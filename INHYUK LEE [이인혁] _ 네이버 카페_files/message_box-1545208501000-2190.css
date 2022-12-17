@@ -1,0 +1,26 @@
+@charset "euc-kr";
+
+/*
+ 메시지 팝업 관련 CSS  (title 한글 주석이 깨져서 보인다면, 해당 css 파일의 인코딩 설정을 확인해서 commit 이 필요합니다.)
+*/
+
+.worn_layer_popup { position:absolute; z-index:99; padding:3px 0 0 3px;font-size:12px;font-family:'돋움',dotum,Helvetica,sans-serif; text-align:left}
+.worn_layer_popup p {margin:0;padding:0}
+.worn_layer_popup .shadow1 { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://blogimgs.pstatic.net/nblog/mylog/post/shadow01.png', sizingMethod='scale'); width:100%;}
+html>body .worn_layer_popup .shadow1 { background:url('https://blogimgs.pstatic.net/nblog/mylog/post/shadow01.png') transparent; }
+.worn_layer_popup .shadow1_side { position:relative; top:-2px; left:-2px;}
+.worn_layer_popup .shadow2 { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://blogimgs.pstatic.net/nblog/mylog/post/shadow02.png', sizingMethod='scale'); width:100%;}
+html>body .worn_layer_popup .shadow2 { background:url('https://blogimgs.pstatic.net/nblog/mylog/post/shadow02.png') transparent; }
+.worn_layer_popup .shadow2_side { position:relative; top:-1px; left:-1px;}
+.worn_layer_popup .border_type { border:2px solid #777777; background-color:#ffffff; }
+.worn_layer_popup .header { display:block; height:22px;_height:30px; padding:8px 0 0 13px;margin:0; background:#f4f4f4; font-weight:bold; font-size:12px; color:#444;}
+.worn_layer_popup .closelayer { position:absolute; right:9px; top:9px; }
+.worn_layer_popup .btn_box { text-align:center; padding:10px 0 15px 0; margin:10px 20px 0 20px; border-top:1px solid #e8e8e8; }
+.worn_layer_popup .btn_box2 {padding:10px 0 15px 0;margin:0;text-align:center}
+.worn_layer_popup .btn_box * { vertical-align:middle;}
+.worn_layer_popup .content {margin:17px 19px 11px;} 
+.worn_layer_popup .txt_1 {padding-bottom:6px;color:#444;font-size:12px; line-height:17px;}
+.worn_layer_popup .txt_1 strong {color:#278F00;}
+.worn_layer_popup .txt_1 a {color:#004790; text-decoration:underline;}
+.worn_layer_popup .txt_1 .norm{color:#444;}
+.worn_layer_popup .xp_box {width:355px;height:80px;background:url(https://blogimgs.pstatic.net/nblog/mylog/post/word_rnd.gif) no-repeat;}
