@@ -1,0 +1,572 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 35 ], {
+    1164: function(e, t, n) {
+        e.exports = n(9)(448);
+    },
+    1715: function(e, t, n) {
+        var s = n(143), i = {
+            "bestyleguide/_avatar": n(331).template
+        }, o = new s.Template({
+            code: function(e, t, n) {
+                var s = this;
+                return s.b(n = n || ""), s.b('<li class="ui-menu-item">'), s.b("\n" + n), s.b('  <div class="mention-user-wrap">'), 
+                s.b("\n" + n), s.b(s.rp("<bestyleguide/_avatar0", e, t, "")), s.b('    <div class="mention-displayname">'), 
+                s.b(s.v(s.f("display_name", e, t, 0))), s.b("</div>"), s.b("\n" + n), s.b('    <div class="mention-minor">@'), 
+                s.b(s.v(s.f("username", e, t, 0))), s.b("</div>"), s.b("\n" + n), s.b("  </div>"), 
+                s.b("\n" + n), s.b("</li>"), s.b("\n"), s.fl();
+            },
+            partials: {
+                "<bestyleguide/_avatar0": {
+                    name: "bestyleguide/_avatar",
+                    partials: {},
+                    subs: {
+                        src: function(e, t, n, s) {
+                            n.b(n.v(n.d("images.50", e, t, 0)));
+                        },
+                        srcLarge: function(e, t, n, s) {
+                            n.b(n.v(n.d("images.115", e, t, 0)));
+                        }
+                    }
+                }
+            },
+            subs: {}
+        }, '<li class="ui-menu-item">\n  <div class="mention-user-wrap">\n    {{<bestyleguide/_avatar}}\n      {{$src}}{{images.50}}{{/src}}\n      {{$srcLarge}}{{images.115}}{{/srcLarge}}\n    {{/bestyleguide/_avatar}}\n    <div class="mention-displayname">{{display_name}}</div>\n    <div class="mention-minor">@{{username}}</div>\n  </div>\n</li>\n', s);
+        o.ri = function(e, t, n) {
+            return s.helpers && e.unshift(s.helpers), this.r(e, (o = i, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, o)), n);
+            var o, r;
+        }, e.exports = o.render.bind(o), e.exports.template = o;
+    },
+    1720: function(e, t, n) {
+        var s = n(143), i = {
+            "bestyleguide/_avatar": n(331).template
+        }, o = new s.Template({
+            code: function(e, t, n) {
+                var s = this;
+                return s.b(n = n || ""), s.b('<li class="comment-container js-comment-container cfix '), 
+                s.s(s.d("user.owner", e, t, 1), e, t, 0, 70, 83, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("owner-comment");
+                }), e.pop()), s.s(s.d("user.owner", e, t, 1), e, t, 1, 0, 0, "") || s.b("user-comment"), 
+                s.b('" data-id="'), s.b(s.v(s.f("id", e, t, 0))), s.b('">'), s.b("\n" + n), s.b(s.rp("<bestyleguide/_avatar0", e, t, "")), 
+                s.b('  <div class="comment-text-container left relative">'), s.b("\n" + n), s.b('    <div class="comment-user-date-wrap ui-corner cfix">'), 
+                s.b("\n" + n), s.b('      <a class="user-name-link bold js-mini-profile" data-id="'), 
+                s.b(s.v(s.d("user.id", e, t, 0))), s.b('" href="'), s.b(s.v(s.d("user.url", e, t, 0))), 
+                s.b('">'), s.b(s.v(s.d("user.name", e, t, 0))), s.b("</a>"), s.b("\n" + n), s.s(s.f("replied_to", e, t, 1), e, t, 0, 637, 775, "{{ }}") && (s.rs(e, t, function(e, t, s) {
+                    s.b('      <span class="bold">'), s.s(s.f("translate", e, t, 1), e, t, 0, 677, 747, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                        n.b('comment_replied_to|replied to <a href="'), n.b(n.v(n.d("user.url", e, t, 0))), 
+                        n.b('">'), n.b(n.v(n.d("user.name", e, t, 0))), n.b("</a>");
+                    }), e.pop()), s.b("</span>"), s.b("\n" + n);
+                }), e.pop()), s.b('      <span class="comment-date '), s.s(s.f("timestamp", e, t, 1), e, t, 0, 837, 856, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("js-format-timestamp");
+                }), e.pop()), s.b('" data-timestamp="'), s.b(s.v(s.f("timestamp", e, t, 0))), s.b('">'), 
+                s.b(s.v(s.f("posted_on", e, t, 0))), s.b("</span>"), s.b("\n" + n), s.b("    </div>"), 
+                s.b("\n" + n), s.b('    <div class="comment-text-wrap"><div class="comment-text js-comment-text">'), 
+                s.b(s.t(s.f("comment", e, t, 0))), s.b("</div></div>"), s.b("\n" + n), s.b("  </div>"), 
+                s.b("\n" + n), s.b('  <div class="comment-actions">'), s.b("\n" + n), s.s(s.d("permissions.flag", e, t, 1), e, t, 0, 1104, 1217, "{{ }}") && (s.rs(e, t, function(e, t, s) {
+                    s.b('    <a class="comment-action comment-spam js-action-spam" data-id="'), s.b(s.v(s.f("id", e, t, 0))), 
+                    s.b('" data-type="'), s.b(s.v(s.f("type", e, t, 0))), s.b('comment"></a>'), s.b("\n" + n);
+                }), e.pop()), s.s(s.d("permissions.close", e, t, 1), e, t, 0, 1265, 1329, "{{ }}") && (s.rs(e, t, function(e, t, s) {
+                    s.b('    <a class="comment-action comment-close js-delete"></a>'), s.b("\n" + n);
+                }), e.pop()), s.b("  </div>"), s.b("\n" + n), s.b("</li>"), s.b("\n"), s.fl();
+            },
+            partials: {
+                "<bestyleguide/_avatar0": {
+                    name: "bestyleguide/_avatar",
+                    partials: {},
+                    subs: {
+                        avatarClasses: function(e, t, n, s) {
+                            n.b("js-mini-profile");
+                        },
+                        avatarId: function(e, t, n, s) {
+                            n.b(n.v(n.d("user.id", e, t, 0)));
+                        },
+                        avatarUrl: function(e, t, n, s) {
+                            n.b(n.v(n.d("user.url", e, t, 0)));
+                        },
+                        src: function(e, t, n, s) {
+                            n.b(n.v(n.d("user.image", e, t, 0)));
+                        }
+                    }
+                }
+            },
+            subs: {}
+        }, '<li class="comment-container js-comment-container cfix {{#user.owner}}owner-comment{{/user.owner}}{{^user.owner}}user-comment{{/user.owner}}" data-id="{{id}}">\n  {{<bestyleguide/_avatar}}\n    {{$avatarClasses}}js-mini-profile{{/avatarClasses}}\n    {{$avatarId}}{{user.id}}{{/avatarId}}\n    {{$avatarUrl}}{{user.url}}{{/avatarUrl}}\n    {{$src}}{{user.image}}{{/src}}\n  {{/bestyleguide/_avatar}}\n  <div class="comment-text-container left relative">\n    <div class="comment-user-date-wrap ui-corner cfix">\n      <a class="user-name-link bold js-mini-profile" data-id="{{user.id}}" href="{{user.url}}">{{user.name}}</a>\n      {{#replied_to}}\n      <span class="bold">{{#translate}}comment_replied_to|replied to <a href="{{user.url}}">{{user.name}}</a>{{/translate}}</span>\n      {{/replied_to}}\n      <span class="comment-date {{#timestamp}}js-format-timestamp{{/timestamp}}" data-timestamp="{{timestamp}}">{{posted_on}}</span>\n    </div>\n    <div class="comment-text-wrap"><div class="comment-text js-comment-text">{{& comment}}</div></div>\n  </div>\n  <div class="comment-actions">\n    {{#permissions.flag}}\n    <a class="comment-action comment-spam js-action-spam" data-id="{{id}}" data-type="{{type}}comment"></a>\n    {{/permissions.flag}}\n    {{#permissions.close}}\n    <a class="comment-action comment-close js-delete"></a>\n    {{/permissions.close}}\n  </div>\n</li>\n', s);
+        o.ri = function(e, t, n) {
+            return s.helpers && e.unshift(s.helpers), this.r(e, (o = i, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, o)), n);
+            var o, r;
+        }, e.exports = o.render.bind(o), e.exports.template = o;
+    },
+    1721: function(e, t, n) {
+        var s = n(143), i = {}, o = new s.Template({
+            code: function(e, t, n) {
+                var s = this;
+                return s.b(n = n || ""), s.b("<div>"), s.b("\n" + n), s.b('  <p class="popup-title">'), 
+                s.s(s.f("translate", e, t, 1), e, t, 0, 45, 94, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_title|Comment Guidelines");
+                }), e.pop()), s.b("</p>"), s.b("\n" + n), s.b('  <p class="popup-subtitle">'), s.s(s.f("translate", e, t, 1), e, t, 0, 155, 235, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_subtitle|Before you comment, please read the guidelines");
+                }), e.pop()), s.b("</p>"), s.b("\n" + n), s.b('  <div class="popoup-image">'), s.b("\n" + n), 
+                s.b('    <img src="'), s.b(s.v(s.f("assetsUrl", e, t, 0))), s.b('img/comments/comment-guidelines.png" srcset="'), 
+                s.b(s.v(s.f("assetsUrl", e, t, 0))), s.b("img/comments/comment-guidelines.png, "), 
+                s.b(s.v(s.f("assetsUrl", e, t, 0))), s.b('img/comments/comment-guidelines@2x.png 2x">'), 
+                s.b("\n" + n), s.b("  </div>"), s.b("\n" + n), s.b('  <div class="popup__guidelines">'), 
+                s.b("\n" + n), s.b('    <h4 class="popup__guidelines-header">'), s.s(s.f("translate", e, t, 1), e, t, 0, 560, 611, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_header_topic|Stay On-Topic");
+                }), e.pop()), s.b("</h4>"), s.b("\n" + n), s.b('    <p class="popup__guidelines-guideline">'), 
+                s.s(s.f("translate", e, t, 1), e, t, 0, 688, 907, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_text_topic|Comments must be about the creative work in the project that you are commenting on. Don't use comments on someone else's project to promote your own work or to link to other websites.");
+                }), e.pop()), s.b("</p>"), s.b("\n" + n), s.b('    <p class="popup__guidelines-guideline">'), 
+                s.s(s.f("translate", e, t, 1), e, t, 0, 983, 1124, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_text_off_topic|We consider off-topic posts 'spam' and we deactivate accounts that repeatedly violate this guideline.");
+                }), e.pop()), s.b("</p>"), s.b("\n" + n), s.b('    <h4 class="popup__guidelines-header">'), 
+                s.s(s.f("translate", e, t, 1), e, t, 0, 1198, 1251, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_header_respect|Be Respectful");
+                }), e.pop()), s.b("</h4>"), s.b("\n" + n), s.b('    <p class="popup__guidelines-guideline">'), 
+                s.s(s.f("translate", e, t, 1), e, t, 0, 1328, 1527, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b("comment_guidelines_popup_text_respect|Although we are all for free expression, we ask that you keep your comments constructive and respectful. We don't tolerate abusive, vulgar or insulting comments.");
+                }), e.pop()), s.b("</p>"), s.b("\n" + n), s.b("  </div>"), s.b("\n" + n), s.b("</div>"), 
+                s.b("\n"), s.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div>\n  <p class="popup-title">{{#translate}}comment_guidelines_popup_title|Comment Guidelines{{/translate}}</p>\n  <p class="popup-subtitle">{{#translate}}comment_guidelines_popup_subtitle|Before you comment, please read the guidelines{{/translate}}</p>\n  <div class="popoup-image">\n    <img src="{{assetsUrl}}img/comments/comment-guidelines.png" srcset="{{assetsUrl}}img/comments/comment-guidelines.png, {{assetsUrl}}img/comments/comment-guidelines@2x.png 2x">\n  </div>\n  <div class="popup__guidelines">\n    <h4 class="popup__guidelines-header">{{#translate}}comment_guidelines_popup_header_topic|Stay On-Topic{{/translate}}</h4>\n    <p class="popup__guidelines-guideline">{{#translate}}comment_guidelines_popup_text_topic|Comments must be about the creative work in the project that you are commenting on. Don\'t use comments on someone else\'s project to promote your own work or to link to other websites.{{/translate}}</p>\n    <p class="popup__guidelines-guideline">{{#translate}}comment_guidelines_popup_text_off_topic|We consider off-topic posts \'spam\' and we deactivate accounts that repeatedly violate this guideline.{{/translate}}</p>\n    <h4 class="popup__guidelines-header">{{#translate}}comment_guidelines_popup_header_respect|Be Respectful{{/translate}}</h4>\n    <p class="popup__guidelines-guideline">{{#translate}}comment_guidelines_popup_text_respect|Although we are all for free expression, we ask that you keep your comments constructive and respectful. We don\'t tolerate abusive, vulgar or insulting comments.{{/translate}}</p>\n  </div>\n</div>\n', s);
+        o.ri = function(e, t, n) {
+            return s.helpers && e.unshift(s.helpers), this.r(e, (o = i, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, o)), n);
+            var o, r;
+        }, e.exports = o.render.bind(o), e.exports.template = o;
+    },
+    1768: function(e, t, n) {
+        "use strict";
+        n.r(t);
+        var s, i = n(135), o = n.n(i), r = n(74), a = n.n(r), c = n(68), u = n.n(c), l = n(766), m = n(1152), d = n.n(m), p = n(0), f = {
+            global: "/v2/users?mentions=1",
+            local: ""
+        }, _ = 2, h = 5, b = function(e) {
+            return this[e];
+        }, g = function(e) {
+            var t = this.toLocaleLowerCase();
+            return 0 === e.first_name.toLocaleLowerCase().indexOf(t) || 0 === e.last_name.toLocaleLowerCase().indexOf(t) || 0 === e.username.toLocaleLowerCase().indexOf(t);
+        }, v = function(e) {
+            return function(e) {
+                return Object.keys(this).map(b, this).filter(g, e);
+            }.call(e, this);
+        };
+        function y(e) {
+            return s = function(e) {
+                for (var t = {}, n = 0; n < e.length; ++n) t[e[n].id] = e[n];
+                return t;
+            }(e);
+        }
+        function w() {
+            var e;
+            return s ? (e = new d.a()).resolve(s) : e = Object(p.default)(f.local).then(y), 
+            e;
+        }
+        var x = function e(t, n) {
+            var s, i;
+            return e._cache = e._cache || {}, e._cache[t] = e._cache[t] || {}, n.length < _ && (i = []), 
+            e._cache[t][n] && (i = e._cache[t][n]), i ? ((s = new d.a()).resolve(i), s) : Object(p.default)({
+                url: t,
+                data: {
+                    q: n
+                }
+            }).then(function(s) {
+                return i = s.users, e._cache[t][n] = i, i;
+            });
+        }.bind(null, f.global), j = {
+            init: function(e) {
+                return e.maxResults && (h = e.maxResults), e.minLength && (_ = e.minLength), e.local && (f.local = e.local), 
+                s = null, this;
+            },
+            getLocal: w,
+            source: function(e, t) {
+                var n = [];
+                function s() {
+                    var e, s;
+                    t((e = n, s = {}, e.filter(function(e) {
+                        return !(e.id in s || (s[e.id] = e, 0));
+                    })).slice(0, h));
+                }
+                [ function(e) {
+                    return w().then(v.bind(e));
+                }, x ].map(function(t) {
+                    return t(e.term);
+                }).reduce(function(e, t) {
+                    return (e ? e.then(function() {
+                        return t;
+                    }) : t).then(function(e) {
+                        e.forEach(function(e) {
+                            e.value = e.username;
+                        }), n = n.concat(e), s();
+                    });
+                }, null).then(null, s);
+            }
+        }, O = n(1715), C = n.n(O), E = n(1716), $ = n.n(E);
+        function T() {
+            return (T = Object.assign || function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var n = arguments[t];
+                    for (var s in n) Object.prototype.hasOwnProperty.call(n, s) && (e[s] = n[s]);
+                }
+                return e;
+            }).apply(this, arguments);
+        }
+        var S = n(230), k = n.n(S), L = n(1153), R = n(191), I = n.n(R), D = n(192), A = n.n(D), U = n(190), M = n.n(U), N = n(490), P = n.n(N), F = n(8), W = n(156), G = n.n(W), B = u.a.extend({
+            formatter: function(e, t) {
+                return e.format(t);
+            },
+            init: function(e, t, n) {
+                var s = this.formatter;
+                t = t || "LL", e.find(".js-format-timestamp").each(function(e, i) {
+                    var r, a = o()(i), c = a.data("timestamp"), u = G.a.unix(c);
+                    n && n.isUTC && (u = u.utc()), (r = n && n.fromNow ? G()(u).fromNow() : s(u, t)) && a.text(r);
+                });
+            }
+        }), V = n(430), J = n(1720), Y = n.n(J), q = {
+            3000: "close",
+            5000: "flag"
+        }, H = M.a.extend({
+            template: P()(Y.a, o.a),
+            templateData: function() {
+                var e = this._super();
+                return e.permissions = e.permissions.reduce(function(e, t) {
+                    return e[q[t]] = !0, e;
+                }, {}), e;
+            },
+            rendered: function() {
+                var e = this;
+                this.$view.hide().fadeIn().on("click", ".js-delete", function() {
+                    Object(V.default)({
+                        title: F.default.translate("delete_comment_are_you_sure_title", "Delete Comment"),
+                        html: F.default.translate("delete_comment_are_you_sure_body", "Are you sure you want to delete this comment?"),
+                        hideClose: !0
+                    }).then(function() {
+                        e.$view.fadeOut(e.trigger.bind(e, "remove"));
+                    }).catch(function() {
+                        return e.trigger("removeCanceled");
+                    });
+                }), B.init(this.$view, "LLL", {
+                    fromNow: !0
+                });
+            }
+        }), K = n(155), Q = n.n(K), X = I.a.extend({
+            _initView: function() {
+                this._super.apply(this, arguments), this.listenTo(this._view, "all", this.trigger);
+            },
+            destroy: function() {
+                this.stopListening(), this._super();
+            }
+        }, {
+            MODEL_CLASS: A.a,
+            VIEW_CLASS: H
+        }).mixin(Q.a), z = u.a.extend({
+            _posts: null,
+            loading: !1,
+            moreSelector: ".see-more-button-container",
+            init: function(e, t, n) {
+                var s = this, i = e.find(".js-comments-list");
+                this.data = t || {}, this.callback = n, this._posts = [], this.loading = !1, this.$content = i, 
+                this.$more = e.find(this.moreSelector), this.get = this.more.bind(this, void 0), 
+                this.$more.on("click", this.get), L.a.delegate(this.$content, function(e) {
+                    e.$context.remove(), s.trigger("spam");
+                });
+            },
+            set: function(e) {
+                return k()(this.data, e), this;
+            },
+            more: function(e) {
+                var t;
+                return this.loading = !0, (t = this.load(e)).then(this.render.bind(this)).catch(function() {}).then(this.after.bind(this)), 
+                t.catch(function() {}).then(this.callback), t;
+            },
+            destroy: function() {
+                this.stopListening(), this.clear(), this.$more.off("click", this.get);
+            },
+            load: function(e) {
+                return Object(p.default)({
+                    url: "/comments/" + this.data.type,
+                    data: k()({
+                        sort_order: "desc"
+                    }, this.data, e)
+                });
+            },
+            render: function(e) {
+                var t;
+                return e && e.comments && (t = e.comments.map(this._makePost, this), this._posts = this._posts.concat(t)), 
+                this._posts["asc" === this.data.order ? "reduceRight" : "reduce"](function(e, t) {
+                    return t.render(e.$content), e;
+                }, this), e;
+            },
+            after: function() {
+                this.data.offset = this._posts.length ? this._posts[this._posts.length - 1].id : void 0;
+            },
+            _makePost: function(e) {
+                e.type = this.data.type;
+                var t = new X(e.id, e);
+                return this.listenTo(t, "remove", this.remove.bind(this, t)), t;
+            },
+            add: function(e) {
+                var t = e instanceof X ? e : this._makePost(e);
+                this._posts.unshift(t), this.render();
+            },
+            remove: function(e) {
+                var t;
+                ~(t = this._posts.indexOf(e)) && (Object(p.default)({
+                    type: "DELETE",
+                    url: "/comments/" + this.data.type + "?comment_id=" + e.id
+                }), this._posts.splice(t, 1), e.destroy(), this.trigger("remove"));
+            },
+            clear: function() {
+                return this._posts.forEach(function(e) {
+                    e.destroy();
+                }), this._posts = [], this;
+            }
+        }), Z = n(491).a.extend({
+            _submit: function(e) {
+                var t = this;
+                return this._super(e).then(function() {
+                    t.$form.find(":input").val("").removeAttr("checked selected");
+                });
+            }
+        }), ee = n(1721), te = n.n(ee), ne = n(13), se = n(16);
+        function ie(e) {
+            return (ie = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                return typeof e;
+            } : function(e) {
+                return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+            })(e);
+        }
+        t.default = u.a.extend({
+            _total: 0,
+            _guidelinesWarningMsg: F.default.translate("comment_guidelines_warning", 'Your comment doesn\'t follow our <a href="/misc/community#comments" target="_blank">comment guidelines.</a>'),
+            init: function(e, t) {
+                var n = this, s = e instanceof o.a ? e : o()(e);
+                this._$context = s, this._id = Number(s[0].dataset.id), this._$view = s.find(".js-post-comment-block"), 
+                this._$commentText = s.find(".js-comment-textarea"), this._$commentWarning = s.find(".js-comment-warning"), 
+                this._$formItemContainer = s.find(".js-comment-form-item-container"), this._$submit = s.find(".js-submit"), 
+                this._commentContainer = this._initCommentContainer(), this._config = t || {}, this._sessionId = a()(), 
+                this._$commentText.on("focus", function() {
+                    return n.trigger("input.focus");
+                }), this._$commentText.on("blur", function() {
+                    return n.trigger("input.blur");
+                });
+            },
+            bind: function() {
+                !function(e, t) {
+                    if (t = T({
+                        maxMentions: 5
+                    }, t), j.init(t), e.length) {
+                        var n = new RegExp($.a.usernameMatch.source, "g");
+                        e.parent().addClass("ui-front").end().one("focus", j.getLocal).automention({
+                            delay: 500,
+                            itemTemplate: C.a,
+                            source: j.source,
+                            appendTo: t.appendTo
+                        }).on("automentionopen", function() {
+                            var e, s, i = this.value, r = {}, a = o()(this);
+                            i.replace(n, function(e, t) {
+                                r[e] = t;
+                            }), Object.keys(r).length > t.maxMentions && (e = a.data("beAutomention"), (s = a.data("errorbar") || new l.a.Errorline(e.menu.element)).render("<strong>You may only mention " + t.maxMentions + " users</strong>"), 
+                            s.$view.prependTo(e.menu.element), a.data("errorbar", s));
+                        });
+                    }
+                }(this._$commentText, {
+                    local: "/mentions/project/" + this._id
+                }), this._bindForm(), this._commentContainer.get();
+            },
+            unbind: function() {
+                this._form && this._form.destroy(), this._commentContainer.destroy(), this._$view && this._$view.remove();
+            },
+            _setTotal: function(e) {
+                this._total = e, this._$context.find(".js-comments-total").text(e ? "(" + e + ")" : "");
+            },
+            _initCommentContainer: function() {
+                var e, t = this._id, n = this, s = this._$context.find(".js-see-more");
+                return e = z.extend({
+                    moreSelector: ".js-see-more"
+                }).init(this._$context, {
+                    type: "project",
+                    entity_id: t
+                }, function(e) {
+                    s.toggleClass("hide", !e.more), n._setTotal(+e.total);
+                }), this.listenTo(e, "remove", function() {
+                    this._setTotal(this._total - 1), n.trigger("removed");
+                }), e;
+            },
+            _logValidationError: function(e) {
+                var t = e.http_code, n = e.messages, s = void 0 === n ? [] : n, i = e.code;
+                return ne.default.info("analytics", "comment failed validation", {
+                    project_id: this._id,
+                    reason: s.length ? s[0].message : null,
+                    httpResponseCode: t,
+                    code: i,
+                    isBlockedRateLimitViolation: i === this._config.COMMENT_ERROR_CODES.ERROR_VALIDATION,
+                    session_id: this._sessionId
+                }), ne.default.send();
+            },
+            _bindForm: function() {
+                var e = this, t = this._id;
+                this._$submit.length && (this._form = Z.extend({
+                    hideButtonText: F.default.translate("comments_hidebutton_posting", "Posting..."),
+                    _findFormError: function(t) {
+                        t.comment && "object" !== ie(t.responseJSON) && e._setFormInErrorState(t.comment), 
+                        this._super(t);
+                    },
+                    hideButtons: function() {},
+                    _setDisabled: function() {
+                        var t = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
+                        e._$context.find(".js-posting").toggleClass("hide", !t), e._$submit.toggleClass("hide", t);
+                    },
+                    showButtons: function() {
+                        this._setDisabled(!1);
+                    }
+                }).init(this._$view).on("success", function() {
+                    var t = this;
+                    this.showButtons(), ne.default.info("analytics", "comment submitted", {
+                        project_id: e._id,
+                        session_id: e._sessionId
+                    }), ne.default.send().then(function() {
+                        return t.trigger("loggedSuccess");
+                    }), e._sessionId = a()();
+                }), this._form.handlers.length = 0, this._form.commit = function(n) {
+                    return n.data.entity_id = t, e._form._setDisabled(), this.then(function(t) {
+                        !function(t) {
+                            if (!t.id || !t.user) throw t;
+                            e._commentContainer.add({
+                                id: t.id,
+                                user: t.user,
+                                comment: t.comment,
+                                posted_on: F.default.translate("comments_just_now", "Just now"),
+                                permissions: [ 3e3 ]
+                            }), e._setTotal(e._total + 1), e.trigger("added");
+                        }(t), e._removeFormFromErrorState();
+                    }).catch(function(t) {
+                        return e._setFormInErrorState(t.responseJSON), e._logValidationError(t.responseJSON);
+                    }), this;
+                }, this._$commentText.on("change", function() {
+                    e._removeFormFromErrorState();
+                }), this._bindCommentGuidelines());
+            },
+            _bindCommentGuidelines: function() {
+                var e = this;
+                this._$commentText.on("focus", function() {
+                    e._config.USER_HAS_ACKNOWLEDGED_GUIDELINES_POPUP || (e._$commentText.blur(), ne.default.info("analytics", "comment guidelines rendered", {
+                        project_id: e._id
+                    }), Object(V.default)({
+                        classes: [ "popup-comment-guidelines qa-popup-comment-guidelines" ],
+                        html: te()({
+                            assetsUrl: se.ASSETS_URL
+                        }),
+                        hideClose: !0,
+                        buttons: [ {
+                            label: F.default.translate("comments_got_it", "Got it!"),
+                            classes: [ "js-confirm" ]
+                        } ]
+                    }).then(function() {
+                        return e._config.USER_HAS_ACKNOWLEDGED_GUIDELINES_POPUP = !0, ne.default.info("analytics", "comment guidelines acknowledged", {
+                            project_id: e._id
+                        }), Object(p.default)({
+                            method: "POST",
+                            url: "/v2/users/me/flags/comment_guidelines_popup"
+                        }).then(function() {
+                            e.trigger("commentGuidelinesAcknowledged");
+                        });
+                    }), o()(".js-blocking-div").off());
+                });
+            },
+            _formatErrorMessage: function(e) {
+                if ("string" == typeof e) return F.default.translateErrorMessage(e);
+                if ("object" === ie(e)) {
+                    var t = e.http_code, n = e.messages, s = void 0 === n ? [] : n;
+                    return t === this._config.COMMENT_ERROR_CODES.TOO_MANY_REQUESTS && s.length && s[0].message ? s[0].message : this._guidelinesWarningMsg;
+                }
+                return "";
+            },
+            _setFormInErrorState: function(e) {
+                "object" === ie(e) && e.http_code === this._config.COMMENT_ERROR_CODES.TOO_MANY_REQUESTS && e.code === this._config.COMMENT_ERROR_CODES.ERROR_VALIDATION && this._showRateLimitPopup(e), 
+                e.http_code !== se.HTTP_CODE_EXPECTATION_FAILURE && this._$commentWarning.removeClass("hide").html(this._formatErrorMessage(e)), 
+                this._$formItemContainer.addClass("form-item-error");
+            },
+            _removeFormFromErrorState: function() {
+                this._$commentWarning.addClass("hide").html(""), this._$formItemContainer.removeClass("form-item-error");
+            },
+            _showRateLimitPopup: function() {
+                var e = "\n      <p>" + F.default.translate("comment_ratelimit_popup_text_violation", 'Your comments have repeatedly violated our <a href="/misc/community#comments" target="_blank">community guidelines</a>. Continued violation of these guidelines may result in a permanent ban.') + "</p>\n      <p>" + F.default.translate("comment_ratelimit_popup_text_appreciate", "We appreciate your understanding.") + "</p>\n      <p>" + F.default.translate("comment_ratelimit_popup_text_contact", 'If you have questions or believe this was shown in error, please <a href="https://help.behance.net" target="_blank">contact us</a>.') + "</p>\n    ";
+                Object(V.default)({
+                    classes: [ "popup-comment-ratelimit" ],
+                    title: F.default.translate("comment_ratelimit_popup_title", "You've reached the comment limit"),
+                    html: e,
+                    buttons: [ {
+                        label: F.default.translate("comments_got_it_no_exclamation", "Got it"),
+                        classes: [ "js-confirm" ]
+                    } ]
+                });
+            }
+        });
+    },
+    766: function(e, t, n) {
+        "use strict";
+        var s = n(135), i = n.n(s), o = n(767), r = n.n(o), a = n(490), c = n.n(a), u = n(768), l = n.n(u), m = n(11), d = i()("<div>");
+        var p, f = r.a.extend({
+            template: c()(l.a, i.a),
+            templateData: function() {
+                return {
+                    message: "Oops, an error occurred. | <a class='js-reload'>Please Refesh.</a>"
+                };
+            },
+            render: function(e) {
+                return e = e ? {
+                    message: function(e) {
+                        return ~e.indexOf("&lt;") ? d.html(e).text() : e;
+                    }(e)
+                } : null, this._super(e);
+            },
+            rendered: function() {
+                this.$view.on("click", ".js-reload", function() {
+                    m.default.reloadLocation();
+                }).show();
+            },
+            hide: function() {
+                return this.$view && this.$view.hide();
+            }
+        }), _ = {
+            init: function(e) {
+                return p = new f(e);
+            },
+            show: function(e) {
+                p && p.render(e);
+            },
+            hide: function() {
+                p && p.hide();
+            },
+            Errorline: f
+        };
+        t.a = _;
+    },
+    767: function(e, t, n) {
+        e.exports = n(9)(198);
+    },
+    768: function(e, t, n) {
+        var s = n(143), i = {}, o = new s.Template({
+            code: function(e, t, n) {
+                var s = this;
+                return s.b(n = n || ""), s.b('<div class="error'), s.s(s.f("containerClasses", e, t, 1), e, t, 0, 38, 44, "{{ }}") && (s.rs(e, t, function(e, t, n) {
+                    n.b(" "), n.b(n.v(n.d(".", e, t, 0)));
+                }), e.pop()), s.b('">'), s.b("\n" + n), s.b('  <span class="error__copy">'), s.b(s.t(s.f("message", e, t, 0))), 
+                s.b("</span>"), s.b("\n" + n), s.b("</div>"), s.b("\n"), s.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div class="error{{#containerClasses}} {{.}}{{/containerClasses}}">\n  <span class="error__copy">{{{message}}}</span>\n</div>\n', s);
+        o.ri = function(e, t, n) {
+            return s.helpers && e.unshift(s.helpers), this.r(e, (o = i, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, o)), n);
+            var o, r;
+        }, e.exports = o.render.bind(o), e.exports.template = o;
+    }
+} ]);
