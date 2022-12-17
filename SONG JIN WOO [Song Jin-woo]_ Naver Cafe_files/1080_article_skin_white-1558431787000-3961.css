@@ -1,0 +1,221 @@
+@charset "UTF-8";
+.list-btn-nor #replyFormBtn .m-tcol-c:before, .list-btn-nor #writeFormBtn .m-tcol-c:before, .list-btn-nor2 .fl .btn2:first-child .m-tcol-c:before, .list-btn-nor2 .fl .btn2 .m-tcol-c:before {
+	display: inline-block;
+	background-image: url(https://ssl.pstatic.net/static/cafe/cafe_pc/sp/sp_icon_article_white_67f137a1.svg);
+	background-repeat: no-repeat;
+	vertical-align: top;
+}
+
+#tbody .sfarm_num .m-tcol-c {
+	color: #666;
+}
+
+#tbody .title .m-tcol-c {
+	color: #666;
+}
+
+#main-area .tit-box .head {
+	color: #666;
+}
+
+.spi_lst em {
+	opacity: 1;
+}
+
+.list-btn-nor .btn {
+	border: solid 1px #ddd;
+	background-color: #fff;
+}
+
+.list-btn-nor .m-tcol-c {
+	color: #666 !important;
+}
+
+.list-btn-nor #replyFormBtn .m-tcol-c:before {
+	background-position: -4px -4px;
+	width: 12px;
+	height: 12px;
+}
+
+.list-btn-nor #writeFormBtn .m-tcol-c:before {
+	background-position: -24px -4px;
+	width: 12px;
+	height: 12px;
+}
+
+.list-btn-nor2 .btn2 {
+	border: solid 1px #ddd;
+	background-color: #fff;
+}
+
+.list-btn-nor2 .btn2 .m-tcol-c {
+	color: #666 !important;
+}
+
+.list-btn-nor2 .fl .btn2:first-child .m-tcol-c:before {
+	background-position: -44px -4px;
+	width: 9px;
+	height: 7px;
+}
+
+.list-btn-nor2 .fl .btn2 .m-tcol-c:before {
+	background-position: -4px -24px;
+	width: 9px;
+	height: 6px;
+}
+
+/* 이전/다음글 */
+.article-board .board-line {
+	background-color: rgba(229, 229, 229, 0.5);
+}
+
+.article_prenet .view-count {
+	opacity: 0.5;
+}
+
+.article_prenet .p_n2 td {
+	background-color: #f9f9f8;
+}
+
+.article_prenet .prev_btn .m-tcol-c,
+.article_prenet .next_btn .m-tcol-c,
+.article_prenet .aaa .m-tcol-c {
+	color: #333 !important;
+}
+
+.article_prenet .wordbreak {
+	color: #666;
+}
+
+/* 댓글 */
+#content-area .box-reply2 {
+	background-color: #f9f9f9;
+}
+
+#content-area .box-reply2 .comm_body a {
+	color: #000;
+}
+
+#content-area .box-reply2 .m-tcol-c {
+	color: #666;
+}
+
+#content-area .box-reply2 .m-tcol-p {
+	color: #000;
+}
+
+#content-area .box-reply2 .author {
+	color: #ff2f3b;
+}
+
+#content-area .box-reply2 .board-box-line-dashed {
+	color: inherit;
+}
+
+#content-area .cminput .comm_write_wrap {
+	border-color: rgba(139, 139, 139, 0.3);
+	background-color: #fff;
+}
+
+#content-area .cminput .comm_write_wrap .textarea {
+	background-color: #fff;
+}
+
+#content-area .cminput .u_cbox_btn_upload {
+	border-color: #ccc;
+}
+
+#content-area .cminput .u_cbox_btn_upload a {
+	color: #666;
+	background-color: transparent;
+}
+
+#content-area .cminput .u_cbox_btn_upload.on a {
+	color: #03c75a;
+	background-color: transparent;
+}
+
+#content-area .cminput .u_cbox_ico_upload_sticker {
+	background-position: -24px -103px;
+}
+
+#content-area .cminput .u_cbox_ico_upload_photo {
+	background-position: -46px -103px;
+}
+
+/* 카페북 */
+.cover_list .toc .first,
+.cafebook_news,
+.cafebook_user {
+	border-color: rgba(139, 139, 139, 0.5);
+}
+
+.sub_aside .cafebook_tree {
+	background-color: #fff;
+}
+
+.sub_aside .cafebook_tree .tree .depth2 .tree-node div .m-tcol-c {
+	color: #333;
+}
+
+.sub_aside .cafebook_tree_menu {
+	background-color: #fff;
+}
+
+.cafebook_list_edit .cafebook_tree .tree .depth2 .tree-node div .m-tcol-c {
+	color: #333 !important;
+}
+
+#main-area.post-layout .search.list-search .input_search {
+	float: left;
+	margin: 0;
+	border: 1px solid #ddd;
+	border-right: 0 none;
+}
+
+#main-area.post-layout .writer_search.list-search select {
+	color: #666;
+}
+
+#main-area.post-layout .writer_search.list-search input {
+	border: 1px solid #e5e5e5;
+	color: #333;
+	background-color: #fff;
+}
+
+#main-area.post-layout .m-tcol-c {
+	color: #666;
+}
+
+/* 태그 */
+#sub-tit h3 {
+	color: #333;
+}
+
+#main-area .date-in {
+	color: #666;
+}
+
+.article-webzine-sub .board-box-line-dashed {
+	border-color: #333;
+}
+
+.article-webzine-sub li {
+	width: 100%;
+	border-color: #d3d3d3;
+}
+
+.article-webzine-sub div .webzine-img {
+	border-color: #e5e5e5;
+}
+
+/* 카페소개 */
+#main-area.article-intro .border-sub.selected {
+	background-color: transparent;
+}
+
+/* 광고 */
+#main-area table.searchad {
+	border-color: #ddd;
+	background-color: #fff;
+}

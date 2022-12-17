@@ -1,0 +1,160 @@
+@charset "euc-kr";
+
+/* SA Advertising */
+.searchad .ico_npay,.searchad .ico_nid,.searchad .tooltip_tail,.searchad .svc_view:after,.searchad .sa_logo,.searchad .ico_help {
+    background: url(https://ssl.pstatic.net/static/cafe/sp_ic_sa_190423.png) no-repeat;
+}
+.searchad {
+    width: 100%;
+    margin: 21px 0;
+}
+div.searchad .searchad_vt {
+	overflow: hidden;
+	max-width: 700px;
+    border:1px solid #d1d1d1;
+
+}
+.searchad .searchad_vt {
+    padding: 12px 11px 11px 25px;
+}
+.searchad .searchad_vt .item {
+    display: block;
+    margin-top: 9px;
+    color: #000;
+    font-size:12px;
+}
+.searchad dt,.searchad dd {
+    position: relative;
+}
+.searchad a {
+    color: #000;
+    text-decoration: none;
+}
+.searchad .tit {
+    text-decoration: underline;
+    color: #2a2a73;
+    font-size: 13px;
+    font-family: '±¼¸²',gulim;
+    font-weight: bold;
+    vertical-align: top;
+}
+.searchad .url {
+	overflow: hidden;
+    display: inline-block;
+    max-width: 400px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    color: #218d44;
+    vertical-align: top;
+    margin-right:2px;
+}
+.searchad .desc {
+    display:inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+.searchad .tooltip_wrap {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.searchad .ico_npay {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 13px;
+    vertical-align: top;
+    background-position: -13px 0;
+}
+.searchad .ico_nid {
+	display: inline-block;
+	position: relative;
+	width: 39px;
+	height: 13px;
+	vertical-align: top;
+	background-position: 0 -47px;
+}
+.searchad .tooltip_wrap.on .tooltip,.searchad .tooltip_wrap.on .tooltip_tail {
+    display: block;
+}
+.searchad .tooltip {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 0;
+    width: 146px;
+    margin-left: -72px;
+    padding: 8px 9px 6px;
+    background-color: #fff;
+    border: solid 1px #a3a3a3;
+    font-size: 11px;
+    letter-spacing: -1px;
+    z-index: 10;
+}
+.searchad .tooltip_tail {
+    display: none;
+    position: absolute;
+    top: 14px;
+    left: 2px;
+    width: 9px;
+    height: 5px;
+    background-position: 0 -35px;
+    z-index: 11;
+}
+.searchad .tooltip .desc {
+    margin-bottom: 3px;
+}
+.searchad .tooltip .txt {
+    display:block;
+}
+.searchad .tooltip .svc_view {
+    color: #41b608;
+    vertical-align: bottom;
+}
+.searchad .tooltip .svc_view:after {
+    content:'';
+    display: inline-block;
+    width: 4px;
+    height: 6px;
+    margin: 2px 0 1px 2px;
+    background-position: -40px -34px;
+    vertical-align: top;
+}
+.searchad .adsby {
+    clear: both;
+    font-family: verdana;
+    font-size: 10px;
+    text-align: right;
+    color:#666;
+}
+.searchad .sa_logo {
+    display: inline-block;
+    overflow: hidden;
+    width: 44px;
+    height: 9px;
+    margin:0 0 2px 4px;
+    background-position: 0 -20px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    vertical-align: bottom;
+}
+.searchad .ico_help {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    vertical-align: top;
+    width: 12px;
+    height: 12px;
+    background-position: -46px 0;
+}
+
+/* SA Advertising - section_cafe */
+.searchad .line_x {
+    height: 1px;
+    background-color: #d1d1d1;
+}
+.searchad .line_y {
+    width: 1px;
+    background-color: #d1d1d1;
+}

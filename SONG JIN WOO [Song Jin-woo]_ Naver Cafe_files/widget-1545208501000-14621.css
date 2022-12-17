@@ -1,0 +1,178 @@
+@charset "euc-kr";
+
+/*
+ 개별 카페 위젯 관련 CSS (title 한글 주석이 깨져서 보인다면, 해당 css 파일의 인코딩 설정을 확인해서 commit 이 필요합니다.)
+*/
+
+/* 명언 */
+#widget-saying {width:171px; margin:0 auto; text-align:left; font-size:12px;}
+#widget-saying p {margin:0; padding:0;}
+#widget-saying .bg-head {overflow:hidden; font-size:0; background-repeat:no-repeat;}
+#widget-saying .bg-body {overflow:hidden;background-repeat:repeat; text-align:center;}
+#widget-saying .bg-footer {clear:both;overflow:hidden; font-size:0; background-repeat:no-repeat;}
+#widget-saying h3 {display:none;}
+#widget-saying .con {width:142px; margin:0 auto; text-align:left;}
+#widget-saying .con img {cursor:pointer;}
+#widget-saying .saying {font-size:11px;font-family:돋움,Dotum,AppleGothic,sans-serif;line-height:1.4;}
+#widget-saying .saying span {font-size:11px;font-family:돋움,Dotum,AppleGothic,sans-serif;}
+#widget-saying .writer {float:right;padding-top:6px;font-size:11px;font-family:돋움,Dotum,AppleGothic,sans-serif;}
+#widget-saying .icon {background-repeat:no-repeat; background-position:50% 50%;}
+#widget-saying .btn-more {padding:8px 0 0 1px;}
+#widget-saying .btn-more a {font-size:10px;text-decoration:none;}
+
+/* 환율 */
+#widget-currency {position:relative;}
+#widget-currency .skin-1,#widget-currency .skin-2 {width:171px; height:100px; margin:0 auto; text-align:left; font-size:11px;background-repeat:no-repeat;}
+#widget-currency p {margin:0; padding:0;}
+#widget-currency .bg-head {height:20px;}
+#widget-currency .bg-head span {display:none}
+#widget-currency .bg-head h3 {float:left;margin:0;font-weight:normal;text-align:center;}
+#widget-currency .bg-head h3 img {border:0}
+#widget-currency .bg-head h3 a {position:relative;display:block;width:51px;height:20px;font-family:Dotum;font-size:11px;letter-spacing:-1px;z-index:99;}
+#widget-currency .bg-head h3.on a {width:55px;height:20px;}
+#widget-currency .bg-body h3.money {position:absolute;margin:0;font-weight:bold;font-family:Times New Roman;}
+#widget-currency .bg-body {clear:both;text-align:center;}
+#widget-currency table {position:absolute;}
+#widget-currency th {display:none}
+#widget-currency td {height:18px;font-size:10px;font-family:Tahoma;text-align:center}
+#widget-currency .rate {height:18px;line-height:1.4;}
+#widget-currency .no {display:none}
+#widget-currency .rate-con {position:absolute;font-family:Tahoma;font-weight:bold;letter-spacing:-1px}
+#widget-currency .buy {position:absolute;font-family:Tahoma;font-size:10px;font-weight:bold;letter-spacing:-1px;}
+#widget-currency .sell {position:absolute;font-family:Tahoma;font-size:10px;font-weight:bold;letter-spacing:-1px;}
+#widget-currency .country {position:absolute;z-index:10;}
+#widget-currency .bg-sel {position:relative;float:left;width:97px;height:19px;padding:0;margin:0}
+#widget-currency .bg-sel li {width:105px;padding:4px 0 3px 0;font-size:11px;font-family:Dotum;cursor:pointer;cursor:hand;}
+#widget-currency .bg-sel li:first-letter {padding-left:7px}
+#widget-currency .bg-sel li.on {background-color:#FF6501;color:#FFFFFF;}
+#widget-currency .bg-sel li.on span {color:#FFFFFF;}
+#widget-currency .bg-sel li span {display:inline;color:#8DA4B4;font-size:10px;font-family:Arial;}
+#widget-currency .cal-input {width:40px;}
+#widget-currency .res-input {width:153px;}
+#widget-currency .nation select {width:95px;font-size:11px;}
+#widget-currency .btn-sel {display:block;position:absolute;width:13px;height:13px;background-repeat:no-repeat;top:3px;right:4px;}
+#widget-currency .calculation {position:relative;float:left;width:160px;height:17px;padding:7px 5px 0 5px;text-align:left;}
+#widget-currency .calculation div,#widget-currency .calculation p {float:left;}
+#widget-currency .calculation select {float:left;}
+#widget-currency .calculation input {float:left;margin:1px 0 0 10px;border:0;background-color:transparent;font-size:11px;font-family:Arial;color:#414141;text-align:right;}
+#widget-currency .calculation span {display:none}
+#widget-currency .btn-calculation {float:right;width:45px;height:17px;text-align:right;}
+#widget-currency .result {float:left;padding:8px 5px 0 9px;}
+#widget-currency .result input {float:left;width:153px;border:0;background-color:transparent;font-size:11px;font-family:Arial;color:#414141;text-align:right;}
+
+/* 날씨 */
+#widget-weather {position:relative;width:171px;margin:0 auto; background-repeat:no-repeat; overflow:hidden;}
+#widget-weather div {margin:0;padding:0;}
+#widget-weather .weather,#widget-weather .today,#widget-weather .tomorrow {position:absolute;background-repeat:no-repeat;}
+#widget-weather .temperature {position:absolute;width:90px;font-family:Tahoma;font-weight:bold;letter-spacing:-2px;line-height:1.0;z-index:10;}
+#widget-weather .today-temperature, #widget-weather .tomorrow-temperature {position:absolute;width:40px;font-family:Tahoma;font-weight:bold;letter-spacing:-1px;line-height:1.0;z-index:10;}
+#widget-weather .today-txt,#widget-weather .tomorrow-txt {position:absolute;font-family:Dotum;font-size:11px;letter-spacing:-1px;line-height:1.2;z-index:10}
+#widget-weather .area {position:absolute;width:90px;font-family:Dotum;font-size:11px;letter-spacing:-1px;z-index:10}
+#widget-weather .tomorrow-minimum-temperature {display:none}
+
+/* 카운터 */
+#widget-count {position:relative; width:171px; margin:0 auto; background-repeat:no-repeat; text-align:left; font-size:12px;}
+#widget-count p {margin:0; padding:0;}
+#widget-count h3 {display:none;}
+#widget-count p span.txt {display:none;}
+#widget-count span.cnt1, #widget-count span.cnt2 {display:block;}
+#widget-count .today,#widget-count .total {position:absolute;}
+
+/* 콩위젯 */
+#widget-bean {width:171px;}
+#widget-bean .widget-bean {background-position:left top;background-repeat:no-repeat;}
+#widget-bean .sub-widget-bean {background-position:left bottom;background-repeat:no-repeat;}
+#widget-bean p {font-size:11px;font-family:dotum;line-height:1.4;letter-spacing:-1px}
+#widget-bean .gather , #widget-bean .participation {font-family:Tahoma;}
+#widget-bean .bean-btns {overflow:hidden;width:100%;}
+#widget-bean .bean-btns a {float:left;background-position:left top;background-repeat:no-repeat;}
+#widget-bean .layer_popup {position:absolute;margin:-78px 0 0 60px;overflow:visible; filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135,strength=2);}
+#widget-bean .layer_popup .layer_content {border:1px solid #b6b6b6; background:#ffffff; position:relative; z-index:2;}
+#widget-bean .layer_popup h4 {display:none}
+#widget-bean .layer_popup .shadow {position:absolute;display:block !important;width:100%; height:100%; overflow:visible; z-index:1; _display:none;}
+*:first-child+html #widget-bean .layer_popup .shadow{ display:none;}
+#widget-bean .layer_popup .shadow1{ left:3px; top:3px; background:url(https://ssl.pstatic.net/static/common/layer/shadow1.png);}
+#widget-bean .layer_popup .shadow2{ left:2px; top:2px; background:url(https://ssl.pstatic.net/static/common/layer/shadow2.png);}
+#widget-bean .layer_popup .shadow3{ left:1px; top:1px; background:url(https://ssl.pstatic.net/static/common/layer/shadow3.png);}
+#widget-bean .layer_popup ul {width:101px;margin:1px;}
+#widget-bean .layer_popup li {width:100%;vertical-align:top}
+#widget-bean .layer_popup li a {display:block;padding:6px 0 2px 11px;color:#000;font-size:11px;font-family:dotum;text-decoration:none;line-height:1.4;letter-spacing:-1px;}
+#widget-bean .layer_popup li a:hover {background-color:#e4ff75;}
+#widget-bean .admin_area {padding:5px 3px 0 0;text-align: right}
+#widget-bean .admin_area a {padding-right:12px;font-weight:bold;font-size:11px;background:url(https://cafe.pstatic.net/widget/happybean/bu_arrow.gif) right top no-repeat;font-family:Dotum;letter-spacing:-1px;text-decoration:none}
+
+/* 사업자정보등록 위젯 */
+#widget_company_info{width:171px;margin:0 auto 5px;font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:11px}
+#widget_company_info .group-mlist-line{margin:0 !important;clear:none}
+#widget_company_info .line_x{height:1px;font-size:0;line-height:0}
+#widget_company_info .line_y{width:1px;font-size:0;line-height:0}
+#widget_company_info .tbl_cmp{width:100%;padding:0;border:0;border-collapse:collapse;table-layout:fixed}
+#widget_company_info .tbl_cmp th,#widget_company_info .tbl_cmp td{padding:0;border:0}
+#widget_company_info .cmp_content{position:relative;font-size:11px !important;letter-spacing:-1px !important}
+#widget_company_info .cmp_content:after{display:block;clear:both;content:''}
+#widget_company_info .cmp_content .bx_line:after{display:block;clear:both;content:''}
+#widget_company_info .cmp_content .bx_line .line_y{float:left}
+#widget_company_info .cmp_content .bx_line .bx_inr{*margin-top:-1px; overflow:hidden}
+#widget_company_info .cmp_content .bx_line .bx_inr a{display:inline-block;float:left;font-size:11px;line-height:13px;text-align:center}
+#widget_company_info .cmp_content .bx_line .bx_inr a .bu{line-height:12px}
+:root #widget_company_info .cmp_content .bx_line .bx_inr a{line-height:16px}
+:root #widget_company_info .cmp_content .bx_line .bx_inr a .bu{line-height:14px}
+#widget_company_info .cmp_content .bx_line .bx_inr a:hover{text-decoration:none}
+#widget_company_info a .bu{display:inline-block;margin-left:2px;font-size:4px;line-height:14px;vertical-align:top}
+/* button text type */
+#widget_company_info .cmp_content .btn_txt{width:37px;position:absolute;top:10px;right:7px}
+#widget_company_info .cmp_content .btn_txt .line_x{width:35px}
+#widget_company_info .cmp_content .btn_txt .line_y{height:14px}
+#widget_company_info .cmp_content .btn_txt a{width:33px;height:12px;padding-top:2px}
+:root #widget_company_info .cmp_content .btn_txt a{padding-top:0;padding-top:2px \0/IE9}
+/* button icon type */
+#widget_company_info .cmp_content .btn_help{width:14px}
+#widget_company_info .cmp_content .btn_help .line_x{width:14px}
+#widget_company_info .cmp_content .btn_help .line_y{height:12px}
+#widget_company_info .cmp_content .btn_help a{width:12px;height:12px;font-size:11px;line-height:15px;letter-spacing:-1px}
+#widget_company_info .cmp_content .tit h4{margin:0;padding:13px 12px 7px;font-size:12px}
+#widget_company_info .cmp_content .tit .btm_line{height:1px;padding:0 5px}
+#widget_company_info .cmp_content .tit .btm_line .group-border{border-bottom:1px dotted}
+#widget_company_info .cmp_content .info_cont{padding:8px 13px 10px 19px;*zoom:1}
+#widget_company_info .cmp_content .info_cont li{position:relative;font-size:11px;line-height:16px}
+#widget_company_info .cmp_content .info_cont li p{display:inline-block;padding-bottom:1px;filter:alpha(opacity=80);-ms-filter:alpha(opacity=80);opacity:0.8;word-wrap:break-word;word-break:break-all}
+#widget_company_info .cmp_content .info_cont li em{font-style:normal}
+#widget_company_info .cmp_content .info_cont li p span{padding-right:2px}
+#widget_company_info .cmp_content .info_cont li strong{display:inline-block;position:relative;font-weight:normal;filter:alpha(opacity=60);-ms-filter:alpha(opacity=60);opacity:0.6}
+#widget_company_info .cmp_content .info_cont li strong i.ico{position:absolute;top:5px;left:-6px;display:inline-block;overflow:hidden;width:2px;height:2px !important;vertical-align:middle;filter:alpha(opacity=60) !important;-ms-filter:alpha(opacity=60) !important;opacity:0.6 !important}
+#widget_company_info .cmp_content .info_cont li .btn_help{position:absolute;top:0;right:-10px}
+:root #widget_company_info .cmp_content .info_cont li .btn_help{top:-2px \0/IE9}
+#widget_company_info .cmp_content .info_cont li .bx_line .bx_inr a strong{font-weight:bold;filter:alpha(opacity=80);-ms-filter:alpha(opacity=80);opacity:0.8}
+#widget_company_info .cmp_content .info_cont li .lk{margin-left:2px;text-decoration:underline}
+#widget_company_info .cmp_content .info_cont li .lk .bu{text-decoration:none}
+#widget_company_info .cmp_content .info_cont .bx_line .bx_inr a{display:inline-block;float:left;font-size:11px;line-height:14px;text-align:center}
+:root #widget_company_info .cmp_content .info_cont .bx_line .bx_inr a{line-height:17px \0/IE9}
+#widget_company_info .cmp_content .layer_tip{display:none;position:absolute;z-index:1000;padding:16px 10px 13px;border:1px solid #888;background-color:#fff}
+#widget_company_info .cmp_content .layer_tip .tip{position:absolute;bottom:-6px;width:11px;height:6px;background:url(https://cafe.pstatic.net/img/section/admin/sp_ly_help2.gif) no-repeat 0 -18px;font-size:0;line-height:0}
+#widget_company_info .cmp_content .layer_tip .cont{margin-left:-1px;font-size:11px;font-family:dotum,'돋움';color:#848689;letter-spacing:-1px;line-height:14px}
+#widget_company_info .cmp_content .layer_tip .clse_tip{display:inline-block;overflow:hidden;position:absolute;top:8px;right:8px;width:10px;height:9px;background:url(https://cafe.pstatic.net/img/section/admin/sp_ly_help2.gif) no-repeat 0 -7px}
+#widget_company_info .filter-20{filter:alpha(opacity=20) !important;-ms-filter:alpha(opacity=20) !important;opacity:0.2 !important}
+#widget_company_info .filter-30{filter:alpha(opacity=30) !important;-ms-filter:alpha(opacity=30) !important;opacity:0.3 !important}
+
+/* scrollbox */
+.template .scrollbox {font-size:12px;border:1px solid green;}
+.template .scrollbox .track {background-color:#ff0; width:20px;}
+.template .scrollbox .button {background-color:#f00;width:20px;height:20px;}
+.template .scrollbox .button.button_up {background-color:#f0f;}
+.template .scrollbox .button.button_up.button_up_over {background-color:#a00;}
+.template .scrollbox .button.button_up.button_up_down {background-color:#0a0;}
+.template .scrollbox .button.button_dn {background-color:#0f0;}
+.template .scrollbox .button.button_dn.button_dn_over {background-color:#a00;}
+.template .scrollbox .button.button_dn.button_dn_down {background-color:#0a0;}
+.template .scrollbox .thumb {background-color:silver;}
+.template .scrollbox .thumb .thumbtop {width:20px;height:10px;background-color:gray;}
+.template .scrollbox .thumb .thumbbtm {width:20px;height:10px;background-color:gray;}
+.template .scrollbox .thumb.thumb_over {background-color:#aaa;}
+.template .scrollbox .thumb.thumb_over .thumbtop {background-color:silver;}
+.template .scrollbox .thumb.thumb_over .thumbbtm {background-color:silver;}
+.template .scrollbox .thumb.thumb_down {background-color:#faa;}
+.template .scrollbox .thumb.thumb_down .thumbtop {background-color:#a77;}
+.template .scrollbox .thumb.thumb_down .thumbbtm {background-color:#a77;}
+
+.png24 {tmp:expression(setPng24(this));}
+.division-line-x {height:5px; font-size:0; overflow:hidden;}
