@@ -1,0 +1,257 @@
+naver_corp_da = window || {};
+
+naver_corp_da.getDateString = function() {
+    var curDate = new Date();
+    var year = curDate.getFullYear();
+    var month = ((curDate.getMonth() + 1) < 10) ? "0" + (curDate.getMonth() + 1) : curDate.getMonth() + 1;
+    var day = (curDate.getDate() < 10) ? "0" + curDate.getDate() : curDate.getDate();
+    var hour = (curDate.getHours() < 10) ? "0" + curDate.getHours() : curDate.getHours();
+    var minute = (curDate.getMinutes() < 10) ? "0" + curDate.getMinutes() : curDate.getMinutes();
+    var second = (curDate.getSeconds() < 10) ? "0" + curDate.getSeconds() : curDate.getSeconds();
+
+    return year + "" + month + "" + day + "" + hour + "" + minute + "" + second;
+};
+
+naver_corp_da.inIframe = function() {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+};
+
+naver_corp_da.ActiveView = function(info) {
+    if (!info.adDivId) return;
+
+    this.adDivId = info.adDivId;
+    this.acEndDate = info.acEndDate || "20991231235959";
+    this.adEndDate = info.adEndDate || "20991231235959";
+    this.scrollTarget = info.scrollTarget || window;
+    this.activeViewTime = info.activeViewTime || 0;
+    this.activeViewPercentage = info.activeViewPercentage || 1.0;
+    this.orientationChangeTime = info.orientationChangeTime || 500;
+    this.callback = info.callback || null;
+    this.callbackForInValid = info.callbackForInValid || null;
+
+    this.viewPortIn = false;
+    this.timeout = null;
+    this.isValid = true;
+    this.isCalledCallbackForInValid = false;
+
+    this.checkViewPortHandler = function(e) {
+        var _this = this;
+        var curDate = naver_corp_da.getDateString();
+        var elem = document.getElementById(this.adDivId);
+
+        this.isValid = (curDate <= this.adEndDate);
+
+        var flagIn = this.beIntoViewPortWithRatio(elem, this.activeViewPercentage);
+        var flagOut = !this.beIntoViewPortWithRatio(elem, 0.01);
+
+        if (!this.isValid && !this.isCalledCallbackForInValid && this.callbackForInValid) { // endDate 이후, 광고 처리
+            var flagInValid = this.beIntoViewPortWithRatio(elem, -6.0); // 광고 영역의 위치가 -600% 일 경우
+            if (flagInValid) {
+                this.callbackForInValid();
+                this.isCalledCallbackForInValid = true;
+            }
+        }
+
+        if (flagIn) { // viewport 안에 있을 경우
+            this.viewPortIn = true;
+
+            if (this.timeout) return;
+
+            this.timeout = setTimeout(function() {
+                if (!_this.viewPortIn) return;
+
+                if (_this.callback) _this.callback();
+
+                _this.removeEventListener();
+            }, this.activeViewTime);
+        }
+
+        if (flagOut) { // viewport 밖에 있을 경우
+            this.viewPortIn = false;
+
+            if (!this.timeout) return;
+
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
+    };
+
+    this.orientationChangeEventHandler = function(e) {
+        var _this = this;
+        setTimeout(function() {
+            _this.checkViewPortHandler();
+        }, this.orientationChangeTime);
+    };
+
+    this.checkActiveView = function() {
+        var _this = this;
+        if ((navigator.userAgent.indexOf("iPhone") > -1) || (navigator.userAgent.indexOf("iPad") > -1)) {
+            setTimeout(function() {
+                _this.checkViewPortHandler();
+            }, 500);
+        } else {
+            this.checkViewPortHandler();
+        }
+
+        this.addEventListener();
+    };
+
+    this.clearActiveView = function() {
+        this.removeEventListener();
+        clearTimeout(this.timeout);
+        this.timeout = null;
+    };
+
+    this.getIsValid = function() {
+        return this.isValid;
+    };
+};
+
+naver_corp_da.ActiveView.prototype = {
+    beIntoViewPortWithRatio: function(elem, ratio) {
+        if (!elem) return false;
+
+        var _window = naver_corp_da.inIframe() ? window.parent : window;
+
+        var ratio = (ratio) ? ratio : 1.0;
+        var eW = parseInt(elem.style.width || elem.getBoundingClientRect().width || elem.offsetWidth, 10);
+        var eH = parseInt(elem.style.height || elem.getBoundingClientRect().height || elem.offsetHeight, 10);
+        var viewportTop = _window.pageYOffset;
+        var viewportBottom = _window.pageYOffset + _window.innerHeight;
+
+        var viewportLeft = _window.pageXOffset;
+        var viewportRight = _window.pageXOffset + _window.innerWidth;
+
+        var agent = navigator.userAgent.toLowerCase();
+        if (agent.indexOf("windows") !== -1) {
+            // window는 스크롤바가 자동으로 사라지지 않으므로 scrollbar를 제외한 너비로 계산한다.
+            // scrollbar width = 17pixels
+            viewportRight -= 17;
+        }
+
+        var f1 = (viewportTop <= (this.offset(elem).top + (eH * (1.0 - ratio))));
+        var f2 = (viewportBottom >= this.offset(elem).top + (eH * ratio));
+        var f3 = (viewportLeft <= this.offset(elem).left + (eW * (1.0 - ratio)));
+        var f4 = (viewportRight >= this.offset(elem).left + (eW * ratio));
+
+        return (f1 && f2) && (f3 && f4);
+    },
+
+    offset: function(elem) {
+        var docElem, win,
+            box = {
+                top: 0,
+                left: 0
+            },
+            doc = elem && elem.ownerDocument;
+
+        if (!doc) {
+            return;
+        }
+
+        docElem = doc.documentElement;
+
+        if (typeof elem.getBoundingClientRect !== typeof undefined) {
+            box = elem.getBoundingClientRect();
+        }
+
+        if (naver_corp_da.inIframe()) {
+            var frame = window.parent.document.getElementById('cafe_main');
+            box = {
+                top: frame.offsetParent.offsetTop,
+                left: frame.offsetLeft
+            };
+        }
+
+        win = this.getWindow(doc);
+
+        return {
+            top: box.top + (win.pageYOffset || docElem.scrollTop) - (docElem.clientTop || 0),
+            left: box.left + (win.pageXOffset || docElem.scrollLeft) - (docElem.clientLeft || 0)
+        };
+    },
+
+    getWindow: function(elem) {
+        return (elem && (elem === elem.window)) ? elem : elem.nodeType === 9 && elem.defaultView;
+    },
+
+    removeEventListener: function() {
+        if (this.scrollTarget.removeEventListener) {
+            this.scrollTarget.removeEventListener('scroll', this, false);
+            this.scrollTarget.removeEventListener('resize', this, false);
+        } else {
+            this.scrollTarget.detachEvent('scroll', this, false);
+            this.scrollTarget.detachEvent('resize', this, false);
+        }
+
+        window.removeEventListener('orientationchange', this, false);
+    },
+
+    addEventListener: function() {
+        if (this.scrollTarget.addEventListener) {
+            this.scrollTarget.addEventListener('scroll', this, false);
+            this.scrollTarget.addEventListener('resize', this, false);
+        } else {
+            this.scrollTarget.attachEvent('scroll', this, false);
+            this.scrollTarget.attachEvent('resize', this, false);
+        }
+
+        window.addEventListener('orientationchange', this, false);
+    },
+
+    handleEvent: function(e) {
+        switch (e.type) {
+            case 'scroll':
+            case 'resize':
+                this.checkViewPortHandler(e);
+                break;
+            case 'orientationchange':
+                this.orientationChangeEventHandler(e);
+                break;
+        }
+    }
+};
+
+naver_corp_da.activeViews = naver_corp_da.activeViews || {};
+
+naver_corp_da.clearActiveViews = function() {
+    var target = naver_corp_da.activeViews;
+    for (var i in target) {
+        if (target.hasOwnProperty(i) && !!target[i]) {
+            target[i].clearActiveView();
+            target[i] = null;
+        }
+    }
+};
+
+
+naver_corp_da.init = function(uId, callback) {
+    var _window = naver_corp_da.inIframe() ? window.parent : window;
+    var tarEl = document.getElementById(uId);
+    var scroll_target = (typeof da_scroll_target !== 'undefined') ? da_scroll_target.targetEl : _window;
+
+    naver_corp_da.activeViews[uId] = naver_corp_da.activeViews[uId] || null;
+
+    if (naver_corp_da.activeViews[uId]) {
+        naver_corp_da.activeViews[uId].clearActiveView();
+        naver_corp_da.activeViews[uId] = null;
+    }
+
+    /* ActiveView */
+    naver_corp_da.activeViews[uId] = new naver_corp_da.ActiveView({
+        activeViewPercentage: 0.5,
+        activeViewTime: 1000,
+        adDiv: tarEl,
+        adDivId: uId,
+        scrollTarget: scroll_target,
+        orientationChangeTime: 500,
+        callback: callback
+    });
+    naver_corp_da.activeViews[uId].checkActiveView();
+}
+
+

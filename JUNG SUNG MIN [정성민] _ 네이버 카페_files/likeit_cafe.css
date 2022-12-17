@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* NTS UIT Development Team PSJ 2014-04-16 */
+
+/* background image */
+.u_likeit_list_module .u_likeit_list_btn .u_ico, .article-movie-sub .u_likeit_list_module .u_likeit_list_btn .u_ico{background-image:url(https://ssl.pstatic.net/static/common/likeit/cafe/sp_likeit.png)}
+
+/* --------------------------------------------------------------------------- */
+/* 카페 적용 */
+/* --------------------------------------------------------------------------- */
+
+/* 좋아요 게시판목록 */
+.board-box .u_likeit_list_module .u_likeit_list_btn{padding:0}
+.board-box .u_likeit_list_module .u_likeit_list_btn .u_cnt{margin:0;line-height:normal;font-size:11px;font-family:'돋움',dotum,Helvetica,sans-serif;font-weight:normal}
+.b .u_likeit_list_module .u_likeit_list_btn .u_cnt{font-weight:bold}
+.article-movie-sub .u_likeit_list_module{display:inline-block;vertical-align:top}
+.article-movie-sub .u_likeit_list_module .u_likeit_list_btn .u_cnt, .border-sub .u_likeit_list_module .u_likeit_list_btn .u_txt{line-height:normal}
+.article-movie-sub .u_likeit_list_module .u_likeit_list_btn{padding:0}
+.article-movie-sub .u_likeit_list_module .u_likeit_list_btn .u_ico{width:14px;height:13px;margin:0;background-position:0 -50px}
+.article-movie-sub .u_likeit_list_module .u_likeit_list_btn .u_cnt{vertical-align:middle}
+
+/* 엔드페이지 좋아요 버튼 */
+.reply-box .u_likeit_list_module{display:inline-block;margin:-2px 0 0 3px;vertical-align:top}
+.reply-box .u_likeit_list_module .u_likeit_list_btn{height:17px;padding:0 7px 0 5px;border:1px solid #ddd;border-radius:1px;background-color:#fff}
+.reply-box .u_likeit_list_module .u_likeit_list_btn .u_ico{width:14px;height:9px;margin-top:4px;background-position:-14px -26px;}
+.reply-box .u_likeit_list_module .u_likeit_list_btn.on .u_ico{background-position:0 -26px;}
+.reply-box .u_likeit_list_module .u_likeit_list_btn .u_cnt{margin-top:2px;color:#666;font-weight:bold;font-size:12px;font-family:'돋움',dotum,Helvetica,sans-serif}
+.reply-box .u_likeit_list_module .u_likeit_list_btn.on .u_cnt{color:#ff4747;}
