@@ -1,0 +1,272 @@
+/* mw: 13/10/2015 added code to client.init to fix hover problems */
+/* mw: 4/12/2015 cleaned up a bit trying to find problem with credits */
+/* mw: 13/2/2016 changes for update 27.2 */
+
+if(jQ.name==="Firefox") {
+    // add this if you have a problem with thumbnail hovers positioning (jQ is defined in infradox.js)
+    var mouseoverpos={
+    	"inside":{"at":"center top","my":"center top"},
+	    "outside":{"at":"center top","my":"center-4 top-1"}
+    };
+}  
+
+var client = {
+    
+    beforepreview: function() {
+        //alert('before preview')
+        $("#previewmodal .keywordstoggle").hide()
+    },
+    afterpreview: function() {
+        
+        if($("#previewmodal").length) { 
+
+            $('#previewmodal .filesizes .fieldname').text('Max file size');
+            
+            $('#previewmodal .restrictioninfo').hide();
+            $(".fieldname:contains('Available file(s)')").html('File size');
+            $("#previewmodal .c1 .fieldname").text('Species');
+            $("#previewmodal .c11 .fieldname").text('');
+        
+            $("#previewmodal .c9 .fieldname").text('Restrictions');
+            //$("#previewmodal .c12 .fieldvalue").css("width", "70%");
+        
+            if ($("#previewmodal .c9 .fieldname").length) {
+                $("#previewmodal .c12 .fieldname").hide();
+               // $("#previewmodal .c12 .fieldvalue").css("padding-left", "109px")
+            }
+            
+            $("#previewmodal .fieldcontainer.c9").hide();
+             $('#previewmodal .territoryinfo .fieldvalue').append($('#previewmodal .fieldcontainer.c12 .fieldvalue'));
+    
+            $('.fieldcontainer.rightsinfo').hide();
+            $('.fieldcontainer.releaseinfo').hide();
+
+            // move latin name 1 next to common name 1
+            $('#previewmodal .c11 .fieldvalue a').css({"margin-left":20+"px"}).insertAfter("#previewmodal .c1 .fieldvalue a");
+            $('#previewmodal .c2').show();
+            $('#previewmodal .c2 .fieldname, #previewmodal .c3 .fieldname').css('font-size', '0px');
+            $('#previewmodal .c2 span').css('margin-right', '10px');
+            $('#previewmodal .c3 .fieldvalue a').insertAfter("#previewmodal .c2 .fieldvalue a");
+            $('#previewmodal .c3, #previewmodal .c11').hide();
+            
+            $(".fieldcontainer.creditnf").insertAfter($(".fieldcontainer.caption"))
+
+        } else {
+            
+            $('#preview .filesizes .fieldname').text('Max file size');
+            
+            //$('#preview .restrictioninfo, .filesizes .sizedisk, .filesizes .sizelabel').hide();
+            $('#preview .restrictioninfo').hide();
+            $(".fieldname:contains('Available file(s)')").html('File size');
+            $("#preview .c1 .fieldname").text('Species');
+            $("#preview .c11 .fieldname").text('');
+        
+            $("#preview .c9 .fieldname, #preview .c12 .fieldname").text('Restrictions');
+            $("#preview .c12 .fieldvalue, #preview .c9 .fieldvalue").css("width", "70%");
+        
+            if ($("#preview .c9 .fieldname").length) {
+                $("#preview .c12 .fieldname").hide();
+               // $("#preview .c12 .fieldvalue").css("padding-left", "109px")
+            }
+            
+             $("#preview .fieldcontainer.c9").hide();
+
+            // move latin name 1 next to common name 1
+            $('#preview .c11 .fieldvalue a').insertAfter("#preview .c1 .fieldvalue a");
+            $('#preview .c2').show();
+            $('#preview .c2 .fieldname, #preview .c3 .fieldname').css('font-size', '0px');
+            $('#preview .c2 span').css('margin-right', '10px');
+            $('#preview .c3 .fieldvalue a').insertAfter("#preview .c2 .fieldvalue a");
+            $('#preview .c3, #preview .c11').hide();
+            
+        };
+
+        var c=previewcfg.content.media[0];
+        if((c.ta==="")&&(c.tu==="")) $(".fieldcontainer.territoryinfo").hide();   
+        
+        
+    },    
+    
+    init: function() { 
+
+        if(jQ.name==="Firefox") {
+            switch(settings.pt) { // pt=pagetype
+            case 1: // search
+                if($("#pagethumbnails").hasClass("layout1")){ // list thumbs
+                    mouseoverpos.outside.my="center-5 top-2"; 
+                }
+                
+                if($("#pagethumbnails").hasClass("layout0")){ // grid
+                    mouseoverpos.outside.my="center-4 top-1"; 
+                }
+            
+                
+                break;
+                    
+            case 4: // order/cart
+                mouseoverpos.outside.my="center+1 top-2"; 
+                break;
+            }
+        }   
+        
+        // change Photographer fieldname on cart and orders page to Photo Credit
+        //$("#cart .metadatacontainer .fieldcontainer:nth-child(4) .fieldname, #order .metadatacontainer .fieldcontainer:nth-child(3) .fieldname").text("Photo Credit");
+
+        // on orders page there is a link "Download Order" change this to "View all Orders"
+        $("#order .ordertopcontainer .innercontainer > a").text("View all Orders");
+        
+        // hide latin and common names from order and cart pages
+        $('#cart .orderitemcontainer').each(function(){
+            $(this).find(".fieldname:contains('Common Name 2')").parent().hide();
+            $(this).find(".fieldname:contains('Latin Name 2')").parent().hide();
+            $(this).find(".fieldname:contains('Common Name')").parent().hide();
+            $(this).find(".fieldname:contains('Latin Name')").parent().hide();
+            $(this).find(".fieldname:contains('Territorial Restrictions')").parent().hide();
+           $(this).find(".fieldname:contains('Use Restrictions')").parent().addClass('plankton-use-restrictions');
+            $(this).find(".fieldname:contains('Availability')").parent().addClass('plankton-availability');
+            $(this).find(".plankton-use-restrictions .fieldname").hide();
+            $(this).find(".plankton-availability .fieldvalue").append($(this).find(".plankton-use-restrictions .fieldvalue"));
+        });
+        
+        $('#order .orderitemcontainer').each(function(){
+            $(this).find(".fieldname:contains('Common Name')").parent().hide();
+            $(this).find(".fieldname:contains('Latin Name')").parent().hide();
+            $(this).find(".fieldname:contains('Common Name 2')").parent().hide();
+            $(this).find(".fieldname:contains('Latin Name 2')").parent().hide();
+            $(this).find(".fieldname:contains('Territorial Restrictions')").parent().hide();
+            $(this).find(".fieldname:contains('Use Restrictions')").parent().addClass('plankton-use-restrictions');
+            $(this).find(".fieldname:contains('File number')").parent().addClass('plankton-file-number');
+            $(this).find(".fieldname:contains('Caption')").parent().addClass('plankton-caption');
+            $(this).find("td:contains('Availability')").parent().addClass('plankton-availability');
+            $(this).find(".plankton-use-restrictions .fieldname").hide();
+            $(this).find(".plankton-availability .fieldvalue").append($(this).find(".plankton-use-restrictions .fieldvalue"));
+            $($(this).find(".plankton-caption")).insertAfter(($(this).find('.orderdetailnumber')));
+            $(this).find(".plankton-caption .fieldname").hide();
+            $(this).find(".plankton-file-number .fieldname").hide();
+        });
+       
+
+        // in the advanced search section use text instead of images. The images are removed in custom CSS
+        $('<span>Horizontal</span>').insertAfter(".orientation li.hor input");
+        $('<span>Vertical</span>').insertAfter(".orientation li.ver input");
+        $('<span>Panoramic</span>').insertAfter(".orientation li.pan  input");
+        $('<span>Square</span>').insertAfter(".orientation li.sqr  input");
+            
+        // currently can't have a space in the title of an advanced search section so am replacing
+        $('.lisfc1 .arrowbox').html('File size<div class="arrowicon sfc1"></div>');
+        $('.lidate .arrowbox').html('Date added<div class="arrowicon date"></div>'); 
+           
+        // for some reason the arrows are noting changing classes when the container is open and closed so doing it here
+        // this is for the advanced search panel
+        $('.searchoptionbox.closed').prev().children().toggleClass('arrowicondown'); 
+        $('.arrowbox').click(function() {
+           $(this).children().toggleClass('arrowicondown').removeClass('arrowiconup');
+        });
+        
+        // adds .button to the save and close button for the layout changer in modal
+        $( "#pagelayout" ).click(function() {
+            
+            setTimeout(
+            function() {
+                $("#pagelayoutmenu a").addClass("button");
+            },
+            2000);
+        });
+
+        if(settings.page==="cart\\cart.html") {
+            // add the ref number to the top of table on cart page
+            $('#cart .reference1').each(function(){
+                $(this).parents('.orderitemcontainer').find('.caption').prepend($(this));
+            });
+            
+            // change downloadable file(s) to "Max file size"
+             $('#cart .label:contains(Downloadable file(s))').text('Max file size');
+        
+            // hide the hover stuff on cart 
+            $('#cart .gridModeBox .showonhover').remove();
+            
+            if($("chkAgree").length) {
+                $('#cart #cartsubmitcontainer p:contains("Click next to confirm this order.")').text('Please tick the checkbox below then click Next to confirm this order');
+            }
+            // stop the Photograher being a link. I know you can change this in admin but Larry wants on preview page but not cart
+            $('#cart .fieldname:contains("Photographer")').next().children().css('color', 'black').click(function( event ) {
+                event.preventDefault();
+               
+                
+            });
+           // photographer = $('#cart .fieldname:contains("Photographer")').next().children().text();
+            
+            $('#cart .fieldname:contains("Photographer")').next().children().each(function(){
+                photographer = $(this).text();
+                shortend_photographer = photographer.split('/')[0];
+                $(this).text(shortend_photographer);
+            });
+           
+            
+            //$('#cart .fieldname:contains("Territorial Restrictions")').text('Restrictions');
+            //$('#cart .fieldname:contains("Use Restrictions")').text('');
+        }
+        
+        // restrictions on order page to be tweaked
+        //$('#order .fieldname:contains("Territorial Restrictions")').text('Restrictions');
+        $('#order .fieldname:contains("Photographer")').text('Photo credit').next().children().css('color', 'black').click(function( event ) {
+            event.preventDefault();
+        });
+           
+        //$('#order .fieldname:contains("Use Restrictions")').text('');
+            
+        // move the 13MB size on disk div to the end of the container for every size option
+        $('#order td.sizeinfo').each(function(){
+            $(this).find('.sizedisk').insertAfter($(this).find('.sizeinches'));
+        });
+            
+        $('#order .metadatacontainer').each(function(){
+            $(this).find('.fieldcontainer:nth-child(2)').insertAfter($(this).find('.fieldcontainer:nth-child(3)'));
+        });
+            
+
+        // make whole box in gallery page clicable
+        $("#group .groupbox").click(function() {
+            window.location = $(this).find("a").first().attr("href");
+            return false;
+        });
+        
+
+        // add a link to the footer cart sliding out thing
+        $('<li><a href="/cart">Order these files</a></li>').insertAfter('#floatingcart #carttoolbar ul li:last-of-type');
+        
+        // make the login button click the real login button
+        $( "#plankton_login_trigger" ).click(function() {
+            $('.needlogin').click();
+        });
+
+        $('<p style="float: left; width: 78%; margin: 14px 0 0 6px; text-align: right;"><a class="plankton-reset-search" href="#">Clear Refined Search</a></p>').insertAfter('.taglisttitle');
+        $('.plankton-reset-search').click(function() {
+            $('#linksearch').click();
+        });
+        
+        $('#taglistgo').addClass('button').css('float', 'left');
+        
+        $('#taglistcontainer .gocontainer').parent().prepend($('#taglistcontainer .gocontainer'));
+        $('#taglist').parent().prepend($('#taglist'));
+        $(".taglistselect").parent().prepend($(".taglistselect"));
+       
+        $('.taglisttitle').parent().prepend($('.taglisttitle'));
+        
+        
+        $('.toolscontainer').insertAfter( "#filtersections" ).css({'margin' : '5px 0 5px 0px'});
+        $('#taglistcontainer').insertAfter( ".toolscontainer" ).css("border-top", "3px solid black").css("margin", "5px 0 5px 0px").css("padding-bottom", "0px").css("padding-top", "12px");
+        
+        $('#filtersections').next().insertAfter($('#sidebaradvanced > ul'));
+        
+        
+        
+       // $('').Filter search results by:
+       $("#sidebaradvanced").prepend("<p style='padding-top: 7px; padding-left: 4px; font-size: 15px;margin-bottom: -8px;'>Filter search results by:</p>");
+       $("#sidebaradvanced .booleansearchbottom").prepend("<p style='font-weight: normal; padding-left: 1px; font-size: 15px;margin-bottom: 10px;'>New Search:</p>");
+        $('.territoryinfo .fieldvalue').append($('.fieldcontainer.c12 .fieldvalue'));
+  
+    
+        
+    }
+};
