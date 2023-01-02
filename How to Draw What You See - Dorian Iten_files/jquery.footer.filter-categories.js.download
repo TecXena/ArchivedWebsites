@@ -1,0 +1,98 @@
+(function($) {
+	"use strict";
+
+	// Capture page elements
+	var $pageContent = $('.main-content');
+	var $portfolioContainer = $('#isotope-trigger');
+	var $filterCategories = $('.filter-category');
+	var $dropdownContainer = $('.dropdown-container');
+	var $dropdownContent = $('.dropdown-content');
+	var $mobileMenu = $('.mobile-menu');
+	var $mobileSearchForm = $('.header-buttons #main-search-form');
+	var isIE9 = $('html').hasClass('ie9');
+
+	/*-----------------------------------------------------------------------------------*/
+	/*	Isotope
+	/*-----------------------------------------------------------------------------------*/
+
+	/* filter items with an isotope filter animation, when one of the filter links is clicked */
+	if( $('body').is('.blog') ) {
+		$('.portfolio-filter a').click(function(e) {
+			e.preventDefault();
+			var selector = $(this).attr('data-filter');
+            console.log( selector );
+		 	$portfolioContainer.isotope({ filter: selector });
+		});
+
+        /* Reset the active class on all the buttons and assign it to the currently active category */
+    	$('.portfolio-filter .filter-category a').click(function() {
+    		$('.portfolio-filter li').removeClass('active');
+    		$(this).parent().addClass('active');
+    	});
+
+        $(document).ready(function(){
+            // Sets filter to open after the page loads
+            setTimeout(function() {
+                $('.filter-button').trigger('click');
+            }, 10 );
+        });
+
+    	/* Initialize Isotope */
+    	$portfolioContainer.imagesLoaded(function() {
+
+    		/* Get the widths of isotope thumbnails, depending on the current screen size */
+    		function getThumbWidth() {
+    			var windowWidth = $(window).width();
+
+    			if(windowWidth <= 400) {
+    				return Math.floor($portfolioContainer.width());
+    			}
+    			else if(windowWidth <= 855) {
+    				return Math.floor($portfolioContainer.width() / 2);
+    			}
+    			else if(windowWidth <= 1280) {
+    				return Math.floor($portfolioContainer.width() / 3);
+    			}
+    			else if(windowWidth <= 1480) {
+    				return Math.floor($portfolioContainer.width() / 4);
+    			}
+    			else if(windowWidth <= 1880) {
+    				return Math.floor($portfolioContainer.width() / 5);
+    			}
+    			else if(windowWidth <= 2280) {
+    				return Math.floor($portfolioContainer.width() / 6);
+    			}
+    			else if(windowWidth <= 2680) {
+    				return Math.floor($portfolioContainer.width() / 7);
+    			}
+    			else if(windowWidth <= 3080) {
+    				return Math.floor($portfolioContainer.width() / 8);
+    			}
+    		}
+
+    		function setThumbWidth() {
+    			var thumbWidth = getThumbWidth();
+    			$portfolioContainer.children().css({ width: thumbWidth });
+    		}
+    		setThumbWidth();
+
+    		$portfolioContainer.isotope({
+    			layoutMode: 'masonry',
+    			masonry: {
+                	columnWidth: getThumbWidth()
+                }
+            });
+
+            $(window).smartresize(function() {
+            	setThumbWidth();
+
+    			$portfolioContainer.isotope({
+                	masonry: {
+                    	columnWidth: getThumbWidth()
+    				}
+    			});
+            });
+        });
+
+	}
+})( jQuery );
