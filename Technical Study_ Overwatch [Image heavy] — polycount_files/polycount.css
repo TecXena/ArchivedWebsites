@@ -1,0 +1,104 @@
+.hover-preview-data {
+  display: none;
+}
+
+#hover-preview {
+  position: absolute;
+  border-radius: 2px;
+  background-color: #757676;
+  box-shadow: 0 0 2px #000;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: all 0.2s ease;
+  top: 50%;
+  left: 20%;
+  width: auto;
+}
+
+#hover-preview img {
+  display: block;
+  box-shadow: 0 0 1px #000;
+}
+
+#hover-preview .preview-body {
+  margin: 10px;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  display: block;
+}
+
+#hover-preview.hover-preview-hovering {
+  display: block;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.Tile {
+  width: 277px;
+  border: 0;
+  border-radius: 0;
+  background-color: #282828;
+  padding: 0;
+  box-shadow: 0 0 4px 0 #000;
+}
+.Tile .Title {
+  background-color: #000;
+  margin: 0 0 0 0;
+  padding: 10px;
+}
+.Tile .AuthorWrap {
+  overflow: hidden;
+  padding: 10px;
+  margin: 0;
+}
+.Tile .AuthorWrap .Author .PhotoWrap {
+  margin: 0 10px 0 0;
+}
+.Tile .AuthorWrap .tile-user-photo i {
+  display: inline-block;
+  background-size: cover;
+}
+.Tile.Wide {
+  width: 560px;
+}
+.Tile .Message {
+  padding: 10px 20px 20px 20px;
+}
+.Tile .Image {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+}
+.Tile .Image img {
+  width: 100%;
+}
+
+/* Override some theming for feed */
+.Section-Feed {
+  /* Due to grid, there is always two pixels remaining to the right of
+  every row. Polycount wants it exact. This is the most meaningful way. */
+}
+.Section-Feed .Content > h1.H {
+  position: absolute;
+  left: -9999em;
+}
+.Section-Feed .BestOfWrap {
+  margin: -5px -4px 0 -4px;
+}
+
+.Attachment .FilePreview img {
+  max-width: 25%;
+  float: left;
+  height: auto;
+}
+
+.Attachment:hover .FileHover img {
+  max-width: 1000px;
+  height: auto;
+  border: solid 3px #fff1e8;
+}

@@ -1,0 +1,65 @@
+;(function ($, window, document, undefined) {
+
+  // Tweak editor lights initial state to off
+  window.editorLights = 'off';
+
+  $(function () {
+    var $hoverPreview = $('<div id="hover-preview" />');
+
+    // Insert hovering container into HTML.
+    $('body').append($hoverPreview);
+
+    var discussionHoverHandler = function (e) {
+      var $discussion = $(e.currentTarget).parents('.ItemDiscussion');
+
+      if ($discussion.length) {
+        var image = {};
+
+        image.thumb = $discussion.find('.hover-preview-data').data('image');
+        image.maxWidth = parseInt($discussion.find('.hover-preview-data').data('maxwidth'));
+        image.maxDimension = parseInt($discussion.find('.hover-preview-data').data('dimension'));
+
+        image.width = image.maxDimension;
+        if (image.maxWidth < image.maxDimension) {
+          image.width = image.maxWidth;
+        }
+
+        if (image.thumb) {
+          var $imagePreview = $('<img src="'+ encodeURI(image.thumb) +'" />');
+
+          $imagePreview
+            .css({
+              'width': '100%' // Fill hover area in case it's too small
+            , 'max-width': image.maxDimension
+            , 'max-height': image.maxDimension
+            });
+
+          $hoverPreview.html($imagePreview);
+
+          $hoverPreview
+            .addClass('hover-preview-hovering')
+            .css({
+              'left': e.pageX - image.width
+            , 'top': e.pageY + 10
+            , 'width': image.width
+            , 'max-width': image.maxDimension
+            });
+        }
+      }
+    };
+
+    $(document)
+      .on('mousemove', '.DataTable .ItemDiscussion .DiscussionOptions .ImagePreview', discussionHoverHandler)
+      .on('mouseout', '.DataTable .ItemDiscussion .DiscussionOptions .ImagePreview', function () {
+        $hoverPreview.removeClass('hover-preview-hovering');
+      });
+  });
+
+  // Add pocket to 'Best Of' tiles for ad. The tiles are currently 4 wide,
+  // so we put #PocketTile before the 5th .Tile (eq is zero-based)
+    $(document ).ready(function() {
+        $('#PocketTile').addClass('Tile');
+        $('.Tile').eq(4).before($('#PocketTile'));
+    });
+
+})(window.jQuery, window, document);

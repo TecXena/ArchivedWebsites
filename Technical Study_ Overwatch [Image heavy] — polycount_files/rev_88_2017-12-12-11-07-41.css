@@ -1,0 +1,1259 @@
+/* ---- Edit CSS ----
+
+If you are unfamiliar with CSS, there are some learning resources in the help
+section on the right-hand side of the page.
+
+Here are some things you should know before you begin:
+
+1. Any definitions you enter here will be related to your custom theme. If you
+   change to a different theme, these definitions will no longer be visible on
+   this page. If you switch back to your custom theme, your changes will be
+   present.
+	
+2. Your custom css definitions will be included *after* the theme
+   css files. So, your definitions will take precedence over the theme ones.
+	
+3. When you preview your changes, you are the only one who can see the preview.
+
+4. Feel free to delete these comments!
+
+*/
+/* 
+------------------------------
+  Site Messages
+------------------------------
+*/
+
+.col-md-9 div:nth-of-type(2).DismissMessage, .col-md-12 div:nth-of-type(2).DismissMessage {
+    margin-top: 10px;
+}
+
+.alert-warning, .AlertMessage {
+    background-color: #c5652b;
+    border-color: #bfbfbf;
+    color: #e4e4e4;
+    font-weight: 600;
+}
+
+.alert, .DismissMessage, .Errors {
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-bottom: 0;
+}
+
+.close, .DismissMessage .Dismiss, a.Close, a.Delete, .token-input-delete-token {
+    float: right;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 1px 2px 0 #000000;
+    opacity: .75;
+}
+/* 
+------------------------------
+  Site Header
+------------------------------
+*/
+
+/* Notifications/Inbox/Favorites flyouts need to be behind the "More" flyout. */
+.MeBox .FlyoutMenu {
+    z-index:-99;
+}
+
+div.Flyout.FlyoutMenu li.Item  {
+/* Flyout from page header: list */
+    padding: 4px 10px;
+    border-bottom: #1e1e1e solid 2px;
+}
+
+div.Flyout.FlyoutMenu ul.PopList.Activities li.Item div.ItemContent.Activity {
+/* Notifications flyout from page header: "commented on" */
+    color: #aaa;
+}
+
+div.Flyout.FlyoutMenu ul.PopList.Activities li.Item div.ItemContent.Activity a {
+/* Notifications flyout from page header: thread titles */
+    color: #37864d;
+    font-weight: 600;
+}
+
+div.Flyout.FlyoutMenu ul.PopList.Conversations li.Item div.ItemContent b.Subject a {
+/* Inbox flyout from page header: member names */
+    color: #37864d;
+    font-weight: 600;
+}
+
+div.Flyout.FlyoutMenu ul.PopList.Conversations li.Item div.ItemContent div.Excerpt {
+/* Inbox flyout from page header: message preview */
+    color: #bbb;
+}
+
+div.Flyout.FlyoutMenu ul.PopList.Popin li.Item div.ItemContent b.Subject a {
+/* Favorites flyout from page header: thread titles*/
+    color: #37864d;
+    font-weight: 600;
+}
+
+.navbar-default .navbar-nav > li > a.patreon {
+/* Highlight color for Patreon link */
+    color: #37864d;
+}
+.navbar-default .navbar-nav > li > a.patreon:hover {
+/* Highlight color for Patreon link */
+    color: #ffffff;
+}
+
+/* 
+------------------------------
+  Banner ad
+------------------------------
+*/
+
+/* The "advertisement" clickable block just links to home, and messes up mobile display, so why have it at all? */
+.adInfo {
+    display: none;
+}
+
+/* The ad is sliding down behind the "search options" button, making the button hard to see. */
+div#adspace {
+    float: initial;
+}
+
+/* 
+------------------------------
+  News 
+------------------------------
+*/
+
+ul.nav-feed {
+/* Twitter,Facebook,RSS links */
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+    margin-top: 0;
+    margin-bottom: 11px;
+    display: inline;
+}
+
+ul.nav-feed li {
+/* Twitter,Facebook,RSS links */
+    display: inline;
+}
+
+ul.nav-feed li a {
+/* Twitter,Facebook,RSS links */
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    line-height: .9;
+    color: #555555;
+    text-transform: uppercase;
+}
+
+.Categories.home h1.H {
+/* Main forum title */
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    color: #37864d;
+    margin: 2px 0px 10px 0px;
+}
+
+.Tiles {
+/* News tiles gutter */
+    margin: 0 0 0 5px;
+}
+
+.Tiles .Tile {
+/* Tile borders */
+    padding: 5px;
+}
+
+.Tiles .Tile .Body {
+/* Tile message body  */
+    padding: 0px;
+    margin-bottom: 35px;
+    background-color: #181818;
+}
+
+.Tile .Title {
+/* Tile thread title */
+    padding: 5px 10px 5px 10px;
+}
+
+div.Tile.ImageWrap.masonry-brick div.Body h2.Title {
+/* Tile post title */
+    font-size: 1em;
+    background-color: #181818;
+}
+
+div.Tile.ImageWrap.masonry-brick div.Body h2.Title a {
+/* Tile post title */
+    color: #aaa;
+}
+
+div.Tile.ImageWrap.masonry-brick div.Body h2.Title a:hover {
+/* Tile post title */
+    color: #ccc;
+    text-decoration: none;
+}
+
+div.Tile div.Body div.Message {
+/* Tile message body text */
+    padding: 5px 10px 5px 10px;
+    background-color: #202020;
+}
+
+.Tiles .Tile .AuthorWrap {
+/* Tile post author */
+    padding: 5px;
+    margin-top: -33px;
+    background-color: #262626;
+}
+
+.Tiles .Tile .AuthorWrap a {
+/* Tile post author */
+    color: #aaa;
+    background-color: #262626;
+}
+
+.Tiles .Tile .AuthorWrap a:hover {
+/* Custom hover color for author */
+    color: #ccc;
+    background-color: #262626;
+}
+
+.Tiles .Tile .AuthorLink {
+/* Tile post author */
+    padding: 0px;
+}
+
+.Tiles .Tile .AuthorLink .Meta {
+/* Author post date */
+    color: #666;
+}
+
+.Tiles .Tile .AuthorLink .Meta:hover {
+/* Author post date */
+    color: #888;
+}
+
+
+/* 
+------------------------------
+  Forum Home
+------------------------------
+*/
+
+.Categories.index h1.H {
+/* Main forum title */
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    color: #37864d;
+    margin: 0px 0px 5px 0px;
+}
+
+.CategoryGroup h2.H {
+/* Forum section titles */
+    margin-bottom: 0px;
+    color: #aaa;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Section-Feed .BestOfWrap {
+/* Main title */
+    margin: 5px -4px 0 -4px;
+}
+
+.DataTable tbody .EntryLink h3 {
+/* Forum name text color */
+    color: #37864d;
+    float: left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.DataTable.CategoryTable tbody .EntryLink:hover h3 {
+/* Forum name rollover color */
+    color: #519e67;
+}
+
+.BlockTitle.LatestPostTitle {
+/* Latest Post text color */
+    color: #37864d;
+}
+
+/* .DataTable h1, .DataTable h2, .DataTable h3, .DataTable h4, .DataTable h5, .DataTable h6, .DataTable h1 a, .DataTable h2 a, .DataTable h3 a, .DataTable h4 a, .DataTable h5 a, .DataTable h6 a, .DataTable .Item .Tag {
+Forum names
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #37864d;
+} */
+
+/* 
+------------------------------
+  Thread list view.
+------------------------------
+*/
+
+.btn-primary, .Button.Primary, .MeBox-SignIn .SignInLinks a {
+    background-color: #37864d;
+}
+
+a.Bookmark:before {
+    color: #37864d;
+}
+
+.row, .row, .MultipleEntryMethods, .MultipleEntryMethods {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container, .container {
+/* Sides of main block */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+/* Sides of thread lists */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-right {
+/* Gutter for search field */
+    float: right !important;
+    float: right;
+    margin-right: 0;
+}
+
+.Breadcrumbs {
+/* Gutter for breadcrumbs */
+    margin: 10px 0px;
+}
+
+.page-header, h1.H, .HomepageTitle, .PageTitle  {
+/* Gutter below main category title */
+    padding-bottom: 0;
+    margin: 0px;
+    margin-top: -5px;
+}
+
+.PageDescription {
+/* Gutters above/below main category description */
+    margin-bottom: 0px;
+    line-height: 1.4;
+    padding-top: 0px;
+}
+
+table.DataTable.CategoryTable thead tr td.CategoryName div.Wrap {
+/* "Forum" title */
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+/* Move the category list up to fill in empty area where "Forum" title was */
+.DataTableWrap .DataTable {
+    margin-bottom: 0;
+    margin-top: -18px;
+}
+}
+
+.CategoryTable .CategoryDescription {
+/* Gutters for categories */
+    margin-top: 1px;
+    margin-left: 10px;
+    float:left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.panel, .Empty, .NoResults, .MessageForm, .DataTableWrap, .MessageList .Item, .CategoryBox, .CategoryGroup {
+/* Gutters between category sections */
+    margin-bottom: 10px;
+}
+
+.list-group-item, .PanelInfo a, .PanelInfo .Heading, .DataList .Foot, .DataList .Item, .DataList.Activities .CommentForm {
+/* Sub-category blocks in TechTalk */
+    margin-bottom: 1px;
+    padding: 5px 15px;
+}
+
+.Item.Category .CategoryName {
+/* Sub-category descriptions in TechTalk moved to same line as Category title */
+    margin: 0 20px 0 10px;
+    float: left;
+}
+
+.list-group, .PanelInfo, .DataList {
+/* Gutter below sub-categories in TechTalk */
+    margin-bottom: 12px;
+}
+
+.PagerWrap, .PageControls, .BeforeCommentHeading {
+/* Gutters above/below NewTopic/Page#s */
+    margin: 0 0 6px;
+}
+
+.DataTable > thead > tr > td {
+/* Gutter below Topic/Replies/Author */
+    padding: 0 0 6px;
+}
+
+.DataTable tbody .EntryLink {
+/* Thread blocks */
+    padding: 2px 0 2px 10px;
+    margin: 0;
+}
+
+strong.NewCommentCount span.Number {
+/* #New - hide the number to prevent popping rollovers */
+    display: none;
+}
+
+.DataTable tbody .LastPageLink {
+/* Remove padding around Last to prevent popping rollovers */
+    padding: 0px 0;
+}
+
+.BlockTitle.LatestPostTitle {
+/* Latest post by name */
+    color: #37864d;
+}
+
+.DataTable > tbody > tr > td {
+/* Thread list */
+    padding: 0;
+    padding-left: 0;
+    border-top: #1e1e1e solid 5px;
+}
+
+.DataTable .Item .Tag {
+/* Sticky/Poll/Closed prefixes */
+    margin-right: 5px;
+}
+
+.DataTable .Item .Tag-Announcement {
+/* Sticky prefix */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    color: #86774c;
+}
+
+.DataTable .Item span.Tag-Closed {
+/* Closed prefix */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    color: #824b45;
+}
+
+.DataTable .Item span.Tag-Poll {
+/* Poll prefix */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    color: #5486ab;
+}
+
+.HasNew {
+/* "New" thread icon */
+    display: none;
+}
+
+.Section-DiscussionList .DiscussionName .EntryLink h3 {
+/* "New" thread text color */
+    color: #37864d;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.Section-DiscussionList .DiscussionName .EntryLink:hover h3 {
+/* "New" thread rollover color */
+    color: #519e67;
+}
+
+.Section-DiscussionList .DiscussionName .EntryLink:active h3 {
+/* "New" thread active (clicked) color */
+    color: #666;
+}
+
+tr.Read .DiscussionName .EntryLink h3 {
+/* "Read" thread text color */
+    color: #666;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+tr.Read .DiscussionName .EntryLink:hover h3 {
+/* "Read" thread rollover color */
+    color: #888;
+}
+
+/* 
+------------------------------
+  Text colors in thread view.
+------------------------------
+*/
+
+.post-color-black, .post-color-black a {
+    color: black;
+}
+
+.post-color-aqua, .post-color-aqua a {
+    color: #426d7d;
+}
+
+.post-color-blue, .post-color-blue a {
+    color: #477196;
+}
+
+.post-color-fuchsia, .post-color-fuchsia a {
+    color: #864577;
+}
+
+.post-color-gray, .post-color-gray a {
+    color: #757575;
+}
+
+.post-color-green, .post-color-green a {
+    color: #498a50;
+}
+
+.post-color-maroon, .post-color-maroon a {
+    color: #824462;
+}
+
+.post-color-lime, .post-color-lime a {
+    color: #43825e;
+}
+
+.post-color-olive, .post-color-olive a {
+    color: #48866a;
+}
+
+.post-color-orange, .post-color-orange a {
+    color: #8a7246;
+}
+
+.post-color-purple, .post-color-purple a {
+    color: #6f4e8a;
+}
+
+.post-color-red, .post-color-red a {
+    color: #92514d;
+}
+
+.post-color-silver, .post-color-silver a {
+    color: #9a9a9a;
+}
+
+.post-color-teal, .post-color-teal a {
+    color: #458686;
+}
+
+.post-color-white, .post-color-white a {
+    color: #a7a7a7;
+}
+
+.post-color-yellow, .post-color-yellow a {
+    color: #948a4e;
+}
+
+div.Signature.UserSignature a {
+    color: #8a8a8a;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* 
+------------------------------
+  Thread post view.
+------------------------------
+*/
+
+audio, canvas, progress, video {
+/* Fix oversize GIFV */
+    width: 900px;
+}
+
+.Item-Inner {
+/* Sides of OP */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.MessageList, .DataList-Search {
+/* Gutter below OP */
+    margin-bottom: 5px;
+}
+
+.Item .Author-Photo {
+    padding-right: 0;
+}
+
+.Item-Aside + .Item-Content {
+/* Prevent padding from sides of each post. */
+    position: relative;
+    min-height: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.list-group-item, .PanelInfo a, .PanelInfo .Heading, .DataList .Foot, .DataList .Item, .DataList.Activities .CommentForm {
+/* Sides of replies */
+    margin-bottom: 1px;
+    padding: 5px 0;
+}
+
+.MessageList .Item + .Item {
+/* Gutter between posts */
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.Button.ReactButton { 
+/* Hide redundant Reply/Quote buttons above each post. */
+    display: none;
+}
+
+.MessageList .Item-Header, .DataList-Search .Item-Header {
+/* Header with poster name, date, edit button. */
+    padding: 5px 20px;
+    background-color: #1f1f1f;
+}
+
+.Item .Author-Card .Author-Name a, .Item .Name, .Item .Username {
+/* Member name under OP avatar, and in post header. */
+    color: #37864d;
+    text-transform: none;
+}
+
+.MessageList .Item-Header .Rank, .DataList-Search .Item-Header .Rank, .Item .Author-Card .Author-Info .Rank {
+/* Rank in post header, and under OP avatar */
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: #848484;
+    text-transform: none;
+}
+
+.MessageList .Item-Header .Meta, .DataList-Search .Item-Header .Meta, .MessageList .Item-Header .Meta a, .DataList-Search .Item-Header .Meta a {
+/* Date permalink in post header. */
+    color: #37864d;
+}
+
+.Section-Discussion .UserStatus {
+/* "Send Message" link in post header */
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: #848484;
+}
+
+.Section-Discussion .UserStatus a {
+/* "Send Message" link in post header */
+    color: #848484;
+    text-decoration: none;
+}
+
+.Section-Discussion .UserStatus a:hover, a:focus {
+/* "Send Message" link in post header */
+    color: #848484;
+    text-decoration: underline;
+}
+
+.MessageList .Item-Body {
+/* Post body. */
+    padding: 20px 30px 0px 30px;
+}
+
+.Message {
+/* Text size in post. */
+    font-size: 14px;
+    font-weight: 300;
+}
+
+blockquote {
+/* Text size in quote. */
+    font-size: 14px;
+}
+
+.Item .Message img {
+/* Emoji should always be inline. */
+    display: inline-block;
+}
+
+.Item-Footer {
+/* Footer with signature and flag/quote/tweet buttons. */
+    padding: 5px 20px 5px 20px;
+    margin: 20px -30px 0 -30px;
+    background-color: #1f1f1f;
+}
+
+.Item-Footer .Signature {
+/* Signature padding below single-line sigs to match multi-line sigs. Default color is gray. */
+    padding: 2px 0px 2px 0px;
+    color: #7b7b7b;
+}
+
+.Item-Footer .Reactions {
+/* Position reactions in footer. */
+    float: right;
+    margin: 0;
+}
+
+.btn-secondary, .ReactButton {
+/* Footer flag/quote/tweet buttons. */
+    color: #555555;
+    background-color: #151515;
+    height: 20px;
+}
+
+.ReactButton {
+    padding: 0 12px 0 0;
+    line-height: 19px;
+}
+
+a.Popup.ReactButton {
+    padding-left: 10px;
+}
+
+div.Spoiler {
+/* Spoilers fix for being too large and too bold */
+    padding: 2px 10px;
+    background-color: rgb(31, 31, 31);
+}
+
+div.Spoiler.SpoilerConfigured {
+/* Spoilers fix for being too large and too bold */
+    background-color: rgb(31, 31, 31);
+}
+
+div.Spoiler div.SpoilerTitle {
+/* Spoilers fix for being too large and too bold */
+    font-weight: inherit;
+    line-height: 1;
+    padding: 4px 10px;
+}
+
+div.Spoiler div.SpoilerTitle input {
+/* Spoilers fix for being too large and too bold */
+    font-weight: inherit;
+    background: #404040;
+    color: #bfbfbf;
+    margin-left: 5px;
+    padding: 1px 5px;
+}
+ 
+.MessageForm {
+/* Prevent the right pocket from covering Preview/SaveDraft/PostReply buttons when thread is very short */
+    float: left;
+    width: 73%;
+    padding-left: 2%;
+}
+
+.sidePocketWrap {
+/* Prevent the right banner pocket from going over the footer */
+    min-height: 0px;
+}
+
+a.ReactButton-Awesome {
+/* Awesome reaction button image */
+    background-image: url("https://us.v-cdn.net/5021068/uploads/editor/zz/n0vdjxy8bu9d.png");
+    background-position: 20px 4px;
+    background-repeat: no-repeat;
+}
+
+.ReactButton-Awesome span.ReactLabel {
+/* Awesome reaction "+" symbol positioning */
+    float:left;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.ReactButton-Awesome .Count {
+/* Awesome reaction "count" */
+    margin-left: 5px !important;
+    margin-right: 0px !important;
+}
+
+span.Count {
+/* Reaction "count" */
+    color: #555555;
+}
+
+span.ReactTwitter {
+/* Twitter button icon */
+    padding: 4px 0px 5px 12px;
+    color: #517098;
+}
+
+div.RecordReactions {
+/* Reaction avatars should be to the right, above the reaction buttons */
+    text-align: right;
+    line-height: 0;
+    margin-bottom: 0.2em;
+}
+
+.ProfilePhotoSmall {
+/* Reaction avatars should be smaller */
+    width: 10px;
+    height: 10px;
+}
+
+div.RecordReactions span.UserReactionWrap span.ReactSprite.ReactAwesome {
+/* Reaction avatars should be closer together */
+    min-width: 0.2em;
+}
+
+.Message > *:last-child {
+/* Last quote block should not have a collapsed bottom 
+    margin-bottom: 0 !important; */
+    margin-bottom: 14px;
+}
+
+/* 
+------------------------------
+  Header edit buttons
+------------------------------
+*/
+
+.MessageList .Item .AdminCheck .icheckbox, .DataList-Search .Item .AdminCheck .icheckbox {
+/* Circular checkbox for moderators */
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.iradio:before, .icheckbox:before {
+/* Checkmark inside circular checkbox for moderators  */
+    width: 14px;
+    vertical-align: top;
+    font-size: 10px;
+    line-height: 6px;
+}
+
+.iradio.checked:before, .icheckbox.checked:before {
+/* Checkmark inside circular checkbox for moderators  */
+    color: #FFF;
+}
+
+.MessageList .Item .Options, .DataList-Search .Item .Options {
+    padding: 0;
+    margin: 0;
+}
+
+.MessageList .Item .Arrow, .DataList-Search .Item .Arrow, .MessageList .Item .AdminCheck, .DataList-Search .Item .AdminCheck {
+    width: 30px;
+    padding: 0;
+    margin: 0 0 0 5px;
+    background-color: #151515;
+}
+
+.MessageList .Item .Arrow, .DataList-Search .Item .Arrow {
+/* Edit cog icon */
+    font-size: 14px;
+}
+
+.iradio, .icheckbox {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+/* 
+--------------------------------------------
+  New Topic
+--------------------------------------------
+*/
+
+.iradio:before, .icheckbox:before {
+/* Checkmarks in radio buttons in New Topic */
+    width: 10px;
+    vertical-align: top;
+    font-size: 6px;
+    line-height: 12px;
+}
+
+/* 
+--------------------------------------------
+  Profile, Inbox, Messages
+--------------------------------------------
+*/
+
+div.Profile div.User h1.H {
+/* User name headline in Profile should be PC green not white */
+    color: #37864d;
+}
+
+div.Profile div.User div.About.P h2.H, div.Profile div.User div.ReactionsWrap h2.H, div.Profile div.DataListWrap h2.H {
+/* Other headlines in Profile should be gray not white */
+    color: #5f5f5f;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .FilterMenu .Active > a, .FilterMenu .Active > a:hover, .FilterMenu .Active > a:focus, .PanelInfo > li.Active a {
+    background-color: #37864d;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus, .PanelInfo .Active a, .PanelInfo .Active a:hover, .PanelInfo .Active a:focus {
+    background-color: #37864d;
+    border-color: #37864d;
+}
+
+div.ReactionsWrap {
+/* Reaction counts in Profile */
+    margin-bottom: 20px;
+}
+
+span.CountItemWrap {
+/* Reaction counts in Profile */
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+    background-color: #262626;
+}
+
+.CountItem a.TextColor {
+/* Reaction counts in Profile */
+    color: #666;
+    font-weight: bold;
+}
+
+span span a span.CountTotal {
+    color: #aaa;
+    font-weight: normal;
+    padding-right: 5px;
+}
+
+div.Profile > div.DataListWrap > ul.DataList > li {
+/* Thread lists in profile */
+    padding: 5px 20px 5px 20px;
+}
+
+div.DataListWrap > ul.Condensed.DataList.Conversations > li {
+/* Thread lists in profile */
+    padding: 5px 20px 5px 20px;
+}
+
+div.ItemContent.Activity div.Title {
+/* Notifications: "commented on" */
+    color: #aaa;
+    font-weight: 100;
+}
+
+div.ItemContent.Activity div.Title a {
+/* Notifications: thread titles */
+    color: #37864d;
+    font-weight: 600;
+}
+
+div.ItemContent.Discussion div.Title a {
+/* Topics: thread titles */
+    color: #37864d;
+    font-weight: 600;
+}
+
+div.ItemContent div.Meta span.MItem b a {
+/* Replies thread titles */
+    color: #37864d;
+    font-weight: lighter;
+}
+
+div.ItemContent.Conversation h3.Users a {
+/* Inbox list member names  */
+    color: #37864d;
+}
+
+div.Excerpt a.Message {
+/* Inbox list message previews  */
+    color: #bbb;
+}
+
+div.Meta span.Author a.Name {
+/* Private Message posted member names */
+    color: #37864d;
+}
+
+div#Badges.Box.BadgeGrid {
+/* Badges box in Profile needs some padding */
+    margin-left: 20px;
+}
+
+dd.ProfileExtend.ProfilePortfolioURL a img {
+/* Prevent a video in the Profile portfolio link to be oversized */
+    display:none;
+}
+
+div.col-md-3 div.PhotoWrap {
+/* Prevent profile pic from covering Topics etc. when on mobile or small display */
+    display: none;
+}
+
+/* 
+--------------------------------------------
+  Allow click-throughs when attempting to reply to a private message on a small-width browser.
+--------------------------------------------
+*/
+
+div.container div.row div.col-md-3 {
+    pointer-events: none; 
+}
+
+div.container div.row div.col-md-3 a, div.container div.row div.col-md-3 div {
+    pointer-events: all; 
+}
+
+
+/* 
+--------------------------------------------
+  Code blocks
+--------------------------------------------
+*/
+
+pre, code {
+    background-color: #9A9A9A;
+    border-color: #C1C1C1;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #949494;
+}
+
+/* 
+--------------------------------------------
+  Moderation Tools
+--------------------------------------------
+*/
+
+a.Delete {
+/* When deleting multiple threads, the Delete button should be more obvious */
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    opacity: 1;
+}
+
+/* 
+--------------------------------------------
+  Magnifier-preview fix (was appearing under page #)
+--------------------------------------------
+*/
+#hover-preview {
+    z-index: 10;
+}
+
+/* 
+--------------------------------------------
+  Allow clicks through the margin of the message div,
+  but message options need to be clickable inside it.
+--------------------------------------------
+*/
+
+.popover, .InformMessage, .InformMessages {
+    pointer-events: none; 
+}
+
+div.InformMessage form div div input, div.Actions, div.InformMessage a {
+    pointer-events: all; 
+}
+
+
+/* 
+--------------------------------------------
+  Spam Warning Popup 
+COMMENTED OUT because AutoDismiss makes 
+it ineffective to combat duplicate posts.
+--------------------------------------------
+/* .popover, .InformMessage, .InformMessages {
+When you trigger the spam filter, the warning message should be more obvious.
+    max-height: 100%;
+    max-width: 100%;
+    color: orange;
+    font-weight: bolder;
+    padding: 20px 20px;
+} */
+
+/* .popover a, .InformMessage a, .InformMessages a {
+Links should be less obvious.
+    color: #cc8500;
+} */
+
+/* .InformMessages {
+    max-width: 100%;
+} */
+
+/* @media all and (max-width:800px){
+  .InformMessages {
+    max-width: 100%;
+  }
+}
+*/
+
+/* 
+------------------------------
+  Activity Page
+------------------------------
+*/
+
+Form.Activity {
+/* Activity page should not have a New Post form. */
+    display: none;
+}
+
+div.Box.Leaderboard h4 {
+/* Activity page leaderboard title needs some padding */
+    margin-left: 20px;
+}
+
+/* Prevent avatar from covering Moderation notes on mobile. (DOESN'T WORK!)
+div.DataListWrap.DataListWrap-UserNotes {
+  z-index: 1040;
+}
+*/
+
+/* 
+--------------------------------------------
+  WYSIWYG Editing to match post formatting
+--------------------------------------------
+*/
+
+textarea#Form_Body.InputBox.TextBox.BodyBox.js-bodybox.js-bodybox.textarea-autosize {
+    padding: 15px;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.Item .Meta .MItem, .Item .AuthorInfo .MItem {
+/* Recent poster name in forum list, remove padding */
+    padding-right: 5px;
+}
+
+div.Meta span.Bullet {
+/* Recent poster name in forum list, remove bullet */
+    display: none;
+}
+
+
+/* 
+------------------------------
+  Rank colors in thread view. Moved to style sheet end to override all others.
+------------------------------
+*/
+
+span.Rank.MItem.Rank-Level-1,span.Rank.Rank-Level-1 {
+    color: #545454;
+}
+
+span.Rank.MItem.Rank-Level-2,span.Rank.Rank-Level-2 {
+    color: #545454;
+}
+
+span.Rank.MItem.Rank-Level-3,span.Rank.Rank-Level-3 {
+    color: #838383;
+}
+
+span.Rank.MItem.Rank-Level-4,span.Rank.Rank-Level-4 {
+    color: #6d8473;
+}
+
+span.Rank.MItem.Rank-Level-5,span.Rank.Rank-Level-5 {
+    color: #5b8466;
+}
+
+span.Rank.MItem.Rank-Level-6,span.Rank.Rank-Level-6 {
+    color: #538460;
+}
+
+span.Rank.MItem.Rank-Level-7,span.Rank.Rank-Level-7 {
+    color: #4b845a;
+}
+
+span.Rank.MItem.Rank-Level-8,span.Rank.Rank-Level-8 {
+    color: #448456;
+}
+
+span.Rank.MItem.Rank-Level-9,span.Rank.Rank-Level-9 {
+    color: #3e8451;
+}
+
+span.Rank.MItem.Rank-Level-10,span.Rank.Rank-Level-10 {
+    color: #39854e;
+}
+
+span.Rank.MItem.Rank-Level-11,span.Rank.Rank-Level-11 {
+    color: #36874d;
+}
+
+span.Rank.MItem.Rank-Level-12,span.Rank.Rank-Level-12 {
+    color: #368c4d;
+}
+
+span.Rank.MItem.Rank-Level-13,span.Rank.Rank-Level-13 {
+    color: #36934d;
+}
+
+span.Rank.MItem.Rank-Level-14,span.Rank.Rank-Level-14 {
+    color: #369a4e;
+}
+
+span.Rank.MItem.Rank-Level-15,span.Rank.Rank-Level-15 {
+    color: #36a051;
+}
+
+span.Rank.MItem.Rank-Level-16,span.Rank.Rank-Level-16 {
+    color: #36a754;
+}
+
+span.Rank.MItem.Rank-Level-17,span.Rank.Rank-Level-17 {
+    color: #36ad57;
+}
+
+span.Rank.MItem.Rank-Level-18,span.Rank.Rank-Level-18 {
+    color: #36b259;
+}
+
+span.Rank.MItem.Rank-JoinDate,span.Rank.Rank-JoinDate {
+    color: #2e5b99;
+}
+
+span.Rank.MItem.Rank-Riot-Games,span.Rank.Rank-Riot-Games {
+    color: #9a4f9a;
+}
+
+span.Rank.MItem.Rank-Sponsor-Under50,span.Rank.Rank-Sponsor-Under50 {
+    color: #d0d0d0;
+}
+
+span.Rank.MItem.Rank-Sponsor-Over50,span.Rank.Rank-Sponsor-Over50 {
+    color: #e2b650;
+}
+
+span.Rank.MItem.Rank-Mod,span.Rank.Rank-Mod {
+/* Rank for moderators */
+    color: #ce8500;
+}
+
+span.Rank.MItem.Rank-Admin,span.Rank.MItem.Rank-Admin {
+/* Rank for admins */
+    color: #993f3d;
+}
+
+span.Rank.MItem.Rank-Founder,span.Rank.MItem.Rank-Founder {
+    color: white;
+}
+
+/* Test to fix how Moderation in profile is covered on mobile */
+.FilterMenu .Active > a {
+    background-color: #37864d00;
+}
