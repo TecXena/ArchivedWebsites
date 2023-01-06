@@ -1,0 +1,48 @@
+﻿@charset "utf-8";
+
+/*
+PXE Photoware
+Markup : Hyunhw Jung
+Website: http://www.premiumxe.com
+Email : clubnb2@naver.com
+*/
+
+/* Colorset - White
+---------------------------------------------------------------------------------*/
+body { background-color:#e2e2e2; }
+a, a:visited {  }
+a:hover {  }
+
+#container_folder { background:#444 url(../img/white/background_line.gif) repeat-x bottom; color:#fff; }
+
+#container_site { background-image: url(../img/white/background.gif); }
+#header { color:#666; }
+#header .wrapper {  }
+#container_contents {  }
+
+#e1 { color:#666; }
+#e2 { color:#666; }
+
+
+
+/* 세로 서브메뉴
+---------------------------------------------------------------------------------*/
+#lnb { border-bottom:1px solid #a8a8a8; }
+#lnb li a { color:#fff; border-left:1px solid #f9f9f9; border-top:1px solid #f9f9f9; border-right:1px solid #f9f9f9; background-color:#e0e0e0; }
+#lnb li .pillow { color:#444; }
+#lnb li span { border-left:1px solid #a8a8a8; border-top:1px solid #a8a8a8; border-right:1px solid #a8a8a8; background-color:#e0e0e0; }
+#lnb li a:hover,
+#lnb li a:focus {  }
+#lnb li.on a { color:#fff; }
+#lnb li.on a .pillow {  }
+#lnb li ul { border-top:1px solid #d1d1d1; border-left:1px solid #f9f9f9; border-right:1px solid #f9f9f9;}
+#lnb li ul li a { color:#494949 !important; background:none !important; }
+#lnb li ul li a:hover,
+#lnb li ul li a:focus { color:#000 !important; }
+#lnb li.on ul li.on a { color:#555 !important; background:#e0e0e0!important; }
+
+
+/* Widget Box - Section 박스 디자인
+---------------------------------------------------------------------------------*/
+.section01 { color:#666; }
+.section02 { color:#666; }

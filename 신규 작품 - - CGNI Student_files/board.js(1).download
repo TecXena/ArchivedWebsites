@@ -1,0 +1,394 @@
+jQuery(function($){
+// Category Navigation
+	var cnb = $('#bd .bd_cnb');
+    var cItem = cnb.find('>ul>li');
+    var lastEvent = null;
+    function cnbToggle(){
+        var t = $(this);
+        if (t.next('ul').is(':hidden') || t.next('ul').length==0) {
+            cItem.find('>ul').fadeOut(100);
+            t.next('ul').fadeIn(200);
+        };
+    };
+    function cnbOut(){
+        cItem.find('ul').fadeOut(100);
+    };
+    cItem.find('>a').mouseover(cnbToggle).focus(cnbToggle);
+    cItem.mouseleave(cnbOut);
+	cItem.find('ul').each(function(){
+		var t = $(this);
+		if(t.width() > $('html,body').width()-t.offset().left){
+			t.addClass('flip');
+		};
+		t.append('<span class="edge"></span>');
+	});
+	cItem.find('>ul>li.on').parents('ul:first').show().prev().addClass('on');
+	$('#bd .cTab>li>ul>li.on_').parents('li:first').addClass('on');
+	// If Overflow
+	cItem.each(function(){
+		if($(this).offset().top!=$('#bd .bd_cnb>ul>li:first-child').offset().top){
+			$(this).addClass('hidden').nextAll().addClass('hidden');
+			$('#bd .cnb_more').css('visibility','visible');
+			return false;
+		};
+	});
+	cnb.css('overflow','visible');
+	function cnbMore(){
+		cnb.toggleClass('open');
+		$('.cnb_more .ui-icon').toggleClass('ui-icon-triangle-1-s').toggleClass('ui-icon-triangle-1-n');
+		return false;
+	};
+	if((cnb.find('.hidden a,.hidden li').hasClass('on')) && (!cnb.hasClass('open'))){
+		cnbMore();
+	};
+	$('#bd .cnb_more').click(cnbMore);
+
+// Prev-Next
+	function rdPrev(){
+		var a = $('#rd_prev .wrp');
+		$(this).append(a).attr('href',$('#rd_prev').attr('href'));
+		a.css({marginLeft:-a.width()/2});
+	};
+	$('a.rd_prev').mouseover(rdPrev).focus(rdPrev);
+	function rdNext(){
+		var a = $('#rd_next .wrp');
+		$(this).append(a).attr('href',$('#rd_next').attr('href'));
+		a.css({marginLeft:-a.width()/2});
+	};
+	$('a.rd_next').mouseover(rdNext).focus(rdNext);
+	$(document).keydown(function(event){
+		var p = $('#rd_prev');
+		var n = $('#rd_next');
+		// fixed for 'prettyphoto' addon
+		if($('.pp_overlay').length==0){
+			if(event.keyCode==37 && p.length==1){
+				window.location.href = p.attr('href');
+			} else	if(event.keyCode==39 && n.length==1){
+				window.location.href = n.attr('href');
+			} else 	if(event.keyCode==27 && $('#viewer').length==1){
+				self.close();
+			} else {
+				return true;
+			};
+		};
+	});
+	$('#comment,textarea,input,select').keydown(function(event){
+		event.stopPropagation();
+	});
+
+// 말풍선
+	$('#bd.use_bubble a.bubble,').each(function(){
+		var t = $(this);
+		if(!t.hasClass('no_bubble')){
+			t.append('<span class="wrp"><span class="speech">'+t.attr('title')+'</span><span class="edge"></span></span>').removeAttr('title');
+			if($('html,body').width()-t.offset().left < 100){
+				t.addClass('left').find('.wrp').css({marginTop:t.parent('.wrp').height()/2});
+			} else if(t.offset().top < 100 && !t.parent().parent().hasClass('rd_nav_side')){
+				t.addClass('btm').find('.wrp').css({marginLeft:-t.find('.wrp').width()/2});
+			} else {
+				t.find('.wrp').css({marginLeft:-t.find('.wrp').width()/2});
+			};
+		};
+	});
+	// Hide
+	$('#bd .rd_file.hide,.fdb_lst .cmt_files').hide();
+
+// 폰트
+	if($('#fontcheck_np1').width()==$('#fontcheck_np2').width()){
+		$('#bd').removeClass('use_np');
+		$.cookie('use_np',null);
+	} else {
+		$('#bd').addClass('use_np');
+		$.cookie('use_np','use_np');
+	};
+	function installfontOut(){
+		$('#install_ng2').fadeOut();
+		$('.bd_font .select').focus();
+		return false;
+	};
+	$(document).keydown(function(event){
+		if($('#install_ng2').is(':visible')) {
+			if(event.keyCode != 27) return true; // ESC
+			return installfontOut();
+		};	
+	});
+	$('#install_ng2 .tg_close2,#install_ng2 .close').click(installfontOut);
+	$('#install_ng2 .tg_blur2').focusin(installfontOut);
+	$('.bd_font li a').click(function(){
+		var p = $(this).parent();
+		if(p.hasClass('ng') && $('#fontcheck_ng3').width()==$('#fontcheck_ng4').width()){
+			$('#install_ng2').fadeIn().find('.tg_close2').focus();
+		} else {
+			var pC = p.attr('class');
+			if(p.hasClass('ui_font')){
+				$.cookie('bd_font',null);
+			} else {
+				$.cookie('bd_font',''+pC+'');
+			};
+			$('.bd,.bd input,.bd textarea,.bd select,.bd button,.bd table').removeClass('ui_font ng window_font tahoma').addClass(pC);
+			p.addClass('on').nextAll('.on').removeClass('on');
+			p.prevAll('.on').removeClass('on');
+			$('.bd_font .select strong').text($(this).text());
+		};
+		return false;
+	});
+
+// Images Load
+	$('.bd_lst.img_load .tmb_wrp').each(function(){
+		$(this).imagesLoaded(function(){
+			$(this).hide().css('visibility','visible').fadeIn(200);
+		});
+	});
+	$('.bd_lst.img_load2 .tmb_wrp img').each(function(){
+		$(this).imagesLoaded(function(){
+			$(this).css('display','block').prev('.no_img').remove();
+		});
+	});
+
+// Comment Hide
+	$('#bd .fdb_hide').hide();
+
+// hikaru100's Toggle2 (Original : XE UI)
+	var tgC2 = $('.tg_cnt2');
+	$('.tg_btn2').click(function(){
+		var t = $(this);
+		var h = t.attr('href');
+		if(t.next(h).is(':visible')) {
+			t.focus().next().fadeOut(200);
+		} else {
+			tgC2.filter(':visible').hide();
+			t.after($(h)).next().fadeIn(200).css('display','block').find('a,input,button:not(.tg_blur2),select,textarea').eq(0).focus();
+		};
+		return false;
+	});
+	function tgClose2(){
+		var closeId = tgC2.filter(':visible').attr('id');
+		tgC2.fadeOut(200).prev('[href="#'+closeId+'"]').focus();
+	};
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		return tgClose2();
+	});
+	tgC2.mouseleave(tgClose2);
+	$('.tg_blur2').focusin(tgClose2);
+	$('.tg_close2,#install_ng2 .close').click(tgClose2);
+
+// Form Label Overlapping
+	var overlapLabel = $('#bd .itx_wrp').find('>:text,>:password,>textarea').prev('label');
+	overlapLabel.next(':text,:password,textarea')
+		.focus(function(){
+			$(this).prev(overlapLabel).css('visibility','hidden');
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				$(this).prev(overlapLabel).css('visibility','visible');
+			} else {
+				$(this).prev(overlapLabel).css('visibility','hidden');
+			}
+		})
+		.change(function(){
+			if($(this).val() == ''){
+				$(this).prev(overlapLabel).css('visibility','visible');
+			} else {
+				$(this).prev(overlapLabel).css('visibility','hidden');
+			}
+		})
+		.blur();
+
+// Search
+	if($('#bd_srch .srch_itx,#bd_srch_btm_itx').val()!=''){
+		$('#bd_srch').show();
+		isSrch();
+	};
+	$('.show_srch').click(function(){
+		if($('#bd_srch').is(':hidden')){
+			$('#bd_srch').fadeIn();
+			$('#bd_srch select').hide().delay(300).fadeIn();
+			$('#bd_srch .srch_itx').focus();
+		} else {
+			$('#bd_srch select').fadeOut(300);
+			$('#bd_srch').delay(400).fadeOut();
+			$(this).focus();
+		}
+	});
+	$('#bd_srch_btm_itx').focus(isSrch);
+    function isSrch(){
+		$('#bd_srch_btm .itx_wrp').animate({width:130}).next().fadeIn().parent().addClass('on');
+    };
+
+// Scroll
+	$('a.back_to').click(function(){
+		$('html, body').animate({scrollTop:$($(this).attr('href')).offset().top});
+		return false;
+	});
+
+// Read Navi
+	$('.print_doc').click(function(){
+		if($(this).hasClass('this')){
+			print();
+		} else {
+			window.open(this.href,'print','width=860,height=999,scrollbars=yes,resizable=yes').print();
+		};
+		return false;
+	});
+	$('.font_plus').click(function(){
+		var c = $('#bd .xe_content');
+		var font_size = parseInt(c.css('fontSize'))+1;
+		c.css('font-size',''+font_size+'px');
+		return false;
+	});
+	$('.font_minus').click(function(){
+		var c = $('#bd .xe_content');
+		var font_size = parseInt(c.css('fontSize'))-1;
+		c.css('font-size',''+font_size+'px');
+		return false;
+	});
+	$(window).scroll(function(){
+		if(!$('#viewer').length && $('#bd .rd').length==1) {
+			var sT = $(this).scrollTop();
+			if((sT > $('.rd_body').offset().top) && (sT < $('.rd_end').offset().top-$(this).height())){
+				$('.rd_nav_side .rd_nav').fadeIn();
+			} else {
+				$('.rd_nav_side .rd_nav').fadeOut();
+			};
+		};
+	});
+
+// Gallery hover effect
+	$('#bd .info_wrp').hover(function(){
+		var t = $(this);
+		var st = t.find('.info.st,.info.st1');
+		var tL = $('#tmb_lst');
+		if($.browser.msie && ($.browser.version==8 || $.browser.version==7)){
+			if(tL.hasClass('tmb_bg2')){
+				st.animate({opacity:1},200);
+			} else {
+				st.animate({opacity:.7},200);
+			};
+		} else {
+			if(tL.hasClass('tmb_bg3')){
+				st.animate({opacity:.8},200);
+			} else {
+				st.animate({opacity:1},200);
+			};
+		};
+		t.find('.info').animate({top:0,left:0},200);
+	},
+	function(){
+		var t = $(this);
+		t.find('.info.st,.info.st1').animate({opacity:0},200);
+		t.find('.info.st2').animate({top:'-100%'},200);
+		t.find('.info.st3').animate({left:'-100%'},200);
+		t.find('.info.st4').animate({top:'-100%',left:'-100%'},200);
+	});
+
+// With Viewer
+	var wView = $('#with_viewer');
+	wView.click(function(){
+		if(wView.hasClass('on')){
+			$.cookie('with_viewer',null);
+			wView.removeClass('on');
+		} else {
+			wView.addClass('on');
+			$.cookie('with_viewer','Y');
+		};
+		return false;
+	});
+	if($.cookie('with_viewer')=='Y'){
+		wView.addClass('on');
+	};
+	$('.bd_lst a.hx').click(function(){
+		if(wView.hasClass('on')){
+			window.open(''+$(this).attr('rel')+'','viewer','width=9999,height=9999,scrollbars=yes,resizable=yes,toolbars=no');
+			return false;
+		};
+	});
+
+// List Viewer
+	if($('#lst_viewer').length==1){
+		$('.bd_lst a.hx').append("<button class=\"bg_color\" title=\""+$('#lst_viewer strong').text()+"\">Viewer</button>");
+	};
+	$('.bd_lst a.hx button').click(function(){
+		window.open(''+$(this).parent().attr('rel')+'','viewer','width=9999,height=9999,scrollbars=yes,resizable=yes,toolbars=no');
+		return false;
+	});
+
+// Editor
+	$('.simple_wrt textarea').focus(function(){
+		$(this).parent().parent().next().slideDown();
+	});
+	$('.fdb_itm .re_comment').click(function(){
+		var fdbItm = $(this).parent().parent();
+		$(fdbItm).append($('#re_cmt'));
+		$('#re_cmt').fadeIn().find('.parent_srl').val(fdbItm.attr('id').substring(8)).parent().find('textarea').focus();
+		return false;
+	});
+	$('#re_cmt a.wysiwyg').click(function(){
+		window.location.href = $('#re_cmt').parent().find('.re_comment').attr('href');
+		return false;
+	});
+	$('.simple_wrt textarea,.guest_wrt textarea').autoGrow();
+});
+
+// SNS에 글쓰기
+(function($){
+	$.fn.snspost = function(opts) {
+		var loc = '';
+		opts = $.extend({}, {type:'twitter', event:'click', content:''}, opts);
+		opts.content = encodeURIComponent(opts.content);
+		switch(opts.type) {
+			case 'me2day':
+				loc = 'http://me2day.net/posts/new?new_post[body]='+opts.content;
+				if (opts.tag) loc += '&new_post[tags]='+encodeURIComponent(opts.tag);
+				break;
+			case 'facebook':
+				loc = 'http://www.facebook.com/share.php?t='+opts.content+'&u='+encodeURIComponent(opts.url||location.href);
+				break;
+			case 'yozm':
+				loc = 'http://yozm.daum.net/api/popup/prePost?sourceid=0&link='+encodeURIComponent(opts.url||location.href)+'&prefix='+opts.content;
+				break;
+			case 'twitter':
+			default:
+				loc = 'http://twitter.com/home?status='+opts.content;
+				break;
+		}
+		this.bind(opts.event, function(){
+			window.open(loc);
+			return false;
+		});
+	};
+	$.snspost = function(selectors, action) {
+		$.each(selectors, function(key,val) {
+			$(val).snspost( $.extend({}, action, {type:key}) );
+		});
+	};
+})(jQuery);
+
+/*!
+ * Autogrow Textarea Plugin Version v2.0
+ * http://www.technoreply.com/autogrow-textarea-plugin-version-2-0
+ *
+ * Copyright 2011, Jevin O. Sewaruth
+ *
+ * Date: March 13, 2011
+ */
+jQuery.fn.autoGrow=function(){return this.each(function(){var c=this.cols;var b=this.rows;var d=function(){e(this)};var e=function(j){var h=0;var f=j.value.split("\n");for(var g=f.length-1;g>=0;--g){h+=Math.floor((f[g].length/c)+1)}if(h>=b){j.rows=h+1}else{j.rows=b}};var a=function(g){var f=0;var j=0;var i=0;var h=g.cols;g.cols=1;j=g.offsetWidth;g.cols=2;i=g.offsetWidth;f=i-j;g.cols=h;return f};this.style.height="auto";this.style.overflow="hidden";this.onkeyup=d;this.onfocus=d;this.onblur=d;e(this)})};
+
+/**
+ * jQuery Cookie plugin
+ *
+ * Copyright (c) 2010 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
+jQuery.cookie=function(d,e,b){if(arguments.length>1&&String(e)!=="[object Object]"){b=jQuery.extend({},b);if(e===null||e===undefined){b.expires=-1}if(typeof b.expires==="number"){var g=b.expires,c=b.expires=new Date();c.setDate(c.getDate()+g)}e=String(e);return(document.cookie=[encodeURIComponent(d),"=",b.raw?e:encodeURIComponent(e),b.expires?"; expires="+b.expires.toUTCString():"",b.path?"; path="+b.path:"",b.domain?"; domain="+b.domain:"",b.secure?"; secure":""].join(""))}b=e||{};var a,f=b.raw?function(h){return h}:decodeURIComponent;return(a=new RegExp("(?:^|; )"+encodeURIComponent(d)+"=([^;]*)").exec(document.cookie))?f(a[1]):null};
+
+/*!
+ * jQuery imagesLoaded plugin v1.0.3
+ * http://github.com/desandro/imagesloaded
+ *
+ * MIT License. by Paul Irish et al.
+ */
+(function(a,b){a.fn.imagesLoaded=function(i){var g=this,e=g.find("img").add(g.filter("img")),c=e.length,h="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";function f(){i.call(g,e)}function d(){if(--c<=0&&this.src!==h){setTimeout(f);e.unbind("load error",d)}}if(!c){f()}e.bind("load error",d).each(function(){if(this.complete||this.complete===b){var j=this.src;this.src=h;this.src=j}});return g}})(jQuery);

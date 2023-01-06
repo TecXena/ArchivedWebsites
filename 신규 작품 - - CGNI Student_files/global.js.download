@@ -1,0 +1,13 @@
+
+// Animate DIV
+  jQuery(document).ready(function($){
+  jQuery.easing.def = 'easeOutQuart';
+
+    $(".pullDown").toggle(function(){
+	  $("#container_folder").animate({ top:"0" }, 1000 )
+	  
+	  },function(){
+	  $("#container_folder").animate( { top:"-250px" }, 1000 );
+	});
+
+  });
