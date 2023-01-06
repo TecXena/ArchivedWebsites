@@ -1,0 +1,328 @@
+(function (window) {
+	// 파일정보
+	var userAgent = navigator.userAgent;
+	if(userAgent.match(/Mac|Macintosh/)) {
+		var SETUP_FILE = BEATPLAY_MAC;
+	}else{
+		var	SETUP_FILE = BEATPLAY_SETUP_V2;
+	}
+
+    function _registerEvent(target, eventType, cb) {
+        if (target.addEventListener) {
+            target.addEventListener(eventType, cb);
+            return {
+                remove: function () {
+                    target.removeEventListener(eventType, cb);
+                }
+            };
+        } else {
+            target.attachEvent(eventType, cb);
+            return {
+                remove: function () {
+                    target.detachEvent(eventType, cb);
+                }
+            };
+        }
+    }
+
+    function _createHiddenIframe(target, uri) {
+        var iframe = document.createElement("iframe");
+        iframe.src = uri;
+        iframe.id = "hiddenIframe";
+        iframe.style.display = "none";
+        target.appendChild(iframe);
+        return iframe;
+    }
+
+    function openUriWithHiddenFrame(uri, failCb) {
+
+        var timeout = setTimeout(function () {
+            failCb();
+            handler.remove();
+        }, 3000);
+
+        var iframe = document.querySelector("#hiddenIframe");
+        if (!iframe) {
+            iframe = _createHiddenIframe(document.body, "about:blank");
+        }
+
+        var handler = _registerEvent(window, "blur", onBlur);
+
+        function onBlur() {
+            clearTimeout(timeout);
+            handler.remove();
+        }
+
+        iframe.contentWindow.location.href = uri;
+    }
+
+    function openUriWithTimeoutHack(uri, failCb) {
+        var timeout = setTimeout(function () {
+            failCb();
+            handler.remove();
+        }, 2000);
+
+        //handle page running in an iframe (blur must be registered with top level window)
+        var target = window;
+        while (target != target.parent) {
+            target = target.parent;			
+        }
+
+        var handler = _registerEvent(target, "blur", onBlur);
+        function onBlur() {
+            clearTimeout(timeout);
+            handler.remove();
+        }
+
+        window.location = uri;
+    }
+
+    function openUriUsingFirefox(uri, failCb) {
+        var iframe = document.querySelector("#hiddenIframe");
+        if (!iframe) {
+            iframe = _createHiddenIframe(document.body, "about:blank");
+        }
+        try {
+            iframe.contentWindow.location.href = uri;
+        } catch (e) {
+            if (e.name == "NS_ERROR_UNKNOWN_PROTOCOL") {
+                failCb();
+            }
+        }
+    }
+
+    function openUriInNewWindowHack(uri, failCb) {
+		
+		failCb();
+		var myWindow = window.open('', '', 'width=0,height=0');
+
+        myWindow.document.write("<iframe src='" + uri + "'></iframe>");
+        setTimeout(function () {
+            try {
+                myWindow.location.href;
+                myWindow.setTimeout("window.close()", 1000);
+            } catch (e) {
+                myWindow.close();
+                failCb();
+            }
+        }, 3000);
+    }
+
+    function openUriWithMsLaunchUri(uri, failCb) {
+        navigator.msLaunchUri(uri, 
+            function () {
+            },
+            failCb
+            );
+	}
+
+	function checkBrowser(){
+
+		var result;
+		var check_agent = navigator.userAgent.toLowerCase();
+
+		if(check_agent.indexOf("safari") != -1){
+
+			if(check_agent.indexOf("opr") != -1){
+				result = "opera";
+			
+			}else if(check_agent.indexOf("chrome") > -1){
+				result = "chrome";
+			} else {
+				result = "safari";
+			}
+		return result;
+		}
+
+		if(check_agent.indexOf("chrome") > -1){
+			result = "chrome";
+		}
+
+		if(check_agent.indexOf("firefox") != -1){
+			result = "firefox";
+		}
+
+
+		if(check_agent.indexOf("netscape") != -1){
+			result = "netscape";
+		}
+
+		if(check_agent.indexOf("skipstone") != -1){
+			result = "skipstone";
+		}
+
+		if(check_agent.indexOf("phoenix") != -1){
+			result = "phoenix";
+		}
+
+		if(check_agent.indexOf("netpositive") != -1){
+			result = "netpositive";
+		}
+
+		if(check_agent.indexOf("chimera") != -1){
+			result = "chimera";
+		}
+
+		if(check_agent.indexOf("beonex") != -1){
+			result = "beonex";
+		}
+
+		if(check_agent.indexOf("webtv") != -1){
+			result = "webtv";
+		}
+
+		if(check_agent.indexOf("staroffice") != -1){
+			result = "star office";
+		}
+
+		// edge
+		if( check_agent.indexOf("edge/") > -1 ){
+			result = "edge";
+		}
+
+		if (check_agent.indexOf("trident/7.0") > -1) {
+			result = "ie11";
+		}
+
+		if (check_agent.indexOf("trident/6.0") > -1) {
+			result = "ie10";
+		}
+
+		if (check_agent.indexOf("trident/5.0") > -1) {
+			result = "ie9";
+		}
+
+		if (check_agent.indexOf("trident/4.0") > -1) {
+			result = "ie8";
+		}
+
+		if(result == ""){
+			result = "mise";
+		}
+
+	return result;
+	}
+
+    function getInternetExplorerVersion() {
+        var rv = -1;
+        if (navigator.appName === "Microsoft Internet Explorer") {
+            var ua = navigator.userAgent;
+            var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                rv = parseFloat(RegExp.$1);
+        }
+        else if (navigator.appName === "Netscape") {
+            var ua = navigator.userAgent;
+            var re = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null) {
+                rv = parseFloat(RegExp.$1);
+            }
+        }
+        return rv;
+    }
+
+	var check_num = 0;
+	var check_re;
+
+	var check_num = 0;
+	openUriWithBeatPlayer = function (uri, mov_idx) {
+
+		var browser = checkBrowser();
+
+		$.ajax({
+			url : "http://beatplayer.bitcdn.kr/CheckBeatPlayer.php",
+			data : {mode: "beat_check" , beat_uri: uri},
+			dataType: "jsonp",
+            jsonpCallback: "callback",
+            beforeSend: function(){
+
+            },error:function(request,status,error){
+
+            },
+			
+			success  : function(obj) {
+				check_re = "";
+				check_re = obj.result;
+
+				if(obj.result != "Y"){
+					check_num++;
+					if(browser == "safari"){
+						chk_count = 2;
+					}else{
+						chk_count = 5;
+					}
+					
+					if( check_num > chk_count ) {
+						
+						if(browser == "firefox" || browser == "chrome" || browser == "ie11" || browser == "edge") {
+							location.href = SETUP_FILE;
+						}else if(browser == "safari") {
+							alert("자동으로 파일 다운로드가 안될 경우에는\n\n 실행파일을 직접 다운로드 받아 주세요\n"+SETUP_FILE);
+							location.href = SETUP_FILE;
+
+						}else{
+							alert("새창에서 실행파일을 다운로드 받아 주세요\n\n팝업차단이 된 경우 팝업창을 허용해 주세요");
+							obj = window.open("http://www.stway.net/v2_download.php","","width=680, height=460");
+						}
+						check_num = 0;
+
+					} else {
+						setTimeout( "openUriWithBeatPlayer('"+uri+"','"+mov_idx+"')", 2000);
+					}
+
+				}else{
+					check_num = 0;
+				}
+			}
+		});
+	}
+
+	function openUriWithBeatUri(uri, failCb, mov_idx) {
+		var myWindow = window.open('', '', 'width=500,height=400');
+		myWindow.document.write("<iframe src='" + uri + "' border=0 style='width:500px;height:400px;' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=no vspace=0></iframe>");
+
+
+		setTimeout(function () {
+			try {
+				myWindow.location.href;
+				myWindow.setTimeout("window.close()", 1000);
+			} catch (e) {
+				myWindow.close();
+			}
+		}, 2000);
+		setTimeout( "openUriWithBeatPlayer('"+uri+"','"+mov_idx+"')", 2000);
+
+	}
+
+    window.protocolCheck = function (uri, mov_idx) {
+		
+        function failCallback() {
+			setTimeout( "openUriWithBeatPlayer('"+uri+"','"+mov_idx+"')", 2000);
+        }
+
+		var browser = checkBrowser();
+        if (navigator.msLaunchUri) { //for IE and Edge in Win 8 and Win 10
+			var check_agent = navigator.userAgent.toLowerCase();
+			if( check_agent.indexOf("edge/") > -1 ){
+				openUriWithHiddenFrame(uri, failCallback);
+			} 
+			else 
+			{
+				openUriWithMsLaunchUri(uri, failCallback);
+			}
+
+        } else {
+           if (browser == "firefox") {
+				openUriUsingFirefox(uri, failCallback);
+           } else if (browser == "safari") {
+				openUriWithHiddenFrame(uri, failCallback);
+
+		   } else if (browser == "chrome") {
+                openUriWithTimeoutHack(uri, failCallback);
+           } else {
+                openUriWithBeatUri(uri, failCallback, mov_idx);
+           }
+        }
+		
+    }
+} (window));
