@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://80.lv/articles/overwatch-technical-overview/ -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">a.fl_flip_button,a.fl_profile_button{color:#474747;text-decoration:none;display:inline-block;line-height:18px;font-family:'Helvetica Neue',Helvetica,sans-serif;font-size:12px;font-weight:500;text-indent:19px;position:relative;padding-right:5px;background-color:#f0f0f0;border:solid 1px #ccc;height:18px;box-sizing:content-box;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-image:-webkit-linear-gradient(bottom,#dfdfdf,#f7f7f7);background-image:-moz-linear-gradient(bottom,#dfdfdf,#f7f7f7);background-image:-o-linear-gradient(bottom,#dfdfdf,#f7f7f7);background-image:linear-gradient(to top,#dfdfdf,#f7f7f7)}a.fl_flip_button b,a.fl_profile_button b{background:url(data:image/gif;base64,R0lGODlhGAAYAJEAAOTMzPHm5v///80EACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjFGNjBCQkU3NzFCMTFFMzhEOTZFMjU1NDZCRTg2NjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjFGNjBCQkY3NzFCMTFFMzhEOTZFMjU1NDZCRTg2NjMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MUY2MEJCQzc3MUIxMUUzOEQ5NkUyNTU0NkJFODY2MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MUY2MEJCRDc3MUIxMUUzOEQ5NkUyNTU0NkJFODY2MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAYABgAAAIynI+py+0Po5xUiiuC3hrizG0eForPV3YnBrQA9bnvFLswa9NYdXy84fsFf8Si8YhMGgoAOw==) no-repeat;background-size:12px 12px;height:12px;width:12px;position:absolute;top:3px;left:3px}a.fl_flip_button:hover,a.fl_profile_button:hover{border-color:#bfbfbf}a.fl_flip_button:active,a.fl_profile_button:active{border:solid 1px #bfbfbf;background-image:-webkit-linear-gradient(top,#dfdfdf,#ebebeb);background-image:-moz-linear-gradient(top,#dfdfdf,#ebebeb);background-image:-o-linear-gradient(top,#dfdfdf,#ebebeb);background-image:linear-gradient(to bottom,#dfdfdf,#ebebeb)}</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=2">
+    <meta name="HandheldFriendly" content="True">
+    <meta content="no" name="apple-mobile-web-app-capable">
+    <meta name="author" content="80.lv">
+    <meta name="p:domain_verify" content="606327248b33d60183c1511f2ce5c30f">
+    <link rel="shortcut icon" href="https://cdn.80.lv/80.lv/images/favicon.ico" type="image/x-icon">
+
+    
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@EightyLevel">
+<meta name="twitter:title" content="Technical and Visual Analysis of Overwatch">
+<meta name="twitter:image" content="https://cdn.80.lv/80.lv/uploads/2016/05/440-21.jpg">
+<meta name="twitter:url" content="https://80.lv/articles/overwatch-technical-overview/">
+<meta name="twitter:description" content="Timothy Bermanseder, co-founder of Cardboard Keep, studied the beta-version of Overwatch and found some very interesting technical details. He gave his analysis of the special effects, materials, assets and visual design of Overwatch.">
+
+<meta property="og:image" content="https://cdn.80.lv/80.lv/uploads/2016/05/440-21.jpg">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="315">
+
+    <link rel="alternate" type="application/rss+xml" title="80lvl - RSS" href="https://80.lv/feed/">
+
+    <script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/008a2beb0f"></script><script src="./Technical and Visual Analysis of Overwatch_files/nr-1016.min.js.download"></script><script type="text/javascript" async="" src="./Technical and Visual Analysis of Overwatch_files/analytics.js.download"></script><script type="text/javascript" id="www-widgetapi-script" src="./Technical and Visual Analysis of Overwatch_files/www-widgetapi.js.download" async=""></script><script src="./Technical and Visual Analysis of Overwatch_files/1919916141628345" async=""></script><script async="" src="./Technical and Visual Analysis of Overwatch_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./Technical and Visual Analysis of Overwatch_files/analytics.js.download"></script><script async="" src="./Technical and Visual Analysis of Overwatch_files/gtm.js.download"></script><script type="text/javascript">
+        window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);
+        ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"008a2beb0f",applicationID:"29469046",sa:1}
+    </script>
+
+    
+<!-- BEGIN Metadata added by the Add-Meta-Tags WordPress plugin -->
+<meta property="fb:pages" content="1498050460442929">
+<meta name="pocket-site-verification" content="3b19362f05a5d8e5094b195f191a77">
+<meta name="google-site-verification" content="baYEwTNtdmnm0_8hugN6Oeiwuwo7bB3N5skxDwxsP4U">
+<meta name="p:domain_verify" content="5521d81b11c9433e8500722863f74f13">
+<meta name="description" content="Timothy Bermanseder, co-founder of Cardboard Keep, studied the beta-version of Overwatch and found some very interesting technical details. He gave his analysis of the special effects, materials, assets and visual design of Overwatch.">
+<meta name="keywords" content="80lvl, best source, information, gaming industry, articles, interview, bankruptcy, blizzard, game development, gamedev, indiedev, lighting, lone echo, materials, maya, meshes, oculus connect, pbr, textures, zbrush">
+<!-- END Metadata added by the Add-Meta-Tags WordPress plugin -->
+
+
+<!-- All in One SEO Pack 2.3.12.1 by Michael Torbert of Semper Fi Web Design[,] -->
+<meta name="description" content="Timothy Bermanseder, co-founder of Cardboard Keep, studied the beta-version of Overwatch and found some very interesting technical details.">
+
+<meta name="keywords" content="overwatch,blizzard,materials,lighting,textures,meshes,pbr,maya,zbrush,gamedev,game development,indiedev,analysis,environment production,bankruptcy,lone echo,oculus connect">
+
+<link rel="canonical" href="https://80.lv/articles/overwatch-technical-overview/">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="80lvl » Technical and Visual Analysis of Overwatch Comments Feed" href="https://80.lv/articles/overwatch-technical-overview/feed/">
+		<style type="text/css">
+				</style>
+	<link rel="stylesheet" id="fb_data_style-css" href="./Technical and Visual Analysis of Overwatch_files/fbstyle.css" type="text/css" media="all">
+<link rel="stylesheet" id="events-manager-css" href="./Technical and Visual Analysis of Overwatch_files/events_manager.css" type="text/css" media="all">
+<link rel="stylesheet" id="frontierpost-css" href="./Technical and Visual Analysis of Overwatch_files/frontier-post.css" type="text/css" media="all">
+<link rel="stylesheet" id="tntColorbox1-css" href="./Technical and Visual Analysis of Overwatch_files/colorbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="tntstyle1-css" href="./Technical and Visual Analysis of Overwatch_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-frontend-css-css" href="./Technical and Visual Analysis of Overwatch_files/wpdiscuz.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-paginate-css" href="./Technical and Visual Analysis of Overwatch_files/wp-paginate.css" type="text/css" media="screen">
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/js.cookie.js.download"></script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/jquery.autogrowtextarea.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"https:\/\/80.lv\/wp-admin\/admin-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"Show Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_held_for_moderate":"Comment awaiting moderation","wc_comment_edit_not_possible":"Sorry, this comment no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_new_comment_button_text":"new comment","wc_new_comments_button_text":"new comments","wc_new_reply_button_text":"new reply on your comment","wc_new_replies_button_text":"new replies on your comments","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"1","wc_comment_bg_color":"#FEFEFE","wc_reply_bg_color":"#F8F8F8","wordpress_comment_order":"desc","commentsVoteOrder":false,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"1","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":true,"isGoodbyeCaptchaActive":false,"facebookAppID":"","version":"4.0.6","wc_post_id":32999,"loadLastCommentId":null,"wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","is_email_field_required":1}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/wpdiscuz.js.download"></script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/gtm4wp-form-move-tracker.js.download"></script>
+<link rel="https://api.w.org/" href="https://80.lv/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://80.lv/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://80.lv/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Marketing At Ubisoft" href="https://80.lv/video/marketing-at-ubisoft/">
+<link rel="next" title="Environment Production With Quixel 2.0" href="https://80.lv/articles/vistorovschi-victor-ue4-environments/">
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="shortlink" href="https://80.lv/?p=32999">
+			<meta property="fb:pages" content="1498050460442929">
+			<script async="" type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/count.js.download"></script><script type="text/javascript" async="" src="./Technical and Visual Analysis of Overwatch_files/widget.min.js.download"></script><script type="text/javascript" async="" src="./Technical and Visual Analysis of Overwatch_files/widget.min.js.download"></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head><body class="wpdiscuz_4.0.6 fullfix mediumfix inn_page"><div class="xl-wrapper" style="display: none;">
+    <div id="xl_auth">
+        <div id="inside-wrapper"><iframe frameborder="0" src="./Technical and Visual Analysis of Overwatch_files/saved_resource.html" id="XsollaLoginWidgetIframe" style="width: 100%; height: 100%;"></iframe></div>
+    </div>
+</div>
+
+<script src="./Technical and Visual Analysis of Overwatch_files/xl.min.js.download"></script>
+<script type="text/javascript">
+        XL.init({
+        projectId: '8b83af12-0974-11e7-93ae-92361f002671',
+        locale: 'en_US',
+        onlyWidgets: true,
+        redirectUrl: 'https://80.lv/articles/overwatch-technical-overview/',
+        fields: 'email'
+    });
+
+    var element_id = 'inside-wrapper';
+    var options = {
+        width: '430px',
+        height: '530px',
+        widgetBaseUrl: 'https://xl-widget.xsolla.com/'
+    };
+    XL.AuthWidget(element_id, options);
+
+    XL.on(XL.eventTypes.LOAD, function () {
+        var loginWidget = document.getElementsByClassName("xl-login");
+        var loginWidgetWrapper = document.getElementsByClassName('xl-wrapper')[0];
+        var showWidget = function () {
+            loginWidgetWrapper.style.display = 'block';
+        };
+        loginWidgetWrapper.onclick = function (event) {
+            loginWidgetWrapper.style.display = 'none';
+        };
+        for (var i = 0; i < loginWidget.length; i++) {
+            loginWidget[i].style.visibility = "visible";
+            loginWidget[i].addEventListener('click', showWidget, false);
+        }
+    });
+
+    XL.on(XL.eventTypes.CLOSE, function () {
+        var loginWidgetWrapper = document.getElementsByClassName('xl-wrapper')[0];
+        loginWidgetWrapper.style.display = 'none';
+    });
+
+</script>
+
+<style>
+    .xl-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #xl_auth {
+        margin: 0 auto;
+    }
+
+    #inside-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .xl-login {
+        visibility: hidden;
+    }
+
+    #inside-wrapper iframe {
+        position: fixed;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        margin-left: -210px;
+        margin-top: -265px;
+        display: inline;
+        width: 430px !important;
+        height: 530px !important;
+    }
+</style><style type="text/css">#wpcomm .wc_new_comment{background:#00B38F;}#wpcomm .wc_new_reply{background:#00B38F;}#wpcomm .wc-form-wrapper{background:#F9F9F9;}#wpcomm select,#wpcomm input[type="text"],#wpcomm input[type="email"],#wpcomm input[type="url"],#wpcomm input[type="date"],#wpcomm input[type="color"]{border:#D9D9D9 1px solid;}#wpcomm .wc-comment .wc-comment-right{background:#FEFEFE;}#wpcomm .wc-reply .wc-comment-right{background:#F8F8F8;}#wpcomm .wc-comment-text{font-size:14px;color:#555;}#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-vendor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-vendor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-vendor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-disabled_user > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-disabled_user > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-disabled_user > .wc-comment-left .wc-comment-label{background:#00B38F;}.wc-load-more-submit{border:1px solid #D9D9D9;}#wpcomm .wc-new-loaded-comment > .wc-comment-right{background:#FFFAD6;}.comments-area{width:auto;}.wpdiscuz-front-actions{background:#F9F9F9;}.wpdiscuz-subscribe-bar{background:#F9F9F9;}.wpdiscuz-sort-buttons{color:#bbbbbb;}.wpdiscuz-sort-button{color:#bbbbbb; cursor:pointer;}.wpdiscuz-sort-button:hover{color:#00B38F;cursor:pointer;}.wpdiscuz-sort-button-active{color:#00B38F!important;cursor:default!important;}#wpcomm .page-numbers{color:#555;border:#555 1px solid;}#wpcomm span.current{background:#555;}#wpcomm .wpdiscuz-readmore{cursor:pointer;color:#00B38F;} #wpcomm .wpdiscuz-textarea-wrap{border:#D9D9D9 1px solid;} .wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label {color: #DDDDDD;}#wpcomm .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover,.wpdiscuz-rating:not(:checked) > label:hover ~ label {   }#wpcomm .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color: #FFED85;} #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-activ-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{ color:#FFD700;} #wpcomm .wc-cta-button:hover{border: 1px solid #00B38F!important; background:#00B38F!important; color:#fff!important;} #wpcomm .wc-cta-active{border: 1px solid #00B38F!important; background:#00B38F!important; color:#fff!important;}#wpcomm .wpf-cta:hover{color:#fff!important; background:#00B38F!important; border:1px solid #00B38F!important;}
+        
+#wpcomm .wpf-cta{ border: 1px solid #cccccc; color:#bbbbbb; }
+#wpcomm .wc-cta-button{ background:#888888; border:1px solid #888888; color:#ffffff;}
+#wpcomm .wc-cta-button-x{ background:#888888; border:1px solid #888888; color:#ffffff;}
+#wpcomm .wc-vote-link{border:1px solid #bbbbbb; color:#aaaaaa;}
+#wpcomm .wc-vote-result{border-top: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; color:#aaaaaa;}
+#wpcomm .wc-vote-result.wc-vote-result-like{border:1px solid #bbbbbb;}
+#wpcomm .wc-vote-result.wc-vote-result-dislike{border:1px solid #bbbbbb;}
+</style>
+			
+<!-- Google Tag Manager for WordPress by DuracellTomi - http://duracelltomi.com -->
+<script data-cfasync="false" type="text/javascript">
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || []
+	dataLayer.push({"pagePostType":"post","pagePostType2":"single-post","pageCategory":["articles","articles-interview"],"pageAttributes":["bankruptcy","blizzard","game-development","gamedev","indiedev","lighting","lone-echo","materials","maya","meshes","oculus-connect","pbr","textures","zbrush"]});
+</script>
+<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WXJSV9');</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by DuracellTomi --><link rel="amphtml" href="https://80.lv/articles/overwatch-technical-overview/amp/">    <link rel="stylesheet" href="./Technical and Visual Analysis of Overwatch_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Technical and Visual Analysis of Overwatch_files/vendors.a1470fd6.css">
+<link rel="stylesheet" href="./Technical and Visual Analysis of Overwatch_files/main.654182ae.css">
+    <title>
+          Technical and Visual Analysis of Overwatch    </title>
+
+
+<div class="for_mobil_help">
+    <div id="wrapper" class="wrapper">
+        <section class="header">
+            <div class="wrap">
+                <div class="header-block">
+                    <div class="header-block-left"><a href="https://80.lv/" class="logo">
+                            <div class="logo-first">
+                                <div class="logo-olive"></div>
+                                <div class="logo-hand"></div>
+                            </div>
+                            <div class="logo-name"></div>
+                        </a>
+                        <div data-toggle="collapse" data-target="#bs-navbar" class="navbar-toggle"><span class="icon-bar icon-bar__top"></span><span class="icon-bar icon-bar__middle"></span><span class="icon-bar icon-bar__bottom"></span></div>
+                    <div class="header-mobil-share-block"><div class="container-item-h-share-block-real">
+                                
+<div class="social share-block">
+    <div class="top-part">
+        
+        
+    </div>
+    <div class="bottom-part">
+        
+        <div class="social-btn fb">
+                    <a class="fa fa-facebook" onclick="javascript:window.open(&#39;https://www.facebook.com/sharer/sharer.php?u=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=400, height=300&#39;)"></a>
+               </div><div class="social-btn tw">
+                    <a class="fa fa-twitter" onclick="javascript:window.open(&#39;https://twitter.com/home?status=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=600, height=400&#39;)"></a>
+                </div><div class="social-btn lk">
+                    <a class="fa fa-linkedin" onclick="javascript:window.open(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&amp;summary=&amp;source=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=475, height=625&#39;)"></a>
+                </div><div class="social-btn rd">
+                    <a class="fa fa-reddit-alien" onclick="javascript:window.open(&#39;https://reddit.com/submit?url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=850, height=625&#39;)"></a>
+                </div>        <a data-flip-widget="flipit" href="https://share.flipboard.com/bookmarklet/popout?v=2&amp;title=Technical%20and%20Visual%20Analysis%20of%20Overwatch&amp;url=https%3A%2F%2F80.lv%2Farticles%2Foverwatch-technical-overview%2F&amp;t=1516635615365&amp;utm_campaign=tools&amp;utm_medium=article-share&amp;utm_source=80.lv" class="fl_flip_button" title="Add this page to a Flipboard Magazine" target="_blank"><i></i><b></b></a>
+    </div>
+</div>
+
+<script>
+    $('.fl_flip_button').contents().filter(function () {
+        return this.nodeType === 3;
+    }).remove();
+</script>
+
+<style>
+    .share-block .top-part,
+    .share-block .bottom-part{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>                            </div></div></div>
+                    <div class="header-block-center">
+                        <div class="header-block-center-top">
+                            <div class="header-block-center-text bitext">80 level is the best source of valuable
+                                information<br>about the gaming industry and its recent trends
+                            </div>
+                            <div class="header-soc">
+                                <a class="header-soc-elem" target="_blank" title="Facebook" href="https://www.facebook.com/LevelEighty"><div class="myicon"><span class="fa fa-facebook" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem" target="_blank" title="Twitter" href="https://twitter.com/EightyLevel"><div class="myicon"><span class="fa fa-twitter" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem" target="_blank" title="Youtube" href="https://www.youtube.com/channel/UCI8IFlI7_0xU9Dc60xoZuiA"><div class="myicon"><span class="fa fa-youtube" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem header-soc-elem-last" target="_blank" title="RSS" href="https://80.lv/feed/"><div class="myicon"><span class="fa fa-rss" aria-hidden="true"></span></div></a>                            </div>
+                        </div>
+                        <div id="bs-navbar" class="navbar-collapse collapse" style="height: 900px;">
+                            <div class="navbar-collapse-inn">
+                                <ul class="nav navbar-nav">
+                                    <li class="navbar-nav-elem dd  selected">
+                                        <div class="navbar-nav-elem-link"><a href="https://80.lv/articles/" class="header-span">Articles</a><span class="header-dropdown-icon"></span></div>
+                                                                                    <ul class="dd-menu">
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/ai/" title="AI">AI</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/animation/" title="Animation">Animation</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/cgistatic-rendering/" title="CGI/Static Rendering">CGI/Static Rendering</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/character-art-articles/" title="Character Art">Character Art</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/environment-art/" title="Environment Art">Environment Art</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/environment-design/" title="Environment Design">Environment Design</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/gameplay/" title="Gameplay">Gameplay</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/articles-interview/" title="Interview">Interview</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/level-design-articles/" title="Level Design">Level Design</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/materials/" title="Materials">Materials</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/articles-news/" title="News">News</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/articles-opinion/" title="Opinion">Opinion</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/pixel-art/" title="Pixel Art">Pixel Art</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/articles-report/" title="Report">Report</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/articles-research/" title="Research">Research</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/review/" title="Review">Review</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/sponsored/" title="Sponsored Content">Sponsored Content</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/tutorial/" title="Tutorial">Tutorial</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/articles/vfx-articles/" title="VFX">VFX</a>
+                                                                                                            </li>
+                                                                                            </ul>
+                                                                            </li>
+                                    <li class="navbar-nav-elem dd ">
+                                        <div class="navbar-nav-elem-link "><a href="https://80.lv/video/" class="header-span">Video</a><span class="header-dropdown-icon"></span></div>
+                                                                                    <ul class="dd-menu">
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/video/video-events/" title="Events">Events</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/video/video-presentations/" title="Presentations">Presentations</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/video/video-talks/" title="Talks">Talks</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/video/video-technologies/" title="Technologies">Technologies</a>
+                                                                                                            </li>
+                                                                                            </ul>
+                                                                            </li>
+                                    <li class="navbar-nav-elem ">
+                                        <div class="navbar-nav-elem-link"><a href="https://80.lv/events/" class="header-span">Events</a></div>
+                                    </li>
+                                    <li class="navbar-nav-elem dd ">
+                                        <div class="navbar-nav-elem-link"><a href="https://80.lv/jobs/" class="header-span">Jobs</a><span class="header-dropdown-icon"></span></div>
+                                                                                    <ul class="dd-menu">
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jobs-art-animation/" title="Art / animation">Art / animation</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jobs-education/" title="Education">Education</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jobs-game-design/" title="Game Design">Game Design</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jobs-marketing/" title="Marketing">Marketing</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jpbs-production/" title="Production">Production</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/jobs/jobs-programming/" title="Programming">Programming</a>
+                                                                                                            </li>
+                                                                                            </ul>
+                                                                            </li>
+                                    <li class="navbar-nav-elem dd ">
+                                        <div class="navbar-nav-elem-link"><a href="https://80.lv/vendors/" class="header-span">Vendors</a><span class="header-dropdown-icon"></span></div>
+                                                                                    <ul class="dd-menu">
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/analytics/" title="Analytics">Analytics</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/content/" title="Content">Content</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/localization/" title="Localization">Localization</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/marketing/" title="Marketing">Marketing</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/network/" title="Network">Network</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/outsource/" title="Outsource">Outsource</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/partners/" title="Partners">Partners</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/payments/" title="Payments">Payments</a>
+                                                                                                            </li>
+                                                                                                    <li>
+                                                                                                                    <a href="https://80.lv/vendors/tools/" title="Tools">Tools</a>
+                                                                                                            </li>
+                                                                                            </ul>
+                                                                            </li>
+                                    <li class="navbar-nav-elem ">
+                                        <div class="navbar-nav-elem-link"><a href="https://80.lv/workshops/" class="header-span">Workshops</a></div>
+                                    </li>
+                                    <li class="navbar-nav-elem ">
+                                        <div class="navbar-nav-elem-link "><a href="https://80.lv/become-a-partner/" class="header-span">Become a partner</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="header-block-s">
+                                    <div class="header-soc">
+                                        <a class="header-soc-elem" target="_blank" title="Facebook" href="https://www.facebook.com/LevelEighty"><div class="myicon"><span class="fa fa-facebook" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem" target="_blank" title="Twitter" href="https://twitter.com/EightyLevel"><div class="myicon"><span class="fa fa-twitter" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem" target="_blank" title="Youtube" href="https://www.youtube.com/channel/UCI8IFlI7_0xU9Dc60xoZuiA"><div class="myicon"><span class="fa fa-youtube" aria-hidden="true"></span></div></a>
+<a class="header-soc-elem header-soc-elem-last" target="_blank" title="RSS" href="https://80.lv/feed/"><div class="myicon"><span class="fa fa-rss" aria-hidden="true"></span></div></a>                                    </div>
+                                </div>
+                                                                <div class="header-block-right">
+                                    <div class="header-block-right-btns ">
+                                        <a class="btn btn-tgreen btn-login login-btn xl-login" style="visibility: visible;">
+                                            <div>Log in</div>
+                                        </a>
+                                        <a class="btn btn-tgreen btn-reg profile-btn" href="https://80.lv/profile/" style="display: none;">
+                                            <div>Profile</div>
+                                        </a>
+                                        <a class="btn btn-tgreen btn-login logout-btn" href="https://80.lv/wp-login.php?action=logout&amp;redirect_to=%2Farticles%2Foverwatch-technical-overview%2F&amp;_wpnonce=a3092c9dcc" style="display: none;">
+                                            <div>Log out</div>
+                                        </a>
+                                    </div>
+                                    <div class="buy-btns">
+
+                                    </div>
+
+                                    <div class="header-block-right-input">
+                                        <form role="search" method="get" id="searchform" class="searchform " action="https://80.lv/">
+	<input type="text" name="q" placeholder="Search" value="" aria-label="Search" class="form-input form-input_green">
+	<input style="display:none;" type="submit" id="searchsubmit" value="">
+	</form>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="content">
+            <script src="./Technical and Visual Analysis of Overwatch_files/custom.ceb8eb44.js.download"></script>
+
+            <script>
+                function AjaxSubscribleForm() {
+                    if (jQuery("#ajax_subscrible_form").length) {
+                        var _this = jQuery("#ajax_subscrible_form");
+                        var _this_data = new Object();
+                        _this_data.post_id = _this.val();
+                        jQuery.ajax({
+                            dataType: "html",
+                            data: _this_data,
+                            method: 'POST',
+                            url: "/wp-content/themes/80lvl - Vitamin/ajax/get_subscrible_form.php",
+                            async: true,
+                            beforeSend: function () {
+                            },
+                            success: function (data) {
+                                _this.after(data);
+                                _this.remove();
+                                $(".container_for_login_to_subscrible").remove();
+                            },
+                            error: function (data) {
+                            }
+                        });
+                    }
+                }
+            </script>
+
+<section class="index-section">
+    <div class="wrap">
+        <div class="container_margin_fix">
+            <div class="container_for_grid">
+                <div id="container_top_column" class="container-item width_x_3 for_mw-m container-item-normal-b column_element stick clear_b">
+                    <figure id="mainBanner" class="sh through_b"><p><a href="https://www.marmoset.co/toolbag/"><img class="aligncenter wp-image-49429 size-large" src="./Technical and Visual Analysis of Overwatch_files/marmoset_banner_1510x2423-1024x164.jpg" width="1024" height="164"></a></p></figure>
+                </div>
+
+                 
+<div class="container_right_column_x2 for_mw-m">
+    <div class="container_right_column">
+        <div class="container-item container-item-normal-b">
+            <figure id="pos_top" class="sh"><p><a href="https://www.marmoset.co/toolbag/"><img class="aligncenter wp-image-49428 size-full" src="./Technical and Visual Analysis of Overwatch_files/marmoset_banner_600x600.jpg" width="600" height="600"></a></p></figure>
+        </div>
+    </div>
+
+    <div class="container_right_column container_left_for_xl_column">
+        <div class="container-item-for-title-block container-item-h">Vendors</div><div class="container-item with_bg_block green2">
+                              <div class="container-item-inn">
+                                <div class="container-item-h"><a href="https://80.lv/vendors/maya-4/">Maya</a></div>
+                                <img src="./Technical and Visual Analysis of Overwatch_files/photo-300x300.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+                                <div class="line_sep"></div>
+                                <div class="about-block-info">
+                                  <div class="about-block-info-row">
+                                    <div class="about-block-info-elem">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div followers"></div>
+                                      </div>
+                                      <div class="icon-text">12 followers</div>
+                                    </div>
+                                    <div class="about-block-info-elem about-block-info-elem-without-margin-right">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div posts"></div>
+                                      </div>
+                                      <div class="icon-text"><a href="https://80.lv/vendors/maya-4/#button_select_block_elem_2">437 posts</a></div>
+                                    </div>
+                                  </div>
+                                  <div class="about-block-info-row">
+                                    <div class="about-block-info-elem">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div comments"></div>
+                                      </div>
+                                      <div class="icon-text"><a href="https://80.lv/vendors/maya-4/#button_select_block_elem_1">0 questions answered</a></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="tags"><a class="tag">Tools</a></div>
+                              </div>
+                            </div><div class="container-item with_bg_block green2">
+                              <div class="container-item-inn">
+                                <div class="container-item-h"><a href="https://80.lv/vendors/zbrush/">ZBrush</a></div>
+                                <img src="./Technical and Visual Analysis of Overwatch_files/zbrushlogo.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+                                <div class="line_sep"></div>
+                                <div class="about-block-info">
+                                  <div class="about-block-info-row">
+                                    <div class="about-block-info-elem">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div followers"></div>
+                                      </div>
+                                      <div class="icon-text">13 followers</div>
+                                    </div>
+                                    <div class="about-block-info-elem about-block-info-elem-without-margin-right">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div posts"></div>
+                                      </div>
+                                      <div class="icon-text"><a href="https://80.lv/vendors/zbrush/#button_select_block_elem_2">571 posts</a></div>
+                                    </div>
+                                  </div>
+                                  <div class="about-block-info-row">
+                                    <div class="about-block-info-elem">
+                                      <div class="icon-div-container">
+                                        <div class="icon-div comments"></div>
+                                      </div>
+                                      <div class="icon-text"><a href="https://80.lv/vendors/zbrush/#button_select_block_elem_1">0 questions answered</a></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="tags"><a class="tag">Tools</a></div>
+                              </div>
+                            </div>        
+                
+    </div>
+
+    <div class="container_right_column">
+        <div class="subscribe-block-wrapper container-item">
+    <div class="container-item-inn">
+        <div class="container-item-h">Weekly Newsletter</div>
+        <input type="email" name="subscribe-email" placeholder="email address">
+        <div class="error-msg subscribe-error"></div>
+        <span class="success-subscribe-text" style="display: none">Thank you for subscription. You'll be getting weekly digest every Friday.</span>
+        <div class="subscribe-block-btn green-submit">
+            <span>Subscribe</span>
+        </div>
+    </div>
+</div><div class="container-item v-right orange for_mw-m">
+    <div class="container-item-inn">
+        <div class="container-item-h">Events</div>
+        <div class="calendar-events-list bitext sm">
+            <div class="calendar-events-list-sub">
+                <span class="dark">Subscribe:&nbsp;</span>
+                <a href="webcal://80.lv/events.ics" class="light">iCal</a>
+                <span class="light">&nbsp;|&nbsp;</span>
+                <a class="light" target="_blank" href="http://www.google.com/calendar/hosted/80.lv/render?cid=https://80.lv/events.ics&amp;pli=1">Google Calendar</a>
+            </div>
+                                <div class="calendar-events-list-elem">
+                        <div class="calendar-events-list-elem-header"><a class="title_elem" href="https://80.lv/events/gacucon">GaCuCon</a></div>
+                        <div class="calendar-events-list-elem-body">
+                            <div class="table">
+                                <div class="tr">
+                                                                        <div class="td">
+                                                                                    <div class="flag_block flag-icon flag-icon-background flag-icon-us"></div>
+                                                                            </div>
+                                    <div class="td">
+                                                                                    <span class="special_text_for_block">Miami US </span>&nbsp;
+                                                                                20, Jan — 26, Jan                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="calendar-events-list-elem">
+                        <div class="calendar-events-list-elem-header"><a class="title_elem" href="https://80.lv/events/pocket-gamer-connects-london-2018-3">Pocket Gamer Connects London 2018</a></div>
+                        <div class="calendar-events-list-elem-body">
+                            <div class="table">
+                                <div class="tr">
+                                                                        <div class="td">
+                                                                                    <div class="flag_block flag-icon flag-icon-background flag-icon-gb"></div>
+                                                                            </div>
+                                    <div class="td">
+                                                                                    <span class="special_text_for_block">London GB </span>&nbsp;
+                                                                                22, Jan — 24, Jan                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="calendar-events-list-elem">
+                        <div class="calendar-events-list-elem-header"><a class="title_elem" href="https://80.lv/events/taipei-game-show-2018">Taipei Game Show 2018</a></div>
+                        <div class="calendar-events-list-elem-body">
+                            <div class="table">
+                                <div class="tr">
+                                                                        <div class="td">
+                                                                                    <div class="flag_block flag-icon flag-icon-background flag-icon-tw"></div>
+                                                                            </div>
+                                    <div class="td">
+                                                                                    <span class="special_text_for_block">Taipei TW </span>&nbsp;
+                                                                                25, Jan — 31, Jan                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="calendar-events-list-elem">
+                        <div class="calendar-events-list-elem-header"><a class="title_elem" href="https://80.lv/events/devgamm-kiev-2018">DevGAMM Kiev 2018</a></div>
+                        <div class="calendar-events-list-elem-body">
+                            <div class="table">
+                                <div class="tr">
+                                                                        <div class="td">
+                                                                                    <div class="flag_block flag-icon flag-icon-background flag-icon-ie"></div>
+                                                                            </div>
+                                    <div class="td">
+                                                                                    <span class="special_text_for_block">Dublin IE </span>&nbsp;
+                                                                                1, Feb — 2, Feb                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="calendar-events-list-elem">
+                        <div class="calendar-events-list-elem-header"><a class="title_elem" href="https://80.lv/events/d-i-c-e-summit-2018">D.I.C.E. Summit 2018</a></div>
+                        <div class="calendar-events-list-elem-body">
+                            <div class="table">
+                                <div class="tr">
+                                                                        <div class="td">
+                                                                                    <div class="flag_block flag-icon flag-icon-background flag-icon-us"></div>
+                                                                            </div>
+                                    <div class="td">
+                                                                                    <span class="special_text_for_block">Las Vegas US </span>&nbsp;
+                                                                                20, Feb — 23, Feb                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        <div class="form_block">
+            <div class="form_block_row form_block_row_last"><a class="btn btn-orange full_width" href="https://80.lv/events/">
+                    <div>More events</div></a></div>
+        </div>
+    </div>
+</div>        <div class="container-item container-item-normal-b">
+            <figure id="pos_middle" class="sh"><p><a href="https://www.autodesk.com/products/maya/subscribe?mktvar002=731645&amp;displ=1" target="_blank" rel="noopener noreferrer"><img class="alignnone size-full wp-image-82628" src="./Technical and Visual Analysis of Overwatch_files/FY18-Q4-Maya-Daily-VoidRunner-600x600.png" alt="" width="600" height="600"></a></p></figure>
+        </div>
+        <div class="container-item v-right green2 for_mw-m">
+    <div class="container-item-inn">
+                <div class="container-item-h">Latest comments</div>
+        <div class="last-comment-list">
+                            <div class="last-comment-list-elem bitext sm">
+                    <div class="last-comment-list-elem-header">
+                        <div class="comments_header">
+                            <div class="comments_header_tr">
+                                <div class="comments_header_img"><img alt="" src="./Technical and Visual Analysis of Overwatch_files/f50d07a8b9f8a156fa98dcc59b499f26" srcset="https://secure.gravatar.com/avatar/f50d07a8b9f8a156fa98dcc59b499f26?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+                                <div class="comments_header_text">
+                                    <div class="comments_header_text_p"><a class="title_elem" href="https://80.lv/?p=43834">How Successful is GTA Online?</a></div>
+                                    <div class="comments_header_text_p2">by&nbsp;<span class="special_text_for_block">sarvs sads</span></div>
+                                    <div class="comments_header_text_p3">1 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-comment-list-elem-body">
+                        <p>This is all about the <a href="http://mygtacheats.com/" rel="nofollow">gta 5 generator</a></p>
+                    </div>
+                </div>
+                                <div class="last-comment-list-elem bitext sm">
+                    <div class="last-comment-list-elem-header">
+                        <div class="comments_header">
+                            <div class="comments_header_tr">
+                                <div class="comments_header_img"><img alt="" src="./Technical and Visual Analysis of Overwatch_files/f50d07a8b9f8a156fa98dcc59b499f26" srcset="https://secure.gravatar.com/avatar/f50d07a8b9f8a156fa98dcc59b499f26?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+                                <div class="comments_header_text">
+                                    <div class="comments_header_text_p"><a class="title_elem" href="https://80.lv/?p=43834">How Successful is GTA Online?</a></div>
+                                    <div class="comments_header_text_p2">by&nbsp;<span class="special_text_for_block">sarvs sads</span></div>
+                                    <div class="comments_header_text_p3">1 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-comment-list-elem-body">
+                        <p>It is all about the <a href="http://mygtacheats.com/" rel="nofollow">gta 5 generator</a> here.</p>
+                    </div>
+                </div>
+                                <div class="last-comment-list-elem bitext sm">
+                    <div class="last-comment-list-elem-header">
+                        <div class="comments_header">
+                            <div class="comments_header_tr">
+                                <div class="comments_header_img"><img alt="" src="./Technical and Visual Analysis of Overwatch_files/f50d07a8b9f8a156fa98dcc59b499f26" srcset="https://secure.gravatar.com/avatar/f50d07a8b9f8a156fa98dcc59b499f26?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+                                <div class="comments_header_text">
+                                    <div class="comments_header_text_p"><a class="title_elem" href="https://80.lv/?p=82210">Snapchat Launches Lens Studio</a></div>
+                                    <div class="comments_header_text_p2">by&nbsp;<span class="special_text_for_block">sarvs sads</span></div>
+                                    <div class="comments_header_text_p3">1 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last-comment-list-elem-body">
+                        <p>This is so good for us. <a href="http://fewhacks.com/" rel="nofollow">snaphack</a></p>
+                    </div>
+                </div>
+                        </div>
+    </div>
+</div>
+        <div class="container-item container-item-normal-b">
+            <figure id="pos_bottom" class="sh"><p><a href="https://www.autodesk.com/products/maya/subscribe?mktvar002=731645&amp;displ=1" target="_blank" rel="noopener noreferrer"><img class="alignnone size-full wp-image-82628" src="./Technical and Visual Analysis of Overwatch_files/FY18-Q4-Maya-Daily-VoidRunner-600x600.png" alt="" width="600" height="600"></a></p></figure>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function FixedRightBlock() {
+            if (jQuery(".for_fixed_soc_icons_out").length) {
+                jQuery(".for_fixed_soc_icons_out").each(function () {
+                    var _this_fix_right_block = $(".fix_right_block");
+                    var _this_fix_right_block_marker = $(".fix_right_block_marker");
+                    var _this_block_for_inn_content = $(".block_for_inn_content");
+                    var _this_container_for_grid = _this_fix_right_block.closest(".container_for_grid");
+
+                    var _window_top = jQuery(window).scrollTop() + 23;
+                    var _top_height_limit = _this_fix_right_block_marker.offset().top;
+                    var _bottom_height_limit = _this_block_for_inn_content.offset().top + _this_block_for_inn_content.outerHeight() - _this_fix_right_block.outerHeight() + 20;
+                    var _css_bottom_height_limit = _this_block_for_inn_content.offset().top + _this_block_for_inn_content.outerHeight() - _this_container_for_grid.offset().top - _this_fix_right_block.outerHeight();
+
+                    if ((_window_top >= _top_height_limit)&&(_css_bottom_height_limit - _top_height_limit >= _this_fix_right_block.outerHeight())) {
+                        _this_fix_right_block.fadeIn(300).addClass("active");
+
+                        if (_window_top >= _bottom_height_limit) {
+                            _this_fix_right_block.addClass("fixed_bottom");
+                            _this_fix_right_block.css({"top":_css_bottom_height_limit});
+                        } else {
+                            _this_fix_right_block.removeClass("fixed_bottom");
+                            _this_fix_right_block.css({"top":0});
+                        }
+
+                    } else {
+                        _this_fix_right_block.fadeOut(300).removeClass("active");
+                    }
+
+                });
+            }
+        }
+        jQuery(window).load(function () {
+            var _this_fix_right_block = $(".fix_right_block");
+            var _this_fix_right_block_show = _this_fix_right_block.find(".container-item").length ? true : false;
+            if (_this_fix_right_block_show) {
+                FixedRightBlock();
+
+                $(window).scroll(function () {
+                    FixedRightBlock();
+                });
+                $(window).resize(function () {
+                    FixedRightBlock();
+                });
+            }
+        });
+    </script>
+    <div class="fix_right_block_marker"></div>
+    <div class="fix_right_block container_right_column">
+        <div class="fix_right_block_inn">
+                    </div>
+    </div></div>
+
+<script type="text/javascript">
+    $(window).load(function(){
+        var themeUrl = "/wp-content/themes/80lvl - Vitamin/ajax/get_side_banner_vendor.php";
+        getSideBanner(themeUrl, 'top', 'articles_detail', 'pos_top');
+        getSideBanner(themeUrl, 'middle', 'articles_detail', 'pos_middle');
+        getSideBanner(themeUrl, 'bottom', 'articles_detail', 'pos_bottom');
+    })
+</script>
+                <div class="container_left_column container_left_column_max_x3 block_for_inn_content">
+                    <div class="container-item v2 green2 width_full_with_r_column change-size block_for_fixed_soc_icons single_block">
+                        <div class="container-item-inn">
+                                                        <div class="container-item-h container-item-h-v2">Technical and Visual Analysis of Overwatch</div>
+                            <div class="container-item-h-c">
+                                <div class="container-item-h-c-elem">
+                                    <div class="container-item-data">23 May, 2016</div>
+                                </div>
+                                <div class="container-item-h-c-elem"><div class="tags tags-v3"><div class="tag">Interview</div></div></div>                            </div>
+                            <div class="share_content_help" title="https://80.lv/articles/overwatch-technical-overview/"></div>
+                            <div class="container-item-h-share-block-real share-block__top target_for_header_social">
+                                
+<div class="social share-block">
+    <div class="top-part">
+        <div class="container-item-h-share-block-real-all">
+            <span class="share-count">214</span>shares
+        </div>
+        <div class="container-item-h-share-block-real-mez">/</div>
+    </div>
+    <div class="bottom-part">
+        <span class="share-on-text">Share on</span>
+        <div class="social-btn fb">
+                    <a class="fa fa-facebook" onclick="javascript:window.open(&#39;https://www.facebook.com/sharer/sharer.php?u=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=400, height=300&#39;)"></a>
+               </div><div class="social-btn tw">
+                    <a class="fa fa-twitter" onclick="javascript:window.open(&#39;https://twitter.com/home?status=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=600, height=400&#39;)"></a>
+                </div><div class="social-btn lk">
+                    <a class="fa fa-linkedin" onclick="javascript:window.open(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&amp;summary=&amp;source=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=475, height=625&#39;)"></a>
+                </div><div class="social-btn rd">
+                    <a class="fa fa-reddit-alien" onclick="javascript:window.open(&#39;https://reddit.com/submit?url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=850, height=625&#39;)"></a>
+                </div>        <a data-flip-widget="flipit" href="https://share.flipboard.com/bookmarklet/popout?v=2&amp;title=Technical%20and%20Visual%20Analysis%20of%20Overwatch&amp;url=https%3A%2F%2F80.lv%2Farticles%2Foverwatch-technical-overview%2F&amp;t=1516635615365&amp;utm_campaign=tools&amp;utm_medium=article-share&amp;utm_source=80.lv" class="fl_flip_button" title="Add this page to a Flipboard Magazine" target="_blank"><i></i><b></b></a>
+    </div>
+</div>
+
+<script>
+    $('.fl_flip_button').contents().filter(function () {
+        return this.nodeType === 3;
+    }).remove();
+</script>
+
+<style>
+    .share-block .top-part,
+    .share-block .bottom-part{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>                            </div>
+
+                            <div class="for_fixed_soc_icons_out active">
+                                <div class="for_fixed_soc_icons fixed">
+                                    
+<div class="social share-block">
+    
+    
+</div>
+
+<script>
+    $('.fl_flip_button').contents().filter(function () {
+        return this.nodeType === 3;
+    }).remove();
+</script>
+
+<style>
+    .share-block .top-part,
+    .share-block .bottom-part{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>                                </div>
+                            </div>
+
+                            <div class="old-cont post">
+                                <div class="container-item-grey bitext container-item-text-v3">
+                                    <div class="container-item-grey bitext container-item-text-v3">
+                                        <h3 dir="ltr"><a href="https://twitter.com/agiletim" target="_blank">Timothy Bermanseder</a>, co-founder of <a href="http://www.cardboardkeep.com/" target="_blank">Cardboard Keep</a>, studied the beta-version of <a href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a>&nbsp;and found some very interesting technical details. He gave his analysis of the special effects, materials, assets and visual&nbsp;design of <a href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a>. Check out the details inside (this is an update of the forum post on <a href="http://polycount.com/discussion/170394/technical-study-overwatch-image-heavy" target="_blank">Polycount</a>&nbsp;with additional comments from the author).</h3>
+<p dir="ltr"><a href="https://80.lv/wp-content/uploads/2016/05/sw110-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33027 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/sw110-02-1024x429.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="429"></a></p>
+<h3 dir="ltr">Introduction</h3>
+<p dir="ltr">G’day, I’m <a href="https://twitter.com/agiletim" target="_blank">Timothy Bermanseder</a>, from Canberra, Australia. I am co-founder of <a href="http://www.cardboardkeep.com/" target="_blank">Cardboard Keep</a>, a small indie studio who just released our first game <a href="http://warden-game.com/" target="_blank">Warden: Melody of the Undergrowth</a>&nbsp;on PC, Mac and Linux.</p>
+<p dir="ltr">When I was young I used to make Doom maps with my dad, from there I went to play with map editors in any game that had them and after school attended the <a href="http://www.theaie.us/" target="_blank">AIE (Academy of Interactive Entertainment)</a>&nbsp;studying 3D art. It was here that I met fellow game devs who wished to start their own company and make their own games.</p>
+<p dir="ltr">I lean mostly into technical art, but being part of an indie team means I wear many hats, we are a small team so ultimately I end up doing a lot of the art. Today as millions of players around the world are launching their Overwatch accounts I want to present my simple technical analysis of the game’s visuals.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/440-2.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33028 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/440-2-1024x426.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="426"></a></p>
+<p dir="ltr">Almost every gamer has heard of <a href="https://playoverwatch.com/ru-ru/" target="_blank">Overwatch</a>&nbsp;and I got the chance to play in the open beta in the beginning of May 2016. I admit I was skeptical of the game, but from all the information I had seen it was quite beautiful aesthetically, so I gave it a whirl and had an absolute blast. As a 3D artist and often responsible for turning an artstyle into reality, I was intrigued by how they managed to get that awesome pixar look, and running silky smooth.This led me to start jotting down notes about things I noticed – eventually I had so many I figured I’d compile them and share them with the community. All of this was simply my own observation. I had no part in the creation of Overwatch.</p>
+<h3 dir="ltr">Material Production</h3>
+<p dir="ltr">I believe (but don’t know for sure) that <a href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a>&nbsp;was a testbed for moving into a PBR (Physically Based Rendering) workflow, using modern rendering technologies to reach for the film or Pixar look. Delving into the texture maps the game uses we can see plenty of maps that could very well be metalness or roughness maps.</p>
+<p dir="ltr">Blizzard have a long history with engine tech and blending materials from Starcraft and WoW, and they made use of this knowledge here to milk the most out of their materials in Overwatch. They layer different materials together to create organic and natural surfaces – from puddles and dirt in the cobblestones, to sand catching in bricks and moss growing up rocks.</p>
+<p dir="ltr">This use of blending is empowering to an environment artist who likely needs to work with tiling textures and a few static props yet cannot afford to let the scene feel stale.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-01-Textures-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33000 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-01-Textures-01-1024x999.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="999"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-01-Textures-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33001 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-01-Textures-02-906x1024.jpg" alt="Technical and Visual Analysis of Overwatch" width="906" height="1024"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-02-Mech-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33002 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-02-Mech-01-848x1024.jpg" alt="Technical and Visual Analysis of Overwatch" width="848" height="1024"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-02-Mech-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33003 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-02-Mech-02-1024x952.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="952"></a></p>
+<h3 dir="ltr">Character Creation</h3>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-03-Characters-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33004 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-03-Characters-01-1024x1018.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="1018"></a></p>
+<p dir="ltr">I was initially most curious about their polycounts as it would give me a starting point for my own poly budget, were I to work on a similar project. Upon study of their character models, I discovered that their characters do not use blendshapes for facial animation, rather they use a bone method.</p>
+<p dir="ltr">Almost every character had some kind of dynamic object attached to them, be it hair, little particles or a dangling keychain from their weapon. These little touches add secondary motion into the characters as they move, breathing more life into their animations.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-03-Characters-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33005 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-03-Characters-02-1010x1024.jpg" alt="Technical and Visual Analysis of Overwatch" width="1010" height="1024"></a></p>
+<p dir="ltr">The mesh flow of characters is wisely targeted to have the highest density in the most seen places; their hands, face and weapons are much denser than their legs or backs, for example.</p>
+<p dir="ltr">For some characters, they would use rectangular textures 1024×2048 rather than square textures. This is likely whenever characters had long UV islands that they wanted to keep straight rather than deal with painting at an angle and dealing with aliasing.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-03-Characters-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33006 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-03-Characters-03-1024x622.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="622"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-04-Characters-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33010 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-04-Characters-03-1024x949.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="949"></a></p>
+<h3 dir="ltr">Environment Production</h3>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-04-Bevels-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33007 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-04-Bevels-01-1024x782.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="782"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-04-Bevels-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33009 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-04-Bevels-03-1024x480.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="480"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-04-Bevels-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33008 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-04-Bevels-02-1024x782.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="782"></a></p>
+<p dir="ltr">Blizzard games are well known for their big readable art styles and Overwatch is no exception. The use of big baked-in bevels really stood out to me. It’s so Blizzard and they really make it work, helping give all the objects in the world a softer, rounder finish without needing to model actual bevels onto everything.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-05-Corners-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33011 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-05-Corners-01-1024x755.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="755"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-05-Corners-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33013 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-05-Corners-03-1024x470.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="470"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-05-Corners-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33012 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-05-Corners-02-1024x755.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="755"></a></p>
+<p>Likewise, they made use of corner pieces to both cover seams, break up repetition and give a chunkier more 3D world. The Overwatch team seems to have tried to avoid sharp 90 degree angles, using either a corner piece or an actual bevel to prevent a level feeling like a series of boxes.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-06-Rocks-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33014 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-06-Rocks-01-1024x847.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="847"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-06-Rocks-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33016 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-06-Rocks-03-1024x794.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="794"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-06-Rocks-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33015 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-06-Rocks-02-1024x488.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="488"></a></p>
+<h3 dir="ltr">Intersections</h3>
+<p dir="ltr">Looking at the mesh intersections I found in Overwatch was actually a huge relief. From having to build many game levels myself, it is so very easy to overlook a slightly stretched UV or a piece of geometry clipping into another object.</p>
+<p dir="ltr">In fact, if one were to enforce no intersecting geometry you would find yourself building far too many unique assets, unable to kitbash pieces together.</p>
+<p dir="ltr"><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-07-Intersections-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33017 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-07-Intersections-01-1024x696.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="696"></a></p>
+<p dir="ltr"><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-07-Intersections-04.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33020 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-07-Intersections-04-1024x415.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="415"></a></p>
+<p dir="ltr"><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-07-Intersections-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33019 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-07-Intersections-03-1024x493.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="493"></a></p>
+<p dir="ltr"><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-07-Intersections-02.jpg" class="fancybox aligncenter"><img class="aligncenter size-large wp-image-33018" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-07-Intersections-02-1024x466.jpg" alt="TechStudy-OW-07-Intersections-02" width="1024" height="466"></a></p>
+<p dir="ltr">What Blizzard have done is make sure all the intersections are smaller, minor objects often of the same material type. That is, stone stairs clip into a stone wall,&nbsp;etc.</p>
+<p dir="ltr">This minimizes the players’ ability to notice or care about these things while allowing them to much more quickly build a large level.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-07-Intersections-04.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33020 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-07-Intersections-04-1024x415.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="415"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-08-Reflections-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33021 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-08-Reflections-01-1024x429.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="429"></a></p>
+<h3 dir="ltr">Lighting</h3>
+<p dir="ltr">As mentioned above, the use of large painted bevels in the texture allow the objects in the world to appear softer and smoother, giving a dramatic rim light feeling for completely free. This lends itself to their art style which strives for a bigger than life comic book feel.</p>
+<p dir="ltr">They also make good use of cubemap reflections, not just in their windows, giving a great sense of depth but also in the subtle reflections of puddles and even slightly metallic surfaces.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-08-Reflections-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33021 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-08-Reflections-01-1024x429.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="429"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-08-Reflections-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33023 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-08-Reflections-03-1024x825.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="825"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-08-Reflections-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33022 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-08-Reflections-02-1024x778.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="778"></a></p>
+<p dir="ltr">Another clever trick I observed with the lighting was the adding of moresubtle detail only in the specular or shiny parts of a material. This works to keep the material readable and simple at distance, &nbsp;but closer up and with lighting, little details pop up out of the texture. This does a great job to break repetition in the tiling of textures.</p>
+<h3 dir="ltr">VFX</h3>
+<p dir="ltr">In it’s comic book style, Overwatch makes great use of exaggerated explosions and muzzle flashes, yet balance them well enough to not be over the top and wash out all the action.</p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-09-VFX-01.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33024 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-09-VFX-01-1024x551.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="551"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-09-VFX-03.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33026 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-09-VFX-03-1024x1015.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="1015"></a></p>
+<p><a href="https://80.lv/wp-content/uploads/2016/05/TechStudy-OW-09-VFX-02.jpg" class="fancybox aligncenter"><img class="aligncenter wp-image-33025 size-large" title="overwatch, blizzard, materials, lighting, textures, meshes, pbr, maya, zbrush, gamedev, game development, indiedev, analysis, environment production" src="./Technical and Visual Analysis of Overwatch_files/TechStudy-OW-09-VFX-02-1024x551.jpg" alt="Technical and Visual Analysis of Overwatch" width="1024" height="551"></a></p>
+<h3 dir="ltr">Overwatch’s Style</h3>
+<p dir="ltr">Polished, bright and colourful. These are hallmarks of Blizzard and they execute it really well in Overwatch.</p>
+<p dir="ltr">What I love most about Overwatch is that it proves Pixar quality art is possible in both real time and during gameplay. The style reminds me of being a child reading comic books and what could be rather than the harsh reality of a video game full of polygons.though I admit through doing this analysis I can’t unsee the seams and intersections I discovered, Now I know how the sausage is made!</p>
+<p dir="ltr">Regardless, I am excited by this shift in the AAA space for brighter more readable games rather than the drab greys of the past. It’s simply more fun and engaging.</p>
+<h3 dir="ltr"><a href="https://twitter.com/agiletim" target="_blank">Timothy Bermanseder</a>, co-founder of <a href="http://www.cardboardkeep.com/" target="_blank">Cardboard Keep</a></h3>
+<h2 dir="ltr">Interesting links</h2>
+<h3><a href="https://80.lv/articles/interview-with-blizzards-cgi-artist/" target="_blank">INTERVIEW WITH BLIZZARD’S CGI-MASTER DAVID LUONG</a></h3>
+<h3><a href="https://80.lv/articles/ue4-environment-tutorial-from-thiago-klafke/" target="_blank">UE4 ENVIRONMENT TUTORIAL FROM THIAGO KLAFKE</a></h3>
+<h3><a href="https://80.lv/video/overwatch-recall-animated-short/" target="_blank">OVERWATCH: RECALL ANIMATED SHORT</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="container-item-h-share-block-real">
+                                
+<div class="social share-block">
+    <div class="top-part">
+        <div class="container-item-h-share-block-real-all">
+            <span class="share-count">214</span>shares
+        </div>
+        <div class="container-item-h-share-block-real-mez">/</div>
+    </div>
+    <div class="bottom-part">
+        <span class="share-on-text">Share on</span>
+        <div class="social-btn fb">
+                    <a class="fa fa-facebook" onclick="javascript:window.open(&#39;https://www.facebook.com/sharer/sharer.php?u=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=400, height=300&#39;)"></a>
+               </div><div class="social-btn tw">
+                    <a class="fa fa-twitter" onclick="javascript:window.open(&#39;https://twitter.com/home?status=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=600, height=400&#39;)"></a>
+                </div><div class="social-btn lk">
+                    <a class="fa fa-linkedin" onclick="javascript:window.open(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&amp;summary=&amp;source=https://80.lv/articles/overwatch-technical-overview/&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=475, height=625&#39;)"></a>
+                </div><div class="social-btn rd">
+                    <a class="fa fa-reddit-alien" onclick="javascript:window.open(&#39;https://reddit.com/submit?url=https://80.lv/articles/overwatch-technical-overview/&amp;title=Technical+and+Visual+Analysis+of+Overwatch&#39;, &#39;&#39;, &#39;scrollbars=no, status=no, width=850, height=625&#39;)"></a>
+                </div>        <a data-flip-widget="flipit" href="https://share.flipboard.com/bookmarklet/popout?v=2&amp;title=Technical%20and%20Visual%20Analysis%20of%20Overwatch&amp;url=https%3A%2F%2F80.lv%2Farticles%2Foverwatch-technical-overview%2F&amp;t=1516635615365&amp;utm_campaign=tools&amp;utm_medium=article-share&amp;utm_source=80.lv" class="fl_flip_button" title="Add this page to a Flipboard Magazine" target="_blank"><i></i><b></b></a>
+    </div>
+</div>
+
+<script>
+    $('.fl_flip_button').contents().filter(function () {
+        return this.nodeType === 3;
+    }).remove();
+</script>
+
+<style>
+    .share-block .top-part,
+    .share-block .bottom-part{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>                            </div>
+
+                            <div class="comments_inn_block ">
+        <div style="font-size:14px;" class="comments_inn_block bitext form_block">
+            <div class="wpdiscuz_top_clearing"></div>
+                    <div id="comments" class="comments-area">
+                    <div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div>
+                            <h3 id="wc-comment-header">Leave a Reply</h3>
+                <div id="wpcomm" class="wpdiscuz_unauth">
+                            <div class="wc-comment-bar">
+                    <p class="wc-comment-title">
+                        Be the First to Comment!                    </p>
+                    <div class="wpdiscuz_clear"></div>
+                </div>
+                                    <div class="wc_social_plugin_wrapper">
+                            </div>
+                    <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                                        <form class="wc_comm_form wc_main_comm_form" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                                                                                <div class="wc-field-avatararea">
+                                <img alt="avatar" src="./Technical and Visual Analysis of Overwatch_files/saved_resource" srcset="https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo avatar-default" height="48" width="48">                            </div>
+                                                <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                <textarea id="wc-textarea-0_0" placeholder="Start the discussion" required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fa fa-user"></i></div>
+                                                <input required="required" class="wc_name wpd-field" type="text" name="wc_name" value="" placeholder="Name" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fa fa-at"></i></div>
+                                                <input required="required" class="wc_email wpd-field" type="email" name="wc_email" value="" placeholder="Email">
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                                    <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+                </form>
+                    </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                            <div class="wc-secondary-forms-social-content"></div>
+                                        <form class="wc_comm_form wc-secondary-form-wrapper" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                                                                                <div class="wc-field-avatararea">
+                                <img alt="avatar" src="./Technical and Visual Analysis of Overwatch_files/saved_resource" srcset="https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo avatar-default" height="48" width="48">                            </div>
+                                                <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Join the discussion" required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fa fa-user"></i></div>
+                                                <input required="required" class="wc_name wpd-field" type="text" name="wc_name" value="" placeholder="Name" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fa fa-at"></i></div>
+                                                <input required="required" class="wc_email wpd-field" type="email" name="wc_email" value="" placeholder="Email">
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                                    <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+                </form>
+                    </div>
+                </div>
+                    
+
+                        
+                
+                                <div id="wcThreadWrapper" class="wc-thread-wrapper">
+                                    
+                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+                <div class="wpdiscuz_clear"></div>
+                                            </div>
+        </div>
+        <div class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"><img class="wpdiscuz-loading-bar-img" alt="wpDiscuz" src="./Technical and Visual Analysis of Overwatch_files/loading.gif" width="32" height="25"></div>
+            </div>
+</div><div class="follow-block">
+    <div class="follow-title">Follow 80.lv on</div>
+    <a href="https://www.facebook.com/LevelEighty/" target="_blank">
+        <img src="./Technical and Visual Analysis of Overwatch_files/icon-follow-fb.svg">
+    </a>
+    <a href="https://telegram.me/level80" target="_blank">
+        <img src="./Technical and Visual Analysis of Overwatch_files/icon-follow-telegram.svg">
+    </a>
+    <a href="https://api.kik.com/v1/code/215b2347351eb43350e0f622b8365dc33b13ed02?c=8" target="_blank">
+        <img src="./Technical and Visual Analysis of Overwatch_files/icon-follow-kik.svg">
+    </a>
+    <a href="https://join.skype.com/bot/7f97d37e-4cdd-4f57-aad6-6228dfd6a630" target="_blank">
+        <img src="./Technical and Visual Analysis of Overwatch_files/icon-follow-skype.svg">
+    </a>
+    <a href="https://news360.com/web/sources/806957255" target="_blank">
+        <img src="./Technical and Visual Analysis of Overwatch_files/icon-follow-news360.svg">
+    </a>
+</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_left_column container_left_column_max_x3 container_left_column_min_x3">
+        <div class="container-item-for-title-block container-item-for-title-block-v2 container-item-h">Related articles</div>
+        <div class="this-iso">
+            <div class="container-item container-item-half-width this-iso-elem">
+                <div class="container-item-inn">
+                    <div class="relaited_articles">
+                        <div class="relaited_articles_tr">
+                            <div class="relaited_articles_td relaited_articles_img"><a href="https://80.lv/articles/brainstorm-an-easier-way-to-come-up-with-ideas/"><img width="150" height="150" src="./Technical and Visual Analysis of Overwatch_files/brainstorm-80lv-concept-art-tool-3-Copy-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Brainstorm, gamedev, indiedev, Oleg Vdovenko, concept art, design, Alexey Mikhailov, ideas, brainstorming, thumbnails, art direction, art production, sci-fi, tools, gamedev tools"></a></div>
+                            <div class="relaited_articles_td relaited_articles_text">
+                                <div class="container-item-h"><a href="https://80.lv/articles/brainstorm-an-easier-way-to-come-up-with-ideas/">Brainstorm: An easier way to come up with ideas</a></div>
+                                <div class="tags"><div class="tag">Interview</div><div class="tag">News</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="container-item container-item-half-width this-iso-elem">
+                <div class="container-item-inn">
+                    <div class="relaited_articles">
+                        <div class="relaited_articles_tr">
+                            <div class="relaited_articles_td relaited_articles_img"><a href="https://80.lv/articles/my-friend-pedro-awesome-slow-motion-platformer-shooter/"><img width="150" height="150" src="./Technical and Visual Analysis of Overwatch_files/2015-12-02-18-32-55-DeadToast.com-A-magical-world-of-Nunchucks-Flesh-eating-mullets-and-Pigeon-Laser-Farts-Google-Chro-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="My Friend Pedro, My Friend Pedro: Blood Bullets Bananas, Media Molecule, Victor Ågren, LittleBigPlanet, LittleBigPlanet 2, Tearaway, indiedev, indiegamedev, gamedev, slow motion, action, Matrix."></a></div>
+                            <div class="relaited_articles_td relaited_articles_text">
+                                <div class="container-item-h"><a href="https://80.lv/articles/my-friend-pedro-awesome-slow-motion-platformer-shooter/">My Friend Pedro: Awesome Slow-Motion Platformer Shooter</a></div>
+                                <div class="tags"><div class="tag">Interview</div><div class="tag">Opinion</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="container-item container-item-half-width this-iso-elem">
+                <div class="container-item-inn">
+                    <div class="relaited_articles">
+                        <div class="relaited_articles_tr">
+                            <div class="relaited_articles_td relaited_articles_img"><a href="https://80.lv/articles/ue4-production-of-kimmo-kaunela/"><img width="150" height="150" src="./Technical and Visual Analysis of Overwatch_files/BeautyShot41-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt=""></a></div>
+                            <div class="relaited_articles_td relaited_articles_text">
+                                <div class="container-item-h"><a href="https://80.lv/articles/ue4-production-of-kimmo-kaunela/">UE4 Production of Kimmo Kaunela</a></div>
+                                <div class="tags"><div class="tag">Interview</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="container-item container-item-half-width this-iso-elem">
+                <div class="container-item-inn">
+                    <div class="relaited_articles">
+                        <div class="relaited_articles_tr">
+                            <div class="relaited_articles_td relaited_articles_img"><a href="https://80.lv/articles/jonathan-benainous-talks-about-building-3d-masterpieces/"><img width="150" height="150" src="./Technical and Visual Analysis of Overwatch_files/50022-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt=""></a></div>
+                            <div class="relaited_articles_td relaited_articles_text">
+                                <div class="container-item-h"><a href="https://80.lv/articles/jonathan-benainous-talks-about-building-3d-masterpieces/">Jonathan Benainous talks about building 3d masterpieces</a></div>
+                                <div class="tags"><div class="tag">Interview</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                <div id="zergnet-widget-46272"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<link type="text/css" rel="stylesheet" href="./Technical and Visual Analysis of Overwatch_files/style(1).css"><script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/script.js.download"></script><script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/player_api"></script></div>
+<div id="empty" style="height: 400px;"></div>
+</div>
+<footer id="footer" style="margin-top: -400px;">
+    <section class="footer">
+        <div class="wrap">
+            <div class="all">
+                <div class="footer_left">
+                    <div class="footer_logo"><a href="https://80.lv/"><img src="./Technical and Visual Analysis of Overwatch_files/footer_logo.png"></a></div>
+                </div>
+                <div class="footer_right">
+                    <div class="footer_table_menu">
+                        <div class="footer_table_menu_tr footer_table_menu_tr_left">
+                            <div class="footer_table_menu_td td_0">
+                                <div class="footer_table_menu_header">Links</div>
+                                <div class="footer_table_menu_list">
+                                    <div class="footer_table_menu_list_elem"><a href="https://80.lv/articles/">Articles</a></div>
+                                    <div class="footer_table_menu_list_elem"><a href="https://80.lv/vendors/">Vendors</a></div>
+                                    <div class="footer_table_menu_list_elem"><a href="https://80.lv/events/">Events</a></div>
+                                    <div class="footer_table_menu_list_elem"><a href="https://80.lv/video/">Video</a></div>
+                                </div>
+                            </div>
+                            <div class="footer_table_menu_td td_1">
+                                <div class="footer_table_menu_header"><a href="https://80.lv/vendors/">Vendors</a></div>
+                                                                    <div class="footer_table_menu_list">
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/analytics/" title="Analytics">Analytics</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/content/" title="Content">Content</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/localization/" title="Localization">Localization</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/marketing/" title="Marketing">Marketing</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/network/" title="Network">Network</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/outsource/" title="Outsource">Outsource</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/partners/" title="Partners">Partners</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/payments/" title="Payments">Payments</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/vendors/tools/" title="Tools">Tools</a>
+                                            </div>
+                                                                            </div>
+                                                            </div>
+                            <div class="footer_table_menu_td td_2">
+                                <div class="footer_table_menu_header"><a href="https://80.lv/video/">Video</a></div>
+                                                                    <div class="footer_table_menu_list">
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/video/video-events/" title="Events">Events</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/video/video-presentations/" title="Presentations">Presentations</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/video/video-talks/" title="Talks">Talks</a>
+                                            </div>
+                                                                                    <div class="footer_table_menu_list_elem">
+                                                <a href="https://80.lv/video/video-technologies/" title="Technologies">Technologies</a>
+                                            </div>
+                                                                            </div>
+                                                            </div>
+                            <div class="footer_table_menu_td td_3">
+                                <div class="footer_table_menu_header"><a href="https://80.lv/events/">Events</a></div>
+                                <div class="footer_table_menu_list">                                        <div class="footer_table_menu_list_elem">
+                                            <a href="https://80.lv/events/gacucon/" title="GaCuCon">
+                                                GaCuCon                                            </a>
+                                        </div>
+                                                                            <div class="footer_table_menu_list_elem">
+                                            <a href="https://80.lv/events/pocket-gamer-connects-london-2018-3/" title="Pocket Gamer Connects London 2018">
+                                                Pocket Gamer Connects London 2018                                            </a>
+                                        </div>
+                                                                            <div class="footer_table_menu_list_elem">
+                                            <a href="https://80.lv/events/taipei-game-show-2018/" title="Taipei Game Show 2018">
+                                                Taipei Game Show 2018                                            </a>
+                                        </div>
+                                                                            <div class="footer_table_menu_list_elem">
+                                            <a href="https://80.lv/events/devgamm-kiev-2018/" title="DevGAMM Kiev 2018">
+                                                DevGAMM Kiev 2018                                            </a>
+                                        </div>
+                                                                            <div class="footer_table_menu_list_elem">
+                                            <a href="https://80.lv/events/d-i-c-e-summit-2018/" title="D.I.C.E. Summit 2018">
+                                                D.I.C.E. Summit 2018                                            </a>
+                                        </div>
+                                    </div>                            </div>
+                        </div>
+                        <div class="footer_table_menu_tr footer_table_menu_tr_right">
+                            <div class="footer-soc">
+                                <div class="footer-soc-inn">
+                                    <a class="footer-soc-elem" target="_blank" title="Facebook" href="https://www.facebook.com/LevelEighty"><div class="myicon"><span class="fa fa-facebook" aria-hidden="true"></span></div></a>
+<a class="footer-soc-elem" target="_blank" title="Twitter" href="https://twitter.com/EightyLevel"><div class="myicon"><span class="fa fa-twitter" aria-hidden="true"></span></div></a>
+<a class="footer-soc-elem" target="_blank" title="Youtube" href="https://www.youtube.com/channel/UCI8IFlI7_0xU9Dc60xoZuiA"><div class="myicon"><span class="fa fa-youtube" aria-hidden="true"></span></div></a>
+<a class="footer-soc-elem" target="_blank" title="RSS" href="https://80.lv/feed/"><div class="myicon"><span class="fa fa-rss" aria-hidden="true"></span></div></a>                                </div>
+                            </div>
+                            <div class="footer-copy bitext">
+                                                                <p>
+                                    © 2018. 80 level. All rights reserved
+                                    <br>
+                                    <a href="https://80.lv/contact-us/">Contact us</a>
+                                    <br>
+                                    <a href="https://80.lv/privacy-policy/">Privacy Policy</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="display:none;">
+        
+
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = '80lvl';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        
+<!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXJSV9"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) --><link rel="stylesheet" id="disqus-latest-comments-green-css-css" href="./Technical and Visual Analysis of Overwatch_files/disqus-latest-comments-green-css.css" type="text/css" media="all">
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/jquery.colorbox-min.js.download"></script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/custom.js.download"></script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var disqus_latest_comments_js_settings = {"disqus_minute_ago":"","disqus_minutes_ago":"","disqus_hour_ago":"","disqus_hours_ago":"","disqus_day_ago":"","disqus_days_ago":"","disqus_week_ago":"","disqus_weeks_ago":"","disqus_month_ago":"","disqus_months_ago":"","disqus_year_ago":"","disqus_years_ago":"","disqus_target_blank":"on"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Technical and Visual Analysis of Overwatch_files/disqus-latest-comments-js.js.download"></script>
+    </div>
+    <script src="./Technical and Visual Analysis of Overwatch_files/jquery.cookie.min.js.download"></script>
+    <script src="./Technical and Visual Analysis of Overwatch_files/flbuttons.min.js.download" type="text/javascript"></script>
+</footer>
+</div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1919916141628345");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1919916141628345&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<!-- Форма оплаты вакансии и редим купона -->
+<div id="popup-close" class="get-job popup-wrapper">
+    <div class="job-form popup-form">
+        <div class="popup-close-btn">✕</div>
+        <div class="job-form-title popup-title">Post Job</div>
+        <div class="packages">
+                    </div>
+        <div class="separator">
+            <div>or</div>
+        </div>
+        <div class="redeem job-redeem">
+            <form class="redeem-from" method="post">
+                <input maxlength="29" class="redeem-input" type="text" name="redeem-code" placeholder="Enter coupon code">
+                <button class="submit-code submit-job-code green-submit">
+                    <span>Submit</span>
+                </button>
+            </form>
+            <div class="error-msg redeem-error"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var s = document.createElement('script');
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "//static.xsolla.com/embed/paystation/1.0.4/widget.min.js";
+
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(s);
+
+    $('.pack-buy-btn').click(function (event) {
+        var options = {
+            access_token: $(this).data('token'),
+            lightbox: {
+                height: '600px'
+            }
+        };
+        XPayStationWidget.init(options);
+        XPayStationWidget.open();
+    });
+
+    // Отправка купона
+    $('.submit-job-code').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var redeemInput = $(this).parent().find('input');
+        var postData = redeemInput.serializeArray();
+        var regex = /^([^а-яА-я])+$/;
+        var error = $(this).parent().parent().find('.redeem-error');
+        if (redeemInput.val() === "") {
+            error.text('Please type the coupon code');
+            return false;
+        }
+        if (redeemInput.val().length < 29) {
+            error.text('Incorrect number of characters');
+            return false;
+        }
+        if (!regex.test(redeemInput.val())) {
+            error.text('Invalid coupon code');
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/wp-content/themes/80lvl - Vitamin/ajax/get_job_webhook.php",
+            data: postData,
+            success: function (res) {
+                $('.get-job').hide();
+                $('.success-redeem-wrapper.job').show();
+                redeemInput.val('');
+            },
+            error: function (res) {
+                error.text(res.responseText.slice(1, -1)).show();
+            }
+        });
+    });
+
+    $('.redeem-input').bind('keydown paste cut blur', function (e) {
+        if ($('.redeem-input').val() === "") {
+            $('.redeem-error').text('');
+        }
+        if ($('.redeem-error').text() !== '') {
+            $('.redeem-error').text('');
+        }
+    });
+</script>
+<!-- Форма оплаты платного поста и редима купона -->
+<div id="popup-close" class="get-post popup-wrapper">
+    <div class="popup-form">
+        <div class="popup-close-btn">✕</div>
+        <div class="job-form-title popup-title">Submit Post</div>
+
+        <div class="green-submit open-ps" data-token="">
+            <span>Buy post for $</span>
+        </div>
+
+        <div class="separator">
+            <div>or</div>
+        </div>
+        <div class="redeem post-redeem">
+            <form class="redeem-from" method="post">
+                <input maxlength="29" class="redeem-input" id="post-redeem-input" type="text" name="redeem-code" placeholder="Enter coupon code">
+                <button class="submit-code submit-post-code green-submit">
+                    <span>Submit</span>
+                </button>
+            </form>
+            <div class="error-msg redeem-error"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    var s = document.createElement('script');
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "//static.xsolla.com/embed/paystation/1.0.4/widget.min.js";
+
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(s);
+
+    $('.open-ps').click(function (event) {
+        var options = {
+            access_token: $(this).data('token'),
+            lightbox: {
+                height: '600px'
+            }
+        };
+        XPayStationWidget.init(options);
+        XPayStationWidget.open();
+    });
+
+
+    // Отправка купона
+    $('.submit-post-code').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var postData = $('.redeem-from').serializeArray();
+        var regex = /^([^а-яА-я])+$/;
+        var redeemInput = $(this).parent().find('input');
+        var error = $(this).parent().parent().find('.redeem-error');
+        if (redeemInput.val() === "") {
+            error.text('Please type the coupon code');
+            return false;
+        }
+        if (redeemInput.val().length < 29) {
+            error.text('Incorrect number of characters');
+            return false;
+        }
+        if (!regex.test(redeemInput.val())) {
+            error.text('Invalid coupon code');
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/wp-content/themes/80lvl - Vitamin/ajax/get_post_webhook.php",
+            data: postData,
+            success: function (res) {
+                $('.get-post').hide();
+                $('.success-redeem-wrapper.post').show();
+                redeemInput.val('');
+            },
+            error: function (res) {
+                error.text(res.responseText.slice(1, -1)).show();
+            }
+        });
+    });
+
+    $('.redeem-input').bind('keydown paste cut blur', function (e) {
+        if ($('.redeem-input').val() === "") {
+            $('.redeem-error').text('');
+        }
+        if ($('.redeem-error').text() !== '') {
+            $('.redeem-error').text('');
+        }
+    });
+</script><!-- Сообщение об успешном редиме купона -->
+<div id="popup-close" class="success-redeem-wrapper popup-wrapper job">
+    <div class="success-redeem-form popup-form">
+        <div class="popup-close-btn">✕</div>
+        <div class="success-redeem-text popup-text">
+            <div>Your coupon code was successfully redeemed, the email with vacancy create form was send.<br>Please
+                check your email
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup-close" class="success-redeem-wrapper popup-wrapper post">
+    <div class="success-redeem-form popup-form">
+        <div class="popup-close-btn">✕</div>
+        <div class="success-redeem-text popup-text">
+            <div>Your coupon code was successfully redeemed, the email with post create form was send.<br>Please
+                check your email
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Форма отклика на вакансию -->
+<div id="popup-close" class="apply-for-job-wrapper popup-wrapper">
+    <div class="apply-for-job-form popup-form">
+        <div class="popup-close-btn">✕</div>
+        <div class="apply-for-job-title popup-title">Apply for Job</div>
+        <form class="inner-wrapper">
+            <div class="sub-wrapper">
+                <span>First name</span>
+                <input class="field-required" type="text" name="first-name">
+            </div>
+            <div class="sub-wrapper">
+                <span>Last name</span>
+                <input class="field-required" type="text" name="last-name">
+            </div>
+            <div class="sub-wrapper">
+                <span>E-mail</span>
+                <input class="field-required" type="text" name="email">
+                <div class="error-msg email-error"></div>
+            </div>
+            <div class="sub-wrapper">
+                <span>Link to CV (optional)</span>
+                <input type="text" name="cv">
+            </div>
+            <div class="upload-cv-btn green-submit">
+                <span>Or upload CV</span>
+            </div>
+        </form>
+        <div class="apply-btn green-submit popup-btn">
+            <span>Apply</span>
+        </div>
+        <div class="error-msg apply-error"></div>
+    </div>
+</div>
+<!-- Форма загрузки резюме -->
+<div id="popup-close" class="cv-upload-wrapper popup-wrapper">
+    <div class="popup-form">
+        <div class="popup-close-btn">✕</div>
+        <form action="https://80.lv/wp-content/themes/80lvl%20-%20Vitamin/ajax/upload_cv.php" class="dropzone dz-clickable" id="cv-dropzone">
+            <div class="dz-default dz-message">
+                <span class="popup-title">Upload Files</span>
+                <div class="popup-text">
+                    <div>Drag and drop files onto this window to upload</div>
+                </div>
+            </div>
+            <div class="error-msg upload-error"></div>
+        </form>
+    </div>
+</div>
+<!-- Форма загрузки изображений -->
+<div id="popup-close" class="upload-form-wrapper popup-wrapper">
+    <div class="popup-form">
+        <div class="popup-close-btn">✕</div>
+        <form action="https://80.lv/wp-content/themes/80lvl%20-%20Vitamin/ajax/upload_image.php" class="dropzone dz-clickable" id="my-awesome-dropzone">
+            <div class="dz-default dz-message">
+                <span class="popup-title">Upload File</span>
+                <div class="popup-text">
+                    <div>Drag and drop file onto this window to upload</div>
+                </div>
+            </div>
+            <div class="error-msg upload-error"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    /*
+     * Отклик на вакансию
+     */
+    var isReady = false;
+    var applyFields = $('.apply-for-job-wrapper .field-required');
+    $('.apply-btn').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var data = {
+            'first-name': $('.apply-for-job-wrapper input[name="first-name"]').val(),
+            'last-name': $('.apply-for-job-wrapper input[name="last-name"]').val(),
+            'email': $('.apply-for-job-wrapper input[name="email"]').val().replace(/\s+/g, ''),
+            'cv': $('.apply-for-job-wrapper input[name="cv"]').val(),
+            'url': window.location.href
+        };
+        if (!isEmailValid(data['email']) && data['email'] !== '') {
+            $('.email-error').text('Wrong email');
+        } else {
+            $('.email-error').text('');
+        }
+        applyFields.each(function () {
+            if ($(this).val() === '' || !isEmailValid(data['email'])) {
+                $('.apply-error').text('Please fill all required fields');
+                return isReady = false;
+            } else {
+                isReady = true;
+                $('.apply-error').text('');
+            }
+        });
+        if (isReady) {
+            $('.apply-btn').addClass('disabled');
+            $.ajax({
+                type: 'POST',
+                url: 'https://wrapper.xsolla.com/api/1/json/public/235879/a08539cbbad8ee1697fef2645dcf4b66ecb486d3',
+                data: JSON.stringify(data),
+                success: function (res) {
+                    $('.apply-btn').removeClass('disabled');
+                    $('.apply-for-job-wrapper input').val('');
+                    $('.apply-for-job-wrapper').hide();
+                }
+            });
+        }
+    });
+
+    Dropzone.options.cvDropzone = {
+        maxFiles: 1,
+        addRemoveLinks: true,
+        init: function () {
+            this.on('maxfilesexceeded', function (file) {
+                $('.upload-error').text('You can only upload one file');
+            });
+        },
+        accept: function (file, done) {
+            done();
+        },
+        success: function (e, res) {
+            var uploadedFile = JSON.parse(res);
+            $('.apply-for-job-wrapper input[name="cv"]').val(uploadedFile['url']);
+        }
+    };
+
+    /*
+     * Загрузка изображений
+     */
+    var maxImageWidth = 1200;
+    var maxImageHeight = 630;
+    var currentFile = null;
+    Dropzone.options.myAwesomeDropzone = {
+        acceptedFiles: "image/*",
+        maxFiles: 1,
+        maxFilesize: 5,
+        addRemoveLinks: true,
+        thumbnailWidth: 200,
+        thumbnailHeight: 200,
+        init: function () {
+            this.on('removedfile', function (file, response) {
+                $('.upload-error').text('');
+                $('.upload-image-name').text('');
+                currentFile = null;
+            });
+            this.on("addedfile", function (file) {
+                $('.dz-input').hide();
+                if (currentFile) {
+                    this.removeFile(currentFile);
+                }
+                currentFile = file;
+            })
+        },
+        accept: function (file, done) {
+            done();
+        },
+        success: function (e, res) {
+            var attachInfo = JSON.parse(res);
+            var imageTitle = attachInfo.post_title;
+            $('.upload-image-name').text(imageTitle);
+            $('input[name="hidden-attach"]').val(res);
+        }
+    };
+</script>
+
+<script type="text/javascript">
+    var pageTemplate = 'single-article';
+    var url = '/wp-content/themes/80lvl - Vitamin/ajax/get_share_count.php';
+    var themeUrl = "/wp-content/themes/80lvl - Vitamin/ajax/get_banner_vendor.php";
+    getTopBannerVendor(themeUrl, 'articles_detail');
+
+    /*Social buttons*/
+    $(".share_content_help").each(function () {
+        var _this_link = $(this).attr("title");
+        GetSocialButtons_a(_this_link, url);
+    });
+</script>
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="cboxIE" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><input type="file" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"><input type="file" class="dz-hidden-input" accept="image/*" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"></body></html>
