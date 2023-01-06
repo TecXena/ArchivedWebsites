@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php -->
+<html lang="en"><head class="at-element-marker"><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">	
+	        
+		<title>Gamasutra: Marco Mignano's Blog - Use Paper Prototyping to design your games</title>
+	<meta name="pagecaching" content="682">
+	<meta name="serveraddress" content="10.40.39.224">
+			<meta name="keywords" content="game development, game developer, game programming, game programmer, videogame, artificial intelligence, 3D animation, game design, 3D modeling, game business, game jobs, game directory, game development software, game technology, 3D technology, game producer, game audio, game animation, virtual reality, digital entertainment, PC game, Xbox game, game news, new game, arcade development, Nintendo development, Playstation development, Playstation 2, PS2, Dreamcast development, Game Developer magazine, Computer Game Developers Conference, Game Developers Conference, Independent Game Developers Conference, CMP Game Media Group, game industry research, online game development, digital assets, free textures, free 3D models, free shaders, Gamasutra Exchange, 3D Studio Max textures"><meta name="description" content="We use paper prototype to craft everything. In this articles some usefully tips to better understated why you should start to use paper prototyping to">
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style>
+		
+			.cke_source{
+				white-space:normal !important;
+			}
+			.hide_phone > iframe {
+				width: 100%;
+			}
+			@media only screen and (max-width:479px){
+				.hide_phone > iframe {
+					height: auto;
+				}
+				.embeddedContent iframe, .page_data_1 iframe {
+					width: 100%;
+				}
+			}
+			.properties ul li {
+				padding: 5px 28px !important;
+			}
+			.formElement label.questionLabel p.description {
+				font-weight: normal;
+				padding: 0 !important;
+			}
+			div#rightlinks ul {
+				padding: 0 15px !important;
+			}
+			.article img {
+				max-width: 100% !important;
+			}
+			@media screen and (max-width: 425px) {
+				blockquote{
+					float:none !important;
+					clear:both;
+				}
+			}
+		
+
+	</style>
+	<!-- CSS -->
+        
+        
+<meta property="fb:app_id" content="1424004174373289">		
+        			 <meta property="og:type" content="article">
+			 <meta property="og:url" content="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php">
+			 <meta property="og:title" content="Use Paper Prototyping to design your games">
+                   	 	
+                                <meta name="og:image" content="https://www.gamasutra.com/blogs/edit/img/portrait/1010959/portrait.jpg">
+                         			 <meta property="og:description" content="We use paper prototype to craft everything. In this articles some usefully tips to better understated why you should start to use paper prototyping to develop you games.">
+				
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@gamasutra">
+		<meta name="twitter:creator" content="@gamasutra">
+					<meta name="twitter:title" content="Use Paper Prototyping to design your games">
+			<meta name="twitter:description" content="We use paper prototype to craft everything. In this articles some usefully tips to better understated why you should start to use paper prototyping to develop you games.">
+			<meta name="twitter:creator" content="@gamasutra">
+			<meta name="twitter:url" content="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php">
+			<meta name="twitter:image" content="https://www.gamasutra.com/blogs/edit/img/portrait/1010959/portrait.jpg">
+		
+        
+                	<link rel="canonical" href="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php">
+                <link rel="alternate" type="application/rss+xml" title="Gamasutra Article Feed" href="http://feeds.feedburner.com/GamasutraFeatureArticles/">
+        <link rel="alternate" type="application/rss+xml" title="Gamasutra News Feed" href="http://feeds.feedburner.com/GamasutraNews/">
+        <link rel="alternate" type="application/rss+xml" title="Gamasutra Columns Feed" href="http://feeds.feedburner.com/GamasutraColumns/">
+        <link rel="alternate" type="application/rss+xml" title="Gamasutra Jobs Feed" href="http://feeds.feedburner.com/GamasutraJobs/">
+        <!-- link href="https://twimgs.com/gamasutra/css/minified.css" rel="stylesheet" type="text/css" / -->
+        <link href="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/gama_unminified.css" rel="stylesheet" type="text/css">
+		<style>
+			
+				#div-gpt-ad-Ltile1 {
+					margin-top: 10px;
+				}
+			
+		</style>
+        
+        <meta name="node" content="224">
+        <meta name="pagecaching" content="780">
+                <script type="text/javascript" async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/www.gamasutra.com.js.download"></script><script type="text/javascript" async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/elqCfg.min.js.download"></script><script type="text/javascript" async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/elqCfg.min.js(1).download"></script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/cb=gapi.loaded_1" async=""></script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/cb=gapi(1).loaded_0" async=""></script><script type="text/javascript" async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/ga.js.download"></script><script async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/log.js.download"></script><script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/at.js.download"></script><style id="at-mbox-default-style">.mboxDefault {visibility:hidden;}</style><style>.at-element-marker {visibility:visible;}</style>
+        <script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/redesign_comments.js.download"></script>
+		<script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/jquery-1.8.2.min.js.download"></script>
+		<script type="text/javascript"> 
+        
+		function checkMail(obj){
+	 
+		   var think_opt_out = document.getElementById('Think_Opt_Out');
+	 
+		   if (document.getElementById('Think_Opt_Out').checked) {
+	 
+				 document.getElementById('Think_Opt_In').value = 0;
+		   } else {
+	 
+				 document.getElementById('Think_Opt_In').value = 1;
+		   }
+		   var firstname = document.getElementById('firstname').value;
+		   if (firstname == ""){
+				 alert('Please provide your first name');
+				 return false;
+		   }
+	 
+		   if (document.getElementById('lastname').value == ''){
+				 alert("Please provide your lastt name");
+				 return false;
+		   }
+	 
+	 
+		   var x = document.getElementById('EmailAddr').value;
+	 
+		   var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		   if (filter.test(x)) { return true; }
+		   else  { alert('Invalid Email Address detected. Please correct.'); return false; }
+	 
+	 
+		}
+		 
+		</script>
+        <script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/md5.js.download"></script>
+
+        
+
+        <script type="text/javascript">
+        var adrand = parseInt(Math.random()*1000000000, 10);
+        var adkeys = "key1+key2+key3+key4";
+        </script>
+
+        	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	
+	<script type="text/javascript">
+            
+		var browser			= navigator.userAgent;
+		var browserRegex	= /(Android|BlackBerry|IEMobile|Nokia|iP(ad|hone|od)|Opera M(obi|ini))/;
+		var isMobile		= false;
+		if(browser.match(browserRegex)) {
+			isMobile			= true;
+			
+		}
+        
+	</script>
+        <!-- Start Visual Website Optimizer Asynchronous Code -->
+        <script type="text/javascript">
+        
+        var _vwo_code=(function(){
+        var account_id=32069,
+        settings_tolerance=2000,
+        library_tolerance=2500,
+        use_existing_jquery=false,
+        // DO NOT EDIT BELOW THIS LINE
+        f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+        
+        </script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/j.php" type="text/javascript"></script>
+        <!-- End Visual Website Optimizer Asynchronous Code -->
+       
+        
+        <!-- Start HeatMap.me Code -->
+		<script type="text/javascript">
+		(function(h,e,a,t,m,p)
+		{ m=e.createElement(a);m.async=!0;m.src=t; p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p); }
+		)(window,document,'script','https://u.heatmap.it/log.js');
+		</script>
+		<!-- End HeatMap.me Code -->
+        
+        
+        <!-- Start: GPT Sync -->
+        <script type="text/javascript">
+         
+         var gptadslots=[];
+         (function(){
+          var useSSL = 'https:' == document.location.protocol;
+          var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+          document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+         })();
+         
+        </script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/gpt.js.download"></script><script id="gpt-impl-0.3014964570720571" src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_173.js"></script><link rel="preload" href="https://adservice.google.com.ph/adsid/integrator.sync.js?domain=www.gamasutra.com" as="script"><script src="https://adservice.google.com.ph/adsid/integrator.sync.js?domain=www.gamasutra.com"></script><script>processGoogleTokenSync({"newToken":"FBS"},5);</script>
+
+        <script type="text/javascript">
+              
+                      googletag.pubads().setTargeting('kw',['design','indie']);
+                                            googletag.pubads().setTargeting('aid',['277766']);
+          		
+				if (document.documentElement.clientWidth > 767)
+				{
+				//Adslot 19 declaration
+		
+					gptadslots[19]=googletag.defineSlot('/2441/Gamasutra/independentgames',[[2,2]],'div-gpt-ad-welcome').setTargeting('pos',['welcome']).addService(googletag.pubads());
+		
+				}
+				else
+				{
+				//Adslot 20 declaration
+		
+					gptadslots[20]=googletag.defineSlot('/2441/Gamasutra/independentgames',[[7,7]],'div-gpt-ad-mi').setTargeting('pos',['mi']).addService(googletag.pubads());
+		
+				}
+				  
+		
+				if (document.documentElement.clientWidth > 767){//Adslot 3 declaration
+		
+					gptadslots[1]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[1,2]],'div-gpt-ad-skin').setTargeting('pos',['skin']).addService(googletag.pubads());
+
+					gptadslots[2]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[728,90]],'div-gpt-ad-top').setTargeting('pos',['top']).addService(googletag.pubads());
+		
+				}else{ 
+		
+					gptadslots[13]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[300,50]],'div-gpt-ad-mobile_leaderboard').setTargeting('pos',['mobile_leaderboard']).addService(googletag.pubads());
+		
+
+		}
+		            
+          //Adslot 1 declaration
+       
+
+				  //Adslot 2 declaration
+		
+				if (document.documentElement.clientWidth > 767){//Adslot 3 declaration
+		
+
+					 //Adslot 3 declaration
+					 gptadslots[3]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[164,59]],'div-gpt-ad-button1').setTargeting('pos',['button1']).addService(googletag.pubads());
+
+					 //Adslot 4 declaration
+					 gptadslots[4]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[164,59]],'div-gpt-ad-button2').setTargeting('pos',['button2']).addService(googletag.pubads());
+
+					 //Adslot 5 declaration
+					 gptadslots[5]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[164,409]],'div-gpt-ad-callout').setTargeting('pos',['callout']).addService(googletag.pubads());
+		
+
+				}
+		
+						
+			//Adslot 6 declaration
+			gptadslots[6]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[300,250]],'div-gpt-ad-rec1').setTargeting('pos',['rec1']).addService(googletag.pubads());
+						
+		
+				if (document.documentElement.clientWidth > 767){//Adslot 3 declaration
+		
+
+					 //Adslot 7 declaration
+					 gptadslots[7]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[160,600]],'div-gpt-ad-sky1').setTargeting('pos',['sky1']).addService(googletag.pubads());
+
+					 //Adslot 8 declaration
+					 gptadslots[8]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[160,160]],'div-gpt-ad-Ltile1').setTargeting('pos',['Ltile1']).addService(googletag.pubads());
+
+					 //Adslot 9 declaration
+					 gptadslots[9]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[164,177]],'div-gpt-ad-custom1').setTargeting('pos',['custom1']).addService(googletag.pubads());
+
+					
+					 //Adslot 11 declaration
+					 gptadslots[11]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[164,177]],'div-gpt-ad-custom3').setTargeting('pos',['custom3']).addService(googletag.pubads());
+					  
+          
+		
+		}
+		
+		 gptadslots[14]= googletag.defineSlot('/2441/Gamasutra/independentgames', [[3,3]],'div-gpt-ad-ribbon').setTargeting('pos',['ribbon']).addService(googletag.pubads());
+		 		 		 													//Adslot 21 declaration
+			gptadslots[21]=googletag.defineSlot('/2441/Gamasutra/independentgames',[[8,2]],'div-gpt-ad-native').setTargeting('pos',['native']).addService(googletag.pubads());
+			//Adslot 22 declaration
+			gptadslots[22]=googletag.defineSlot('/2441/Gamasutra/independentgames',[[8,4]],'div-gpt-ad-insight').setTargeting('pos',['insight']).addService(googletag.pubads());
+			//Adslot 23 declaration
+			gptadslots[23]=googletag.defineSlot('/2441/Gamasutra/independentgames',[[4,4]],'div-gpt-ad-video').setTargeting('pos',['video']).addService(googletag.pubads());
+		
+
+         googletag.pubads().enableSingleRequest();
+         googletag.pubads().enableSyncRendering();
+         googletag.enableServices();
+        </script>
+        <!-- End: GPT -->
+	
+	<script type="text/javascript">
+	
+	  var _AdsNativeOpts =
+	  {
+	
+		keywords: ['independentgames']
+	
+	  };
+	
+	</script>
+        
+         		<script type="text/javascript">
+ 		
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-48094207-1']);
+			_gaq.push(['_trackPageview']);
+			(function()
+			{ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); }
+			)();
+		
+		</script>
+		<link rel="stylesheet" href="https://i.ubm-us.net/oas/nativead/css/game_nativead.css">
+		<script language="JavaScript" src="https://i.ubm-us.net/oas/nativead/js/nativead.js"></script>
+		<script language="JavaScript" src="https://i.ubm-us.net/oas/nativead/js/game_nativead.js"></script>
+		
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/svrGP"></script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/va-9a8f11a7f383bcae5b9aa6b52ebd0799.js.download" type="text/javascript"></script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/track-9a8f11a7f383bcae5b9aa6b52ebd0799.js.download" type="text/javascript"></script><script src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/opa-985527e858c6869abbdcb9b4109b357b.js.download" type="text/javascript"></script><iframe style="display: none;" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/saved_resource.html"></iframe><script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/svrGP(1)"></script><script async="true" type="text/javascript" src="https://s.adroll.com/j/roundtrip.js"></script></head>
+<body>
+	<!-- Beginning Sync AdSlot 19 for Ad unit Gamasutra//independentgames ### size: [[2,2]]  -->
+<div id="div-gpt-ad-welcome">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-welcome');
+ </script>
+</div>
+<!-- End AdSlot 19 -->
+	<!-- Beginning Sync AdSlot 20 for Ad unit Gamasutra//independentgames ### size: [[7,7]]  -->
+<div id="div-gpt-ad-mi">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-mi');
+ </script>
+</div>
+<!-- End AdSlot 20 -->
+    <div class="hide-phone">
+                                <!-- Beginning Sync AdSlot 1 for Ad unit Gamasutra//independentgames ### size: [[1,2]]  -->
+<div id="div-gpt-ad-skin">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-skin');
+ </script>
+</div>
+<!-- End AdSlot 1 -->
+            </div>
+
+    <div class="hide-phone">
+         <div class="wrapper properties">
+            <div class="container">
+                    <ul>
+                        <li>Our Properties:</li>
+                        <li class="activetab"><a href="https://www.gamasutra.com/" class="active">Gamasutra</a></li>
+                        <li><a href="http://www.gamecareerguide.com/">GameCareerGuide</a></li>
+                        <li><a href="http://www.indiegames.com/">IndieGames</a></li>
+                        <li><a href="http://www.gdcvault.com/">GDC Vault</a></li>
+                        <li><a href="http://www.gdconf.com/">GDC</a></li>
+                        <li><a href="http://www.igf.com/">IGF</a></li>
+                   </ul>
+              </div>
+         </div><!--end wrapper-->
+    </div>
+    
+    <br>
+     <div class="container bottom3">
+     	<div class="span-7">
+          	<a href="http://www.gamasutra.com/"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/gamasutra_logo.png" alt="Gamasutra: The Art &amp; Business of Making Games" width="243" height="77" border="0"></a><img alt="spacer" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/spacer.gif" width="27">
+		</div>
+          <div class="hide-phone">
+              <div class="div span-16 last leaderboard">
+                     
+                                                                               <!-- Beginning Sync AdSlot 2 for Ad unit Gamasutra//independentgames ### size: [[728,90]]  -->
+<div id="div-gpt-ad-top">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-top');
+ </script>
+</div>
+<!-- End AdSlot 2 -->
+                                           
+    
+              </div>
+          </div>
+    </div>
+          
+<div class="container"> 
+		<div class="span-20">
+			<div class="show-phone clearfix" style="padding:0px 0 5px 0"><!--sadie change-->
+                        <div class="span-5 center ">
+								<!-- Beginning Sync AdSlot 2 for Ad unit Gamasutra//independentgames ### size: [[300,50]]  -->
+<div id="div-gpt-ad-mobile_leaderboard">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-mobile_leaderboard');
+ </script>
+</div>
+<!-- End AdSlot 2 -->
+
+                        </div>
+				</div>
+
+                    <div class="show-phone"><!--there is another on the page for the regular size, this is phone only-->
+                         <div class="span-5 last nav_search">
+                              <div class="content center">
+                                   <span class="nav_searchtxt">SEARCH</span>
+                                   <form class="left" name="topsearchph" action="https://www.gamasutra.com/search/" method="GET">
+          
+                                               <input name="search_text" type="text" size="25" class="search">	  
+                                              <span class="nav_searchbutton"><a href="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php" onclick="javascript: document.topsearchph.submit(); return false;">GO</a></span>
+                                   
+                                   </form>
+                              </div>
+                         </div>
+                    </div><!--end show phone-->
+                    
+                    <div class="show-phone"><!--sadie change-->
+                        <div class="span-3">
+                                  <div class="login_phone" id="login_phone"><a href="http://www.gamasutra.com/sso/login.php?from=https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php">LOGIN</a></div>
+                        </div>
+                    </div><!--end showphone-->
+                    <div class="nav">
+                	<div class="span-3 nav_jobs">
+                    	<div class="content">
+                              <a href="http://jobs.gamasutra.com/">GAME JOBS</a>
+                          </div>
+                    </div>
+                    <div class="span-12 nav_links">
+                         <div class="content">
+                                   <a href="https://www.gamasutra.com/updates/">updates</a>
+                                   <a href="https://www.gamasutra.com/blogs/">Blogs</a>
+                                   
+                                   <a href="https://www.gamasutra.com/contractors/contractor_display.php">contractors</a>
+                                   <a href="https://www.gamasutra.com/newsletter-signup">newsletter</a>
+                                   <a href="https://store.cmpgame.com/storefront.php?loc=&amp;skin=gamasutra_redesign">store</a>
+                         </div>
+                    </div>
+                    <div class="hide-phone">
+                        <div class="span-5 last nav_search">
+                             <div class="content">
+                                  <span class="nav_searchtxt">SEARCH</span>
+                                  <form class="left" name="topsearch" action="https://www.gamasutra.com/search/" method="GET">
+
+                                              <input name="search_text" type="text" size="10" class="search">	  
+                                             <span class="nav_searchbutton"><a href="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php" onclick="javascript: document.topsearch.submit(); return false;">GO</a></span>
+
+                                    </form>
+                             </div>
+                        </div>
+                    </div>
+                    <br class="clear">
+               </div><!--end nav-->
+               <div class="hide-phone"> 
+                    <div class="span-20 last"> 
+                       <div class="topicmenu">
+                            <ul>
+                                <li class="activetab"><a href="http://www.gamasutra.com/">ALL</a>
+                                </li><li><a href="https://www.gamasutra.com/topic/console-pc">CONSOLE/PC</a>
+                                </li><li><a href="https://www.gamasutra.com/topic/smartphone-tablet">SMARTPHONE/TABLET</a>
+                                </li><li><a href="https://www.gamasutra.com/topic/indie">INDEPENDENT</a>
+                                </li><li><a href="https://www.gamasutra.com/topic/vr">VR/AR</a>
+                                </li><li><a href="https://www.gamasutra.com/topic/social-online">SOCIAL/ONLINE</a>
+                                </li></ul>
+                                                          <span class="gdmag"><a href="https://www.gamasutra.com/topic/game-developer"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/btn_gdmag0.png" width="118px" height="33px"></a></span>
+                       </div>
+                   </div>
+               </div>		
+                    <div class="span-20 last content_bg">
+                        <div class="hide-phone">
+<div class="span-4">
+  <div class="content_box_left">
+    <div class="leftcol">
+        <!--member login-->
+                    <table width="166" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>   
+    <td id="memberLogin" class="welcome">            <span class="MedGreenHeader">Member Login </span>
+            <div id="status" class="errors" style="color: #FF0000;margin-left: 5px;"></div>
+            <form onsubmit="NextGen.login(&#39;email&#39;,&#39;password&#39;,&#39;rememberme&#39;); return false;" method="post" id="LoginForm" name="login_form">
+               <table width="166" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                     <tr>
+                        <td width="5" rowspan="5"><img width="5" border="0" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/spacer.gif"></td>
+                        <td width="70" align="right" class="SmWhiteText">Email:&nbsp;&nbsp;</td>
+                        <td width="87"><input type="text" class="login_1" name="email"></td>
+                        <td width="5" rowspan="5"><img width="5" border="0" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/spacer.gif"></td>
+                     </tr>
+                     <tr>
+                        <td align="right" class="SmWhiteText">Password:&nbsp;&nbsp;</td>
+                        <td><input type="password" class="login_1" name="password"></td>
+                     </tr>
+                     <tr>
+                        <td>&nbsp;</td>
+                        <td style="padding: 3px;"><input type="submit" class="button" value="Login" id="submit" name="submit"></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><a class="SmWhiteText" onclick="NextGen.forgetpassword();" href="javascript:void(0)">Forgot Password?</a>&nbsp;<a class="SmRedText" id="lbreglnk" href="javascript:void(0)" onclick="NextGen.register(&#39;/registration/index?assetId=347883&#39;);">Sign Up</a></td>
+                     </tr>                     
+                  </tbody>
+               </table>
+            </form>
+        </td>   
+  </tr>
+</tbody></table>
+                 <!--end memberlogin-->
+        
+        <!--begin social icons-->
+            <!--begin social icons-->
+<div class="bottom2">
+    <ul class="leftcol_social">
+       <li class="facebook"><a href="http://www.facebook.com/pages/Gamasutra/31610613408" target="_blank">&nbsp;</a></li>
+       <li class="twitter"><a href="http://twitter.com/gamasutra" target="_blank">&nbsp;</a></li>
+       <li class="feed"><a href="http://www.gamasutra.com/static2/rssfeeds.html">&nbsp;</a></li>
+       <li class="newsletter"><a href="https://www.gamasutra.com/newsletter-signup">&nbsp;</a></li>
+    </ul>
+</div>
+<!--end social icons-->
+        <!--end social icons-->
+        
+        <!--begin page numbers-->
+                <!--end page numbers-->
+        
+        <!--begin leftnav-->
+                <div class="leftnav_categories bottom2">
+   <a href="https://www.gamasutra.com/category/programming/"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_programming.gif" width="24px" height="24px"></a>
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/programming/">PROGRAMMING</a></div>
+
+   <hr>
+
+   <a href="https://www.gamasutra.com/category/art/"><img alt="spacer" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_art.gif" width="24px" height="24px"></a>
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/art/">ART</a></div>
+
+   <hr>
+
+   <a href="https://www.gamasutra.com/category/audio/"><img alt="spacer" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_audio.gif" width="24px" height="24px"></a>         
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/audio/">AUDIO</a></div>
+
+   <hr>
+
+   <a href="https://www.gamasutra.com/category/design/"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_design.gif" width="24px" height="24px"></a>
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/design/">DESIGN</a></div>
+
+   <hr>
+
+   <a href="https://www.gamasutra.com/category/production/"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_production.gif" width="24px" height="24px"></a>
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/production/">PRODUCTION</a></div>
+
+   <hr>
+   <a href="https://www.gamasutra.com/category/business-marketing/"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/button_business.gif" width="24px" height="24px"></a>
+   <div class="leftnav_btn"><a href="https://www.gamasutra.com/category/business-marketing/">BIZ/MARKETING</a></div>
+
+   <br class="clear">
+</div>          <!--end leftnav-->
+                  
+                    <!-- Beginning Sync AdSlot 3 for Ad unit Gamasutra//independentgames ### size: [[164,59]]  -->
+<div id="div-gpt-ad-button1">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-button1');
+ </script>
+</div>
+<!-- End AdSlot 3 -->
+            <!-- Beginning Sync AdSlot 4 for Ad unit Gamasutra//independentgames ### size: [[164,59]]  -->
+<div id="div-gpt-ad-button2">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-button2');
+ </script>
+</div>
+<!-- End AdSlot 4 -->
+            <!-- Beginning Sync AdSlot 5 for Ad unit Gamasutra//independentgames ### size: [[164,409]]  -->
+<div id="div-gpt-ad-callout">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-callout');
+ </script>
+</div>
+<!-- End AdSlot 5 -->
+            <!-- Beginning Sync AdSlot 9 for Ad unit Gamasutra//independentgames ### size: [[164,177]]  -->
+<div id="div-gpt-ad-custom1">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-custom1');
+ </script>
+</div>
+<!-- End AdSlot 9 -->
+            <!-- Beginning Sync AdSlot 11 for Ad unit Gamasutra//independentgames ### size: [[164,177]]  -->
+<div id="div-gpt-ad-custom3">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-custom3');
+ </script>
+</div>
+<!-- End AdSlot 11 -->
+                
+        <!-- begin event tickers -->
+			              
+        <!-- end event tickers -->
+	
+         <!--begin jobs-->
+            <div class="header"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_jobs.png" width="22px" height="20px"><a href="http://jobs.gamasutra.com/">Latest Jobs</a></div>
+<div class="leftnav bottom2">
+     <a href="http://jobs.gamasutra.com/"><strong>View All</strong></a> &nbsp;&nbsp;&nbsp;
+     <a href="http://feeds.feedburner.com/GamasutraJobs"><strong>RSS</strong></a>
+     <hr>
+     <strong>January 22, 2018</strong>
+     <hr>
+     <ul>    
+            <li>Remedy Entertainment<br>
+              <a href="http://jobs.gamasutra.com/job/lead-game-designer-espoo-32620">Lead Game Designer</a>
+        </li>
+        <li class="line"></li>
+            <li>Blackstorm<br>
+              <a href="http://jobs.gamasutra.com/job/studio-game-engineer-mountain-view-california-32576">Studio Game Engineer</a>
+        </li>
+        <li class="line"></li>
+            <li>Plarium Michigan Studio LP<br>
+              <a href="http://jobs.gamasutra.com/job/senior-systems-designer-portage-michigan-32454">Senior Systems Designer</a>
+        </li>
+        <li class="line"></li>
+            <li>Naughty Dog<br>
+              <a href="http://jobs.gamasutra.com/job/web-developer-santa-monica-california-32572">Web Developer</a>
+        </li>
+        <li class="line"></li>
+            <li>Naughty Dog<br>
+              <a href="http://jobs.gamasutra.com/job/scripting-systems-designer-single-player-santa-monica-california-32570">Scripting / Systems Designer (Single Player)</a>
+        </li>
+        <li class="line"></li>
+            <li>Naughty Dog<br>
+              <a href="http://jobs.gamasutra.com/job/level-environment-designer-multiplayer-santa-monica-california-32569">Level / Environment Designer (Multiplayer)</a>
+        </li>
+        <li class="line"></li>
+         </ul>    
+</div>
+         <!--end jobs-->   
+           			
+         <!--begin blogs-->
+            <div class="header"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_blogs.png" width="22px" height="20px"><a href="https://www.gamasutra.com/blogs/">Latest Blogs</a></div>
+<div class="leftnav bottom2">
+    <a href="https://www.gamasutra.com/blogs/"><strong>View All</strong></a> 
+    &nbsp;&nbsp;&nbsp; <a href="https://www.gamasutra.com/blogs/edit/"><strong>Post</strong></a>
+    &nbsp;&nbsp;&nbsp; <a href="https://www.gamasutra.com/blogs/rss/"><strong>RSS</strong></a>
+    <hr>
+    <strong>January 22, 2018</strong>
+    <hr>   
+    <ul>
+        
+        <li>
+            <a href="https://www.gamasutra.com/blogs/JohnKrajewski/20180122/313394/Virtual_Worlds_Designed_by_Their_Inhabitants.php">Virtual Worlds Designed by Their Inhabitants</a>
+                    </li>
+        <li class="line"></li>
+        
+        <li>
+            <a href="https://www.gamasutra.com/blogs/SimonCarless/20180121/313396/Video_Game_Deep_Cuts_Labo_On_A_Police_Quest.php">Video Game Deep Cuts: Labo On A Police Quest?</a>
+             
+                [<a title="1 comments" href="https://www.gamasutra.com/blogs/SimonCarless/20180121/313396/Video_Game_Deep_Cuts_Labo_On_A_Police_Quest.php#comments">1</a>]
+                    </li>
+        <li class="line"></li>
+        
+        <li>
+            <a href="https://www.gamasutra.com/blogs/LarsDoucet/20180119/313283/So_You_Want_To_Compete_With_Steam.php">So You Want To Compete With Steam</a>
+             
+                [<a title="6 comments" href="https://www.gamasutra.com/blogs/LarsDoucet/20180119/313283/So_You_Want_To_Compete_With_Steam.php#comments">6</a>]
+                    </li>
+        <li class="line"></li>
+        
+        <li>
+            <a href="https://www.gamasutra.com/blogs/BobWhitaker/20180119/313327/Call_of_Duty_WWII_and_Historical_Memory.php">Call of Duty WWII and Historical Memory</a>
+             
+                [<a title="1 comments" href="https://www.gamasutra.com/blogs/BobWhitaker/20180119/313327/Call_of_Duty_WWII_and_Historical_Memory.php#comments">1</a>]
+                    </li>
+        <li class="line"></li>
+        
+        <li>
+            <a href="https://www.gamasutra.com/blogs/RaphKoster/20180117/313211/The_cost_of_games.php">The cost of games</a>
+             
+                [<a title="19 comments" href="https://www.gamasutra.com/blogs/RaphKoster/20180117/313211/The_cost_of_games.php#comments">19</a>]
+                    </li>
+        <li class="line"></li>
+       
+    </ul>
+</div>
+         <!--end blogs-->
+         
+         <!--begin press releases-->
+            <div class="header"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_blogs.png" width="22px" height="20px">Press Releases</div>
+<div class="leftnav bottom2">
+    <strong>January 22, 2018</strong>
+	<hr>
+	       <a href="https://www.gamasutra.com/pressreleases_index.php"><strong>Games Press</strong></a>
+   <hr>
+   <ul>
+          
+        <li>
+            <a href="https://www.gamasutra.com/view/pressreleases/313417/DBFZ_LAUNCH_TRAILER_AND_MORE.php">DBFZ LAUNCH TRAILER AND<br>
+MORE!</a>
+        </li>
+        <li class="line"></li>
+          
+        <li>
+            <a href="https://www.gamasutra.com/view/pressreleases/313418/CashBet_Seeks_40_Million_for_Worlds_Only_Complete_CryptoReady_Mobile_iGaming_Platform.php">CashBet Seeks $40 Million<br>
+for Worldâ€™s Only...</a>
+        </li>
+        <li class="line"></li>
+          
+        <li>
+            <a href="https://www.gamasutra.com/view/pressreleases/313419/Clockwork_Giants_announces_offtherails_thirdperson_shooter_Introspect_for_PC_release_in_2019_featuring_enormous_dystopian_automatons.php">Clockwork Giants<br>
+announces off-the-rails<br>
+third...</a>
+        </li>
+        <li class="line"></li>
+          
+        <li>
+            <a href="https://www.gamasutra.com/view/pressreleases/313421/Jam_City_and_Panda_Pop_Team_Up_with_Pro_Football_Star_Ty_Montgomery_in_Save_the_Babies_Event_Benefiting_the_Coalition_for_Children_Youth__Families.php">Jam City and Panda Pop<br>
+Team Up with Pro<br>
+Football...</a>
+        </li>
+        <li class="line"></li>
+          
+        <li>
+            <a href="https://www.gamasutra.com/view/pressreleases/313420/Hatch_Beta_opens_in_UK_and_Ireland_as_Square_Enix_Montreal_adds_to_industry_backing_for_pioneering_gamesondemand_service.php">Hatch Beta opens in UK<br>
+and Ireland as Square<br>
+Enix...</a>
+        </li>
+        <li class="line"></li>
+         </ul>
+   <a href="https://www.gamasutra.com/pressreleases_index.php"><strong>View All</strong></a> 
+   &nbsp;&nbsp;&nbsp; <a href="https://www.gamasutra.com/pressreleases/rss/"><strong>RSS</strong></a>
+</div>         <!--end press releases-->
+                         
+         <!--begin calendar-->
+            <!--
+
+<div class="header"><img alt="arrow" src="https://twimgs.com/gamasutra/images/icon_calendar.png" width="22px" height="20px"/><a href="http://www.gamasutra.com/calendar/calendar.php">Calendar</a></div>
+<div class="leftnav bottom2">
+    <a href="http://www.gamasutra.com/calendar/calendar.php"><strong>View All</strong></a> &nbsp;&nbsp;&nbsp; <a href="http://www.gamasutra.com/calendar/calendar_submit.php"><strong>Submit Event</strong></a>
+    <hr>
+    <ul>
+        
+    </ul>
+</div>
+
+-->         <!--end calendar-->
+                         
+         <!--begin about-->
+            <div class="header"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_about.png" width="22px" height="20px"><a href="https://www.gamasutra.com/contactus">About</a></div>
+<div class="leftnav bottom2">
+    <ul>
+            <li><strong>Editor-In-Chief: </strong><br><a href="mailto:kgraft@gamasutra.com">Kris Graft</a></li>
+            <li class="line"></li>
+         
+       
+            <li><strong> Editor: </strong><br> <a href="mailto:alex.wawro@ubm.com">Alex Wawro</a></li>
+            <li class="line"></li>
+
+            <li><strong>Assignment Editor: </strong><br> <a href="mailto:chris.baker@ubm.com">Chris Baker</a></li>
+            <li class="line"></li>
+            <li><strong>Contributors: </strong><br>
+		Chris Kerr<br>
+	    	Alissa McAloon<br>
+		Emma Kidwell<br>
+		Bryant Francis<br>
+		Katherine Cross<br>
+            </li><li><strong>Advertising: </strong><br><a href="mailto:libby.kruse@ubm.com">Libby Kruse</a></li>
+    </ul>
+    <hr>
+    <div class="center"><a href="https://www.gamasutra.com/contactus">Contact Gamasutra</a></div>
+    <hr>
+    <div class="center"><a href="mailto:support@gamasutra.com">Report a Problem</a></div>
+    <hr>
+    <div class="center"><a href="mailto:news@gamasutra.com">Submit News</a></div>
+    <hr>
+    <div class="center"><a href="https://www.gamasutra.com/static2/comment_guidelines.html">Comment Guidelines</a></div>
+    <hr>
+    <div class="center"><a href="https://www.gamasutra.com/static2/blogsubmissions.html">Blogging Guidelines</a></div>
+	<hr>
+    <div class="center"><a href="https://www.gamasutra.com/static2/howwework.html">How We Work</a></div>
+</div>
+
+<div class="bottom2">
+    <a href="http://www.ubmgamenetwork.com/online/" target="_blank">
+        <img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/AdwGama_177x60_button_v1.jpg" alt="Sponsor" border="0" class="whiteTop" width="177px" height="60px">
+    </a>
+</div>
+             <!--end about-->
+         
+         <!--begin network-->
+            <div class="header"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_about.png" width="22px" height="20px"><a href="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php#">Gama Network</a></div>
+<div class="leftnav_network bottom2">
+    If you enjoy reading this site, you might also want to check out these UBM Tech sites:
+    <hr>
+    <a href="http://www.gamecareerguide.com/"><!-- img src="http://www.indiegames.com/blog/gcgmini.jpg" align="left" hspace="2"/ --></a> 
+    <div class="leftnav_btn"><a href="http://www.gamecareerguide.com/">Game Career Guide</a></div>
+    <hr>
+    <a href="http://www.indiegames.com/blog"><!-- img src="http://www.indiegames.com/blog/indiemini.jpg" align="left" hspace="2"/ --></a>
+    <div class="leftnav_btn"><a href="http://www.indiegames.com/blog">Indie Games</a></div>
+    <br class="clear">
+</div>         <!--end network-->
+         
+         <!--begin store-->
+                     <!--end store-->
+         
+                
+    </div><!--end leftcol-->
+  </div>
+</div> 
+</div>  	<style>.content_box_middle pre {
+		overflow-x:auto;
+	}
+	.item_title{
+		    margin-top: 0px !important;
+			margin-bottom: 0px !important;
+	}
+	</style>
+<div class="span-16 last">
+    <div class="content_box_middle">
+        <!-- InstanceBeginEditable name="BodyContent" --> 
+        <div class="header_large">
+            <span class="left"><img alt="arrow" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_blogs.png"><a href="https://www.gamasutra.com/blogs/">Blogs</a></span>
+        </div>
+        <div class="page_item"> 
+                        <div class="clear">&nbsp;</div>
+            <h1 class="item_title">Use Paper Prototyping to design your games</h1>
+            <div>
+                <span class="newsAuth">by <a href="https://www.gamasutra.com/blogs/author/MarcoMignano/1010959/">Marco Mignano</a> on 07/25/16 10:30:00 am 
+                                                                                <br>
+                </span>
+            </div>
+            <div>
+                <br>
+                                    <span class="comment_text">
+                                                    <a href="https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php#comments">Post A Comment</a>
+                                            </span>
+                    <a name="twitter_share" type="button" href="http://twitter.com/?status=RT%20@gamasutra:%20Use%20Paper%20Prototyping%20to%20design%20your%20games%20http://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/" target="_blank"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/twitter.gif" alt="Share on Twitter" border="0" height="20"></a>
+                    <iframe src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/share_button.html" width="72" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+
+                    <script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/plusone.js.download" gapi_processed="true"></script>
+                    <div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1516635486526" name="I0_1516635486526" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/fastbutton.html" data-gapiattached="true" title="G+"></iframe></div>
+					<span id="edit_post_link"></span>&nbsp;&nbsp;
+					<a href="https://www.gamasutra.com/blogs/rss/"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/icon_rss.gif" width="15" height="15" border="0" alt="RSS"></a>
+                            </div>
+            <hr>
+            <div class="item_body mobile_image_transform">       
+                <strong><i><small>
+                    The following blog post, unless otherwise noted, was written by a member of Gamasutra’s community.<br>
+                    The thoughts and opinions expressed are those of the writer and not Gamasutra or its parent company.
+                </small></i></strong>
+                <hr>
+                <div class="clear">&nbsp;</div>
+                <p><strong>What is a paper prototyping?</strong><br>
+A paper prototype is a game concept (both mechanics and aesthetics) explained using paper. So basically, you will create a game concept with pencils and paper .</p>
+
+<p>&nbsp;</p>
+
+<h3><strong>Why paper prototyping it important?</strong></h3>
+
+<p>A paper prototype have a lot of advantages:</p>
+
+<ol>
+	<li data-mce-style="font-weight: 400;">Quick to make.</li>
+	<li data-mce-style="font-weight: 400;">No technical skills needed.</li>
+	<li data-mce-style="font-weight: 400;">Easy to make.</li>
+	<li data-mce-style="font-weight: 400;">Easy to test and evaluate.</li>
+	<li data-mce-style="font-weight: 400;">Easy to change.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p><strong>Quick to make:</strong></p>
+
+<p>A paper prototype it very easy and fast to make, you just need to sketch your ideas on paper, it’s really a matter of minutes.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>No technical skills needed:</strong></p>
+
+<p>You don’t need to know any programming languages or other technicals stuff. Knowing how to hold a pencil will be enough.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Easy to make:</strong></p>
+
+<p>You don’t need any special equipements; paper and pencils will be enough.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Easy to test and evaluate:</strong></p>
+
+<p>If you look at your paper prototype once it’s done, you will immediately have feedbacks about it. Evaluate basic game mechanics and aesthetics will be incredibly easy and fast.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Easy to change</strong></p>
+
+<p>If you notice that something is wrong in your paper prototype, making some changes will be extremely easy and fast.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Paper prototype for digital games:</strong></p>
+
+<p>Paper prototypes are extremely helpful not only for board games but also for digital games. If you adopt paper prototype for you digital games, you will be able to evaluate some core concept and gameplay mechanics that otherwise, implementing directly in your digital games would take a lot of time.</p>
+
+<p>&nbsp;</p>
+
+<h3>Examples</h3>
+
+<p>These are some examples of paper prototype that i made to craft the main obstacles for my mobile game,&nbsp;<a data-mce-href="http://colorswars.gladiogames.com" href="http://colorswars.gladiogames.com/" target="_blank">Colors Wars</a>:</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="Paper prototype" data-mce-src="https://gamedevelopertips.com/wp-content/uploads/2016/06/Schermata-2016-06-20-alle-09.04.38.png" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/Schermata-2016-06-20-alle-09.04.38.png" style="height:447px; width:597px"></p>
+
+<p>I think it took me 5 minutes to craft those 2 obstacle which later will become into this:</p>
+
+<p><img alt="Digital Prototype" data-mce-src="http://gamedevelopertips.com/wp-content/uploads/2016/06/Schermata-2016-06-20-alle-09.06.55.png" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/Schermata-2016-06-20-alle-09.06.55.png" style="height:163px; width:294px"></p>
+
+<p>As you can see, by doing a paper prototype, I was able to create obstacles and define the core game mechanics of each obstacle. Later I’ve combined more obstacles together in order to create patterns, and again paper prototype gave me a big help to define the desired difficulty of each pattern and allowed me to save a lot of time.<strong>&nbsp;If on a paper prototype I realize that something was wrong, redoing it or changing it was really a matter of a few seconds</strong>. The same changes on digital prototype would have cost me at least 10 times more in terms of time invested.</p>
+
+<p>This is another examples of a complex paper prototype for a third person shooting game:</p>
+
+<p><img alt="Paper prototype for 3d game" data-mce-src="https://gamedevelopertips.com/wp-content/uploads/2016/06/Schermata-2016-06-20-alle-09.08.25.png" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/Schermata-2016-06-20-alle-09.08.25.png" style="height:437px; width:604px"></p>
+
+<p>From the book&nbsp;<a data-mce-href="https://books.google.it/books/about/Introduction_to_Game_Design_Prototyping.html?id=40T1AwAAQBAJ&amp;source=kp_cover&amp;redir_esc=y&amp;hl=en" href="https://books.google.it/books/about/Introduction_to_Game_Design_Prototyping.html?id=40T1AwAAQBAJ&amp;source=kp_cover&amp;redir_esc=y&amp;hl=en" target="_blank">Introduction to game design</a>.</p>
+
+<p>Imagine how much time you have to invest on it if you had to develop the digital version version of this paper prototype just to evaluate the core game mechanics.</p>
+
+<p>&nbsp;</p>
+
+<h3>Other use of paper prototyping.</h3>
+
+<p>Paper prototype can be good not only to evaluate game mechanics, but can also be used for level design:</p>
+
+<p><img alt="Level design on paper" data-mce-src="https://gamedevelopertips.com/wp-content/uploads/2016/06/Schermata-2016-06-20-alle-09.12.00.png" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/Schermata-2016-06-20-alle-09.12.00.png" style="height:415px; width:597px"></p>
+
+<p>This is a peace of level designed for the game&nbsp;<a data-mce-href="http://dagadventures.com" href="http://dagadventures.com/" target="_blank">Dag Adventures</a>. You can also design UI or basically any elements related to the game.</p>
+
+<p>&nbsp;</p>
+
+<h3><strong>Conclusions:</strong></h3>
+
+<p>Paper prototype is a handful instrument that can help you to save a lot of time before getting into the development cycle. You can use it to craft board games and specially digital games. There are basically no downsides of using it, so before starting to develop your next game, be sure to start by making a good paper prototype of it.</p>
+
+<hr>
+<p>This article was originally posted on the blog <a href="http://gamedevelopertips.com/">GameDeveloperTips</a></p>
+            </div>   
+                                                <hr>
+                    <div class="hide-phone">
+                        <h3>Related Jobs</h3>
+                                                   <div class="stories_item">
+                                <div class="thumb"><a href="http://jobs.gamasutra.com/job/lead-game-designer-espoo-32620"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/remedy.gif" alt="Remedy Entertainment" width="120"></a></div>
+                                <div class="title">
+                                    <strong>
+                                    Remedy Entertainment — 
+                                                                          Espoo,
+                                                                                                            Finland
+                                    <br>
+                                    [01.22.18]
+                                   </strong>
+                                   <br>
+                                   <a href="http://jobs.gamasutra.com/job/lead-game-designer-espoo-32620">Lead Game Designer</a>
+                                </div>
+                           </div>
+                                                   <div class="stories_item">
+                                <div class="thumb"><a href="http://jobs.gamasutra.com/job/studio-game-engineer-mountain-view-california-32576"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/1001105.png" alt="Blackstorm" width="120"></a></div>
+                                <div class="title">
+                                    <strong>
+                                    Blackstorm — 
+                                                                          Mountain View,
+                                                                                                              California,
+                                                                        United States
+                                    <br>
+                                    [01.19.18]
+                                   </strong>
+                                   <br>
+                                   <a href="http://jobs.gamasutra.com/job/studio-game-engineer-mountain-view-california-32576">Studio Game Engineer</a>
+                                </div>
+                           </div>
+                                                   <div class="stories_item">
+                                <div class="thumb"><a href="http://jobs.gamasutra.com/job/senior-systems-designer-portage-michigan-32454"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/996438.jpg" alt="Plarium Michigan Studio LP" width="120"></a></div>
+                                <div class="title">
+                                    <strong>
+                                    Plarium Michigan Studio LP — 
+                                                                          Portage,
+                                                                                                              Michigan,
+                                                                        United States
+                                    <br>
+                                    [01.19.18]
+                                   </strong>
+                                   <br>
+                                   <a href="http://jobs.gamasutra.com/job/senior-systems-designer-portage-michigan-32454">Senior Systems Designer</a>
+                                </div>
+                           </div>
+                                                   <div class="stories_item">
+                                <div class="thumb"><a href="http://jobs.gamasutra.com/job/web-developer-santa-monica-california-32572"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/795543.png" alt="Naughty Dog" width="120"></a></div>
+                                <div class="title">
+                                    <strong>
+                                    Naughty Dog — 
+                                                                          Santa Monica,
+                                                                                                              California,
+                                                                        United States
+                                    <br>
+                                    [01.18.18]
+                                   </strong>
+                                   <br>
+                                   <a href="http://jobs.gamasutra.com/job/web-developer-santa-monica-california-32572">Web Developer</a>
+                                </div>
+                           </div>
+                                            </div>
+                    <br class="clear"><br>
+                    <div class="right small">
+                        <strong>[<a href="http://jobs.gamasutra.com/">View All Jobs</a>]</strong>
+                    </div>
+                    <br class="clear"><br>
+                                        <hr>
+            							<script type="text/javascript">
+								
+								//Rectangle 1 on small mobile device
+								if (document.documentElement.clientWidth <= 767)
+								{ document.write('<div id="div-gpt-ad-rec1"><center>'); googletag.display('div-gpt-ad-rec1'); document.write('</center></div>'); }
+								
+							</script>
+
+
+                <div id="dynamiccomments"><a style="font-weight: bold; font-size: 16px;" name="comments">Comments</a><br><div id="no_comment_form">   <br>   <span class="comment_login">   <a href="https://www.gamasutra.com/sso/login.php?from=https://www.gamasutra.com/blogs/MarcoMignano/20160725/277766/Use_Paper_Prototyping_to_design_your_games.php">   <img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/btn_comment.gif" width="113" height="16" border="0" alt="Login to Comment"></a>   </span>   <br></div><br></div>
+                    </div>  
+        <!-- InstanceEndEditable -->
+    </div><!--end contentbox-->
+</div><!--end span-16-->
+
+            </div>
+            <br class="clear">
+	</div><!--end span-21-->
+
+        <!--begin right sidebar-->
+     	<div class="hide-phone center">
+               <div class="span-4 last">
+                   <!--right hand ads start here-->
+
+  
+                            <!-- Beginning Sync AdSlot 7 for Ad unit Gamasutra//independentgames ### size: [[160,600]]  -->
+<div id="div-gpt-ad-sky1">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-sky1');
+ </script>
+</div>
+<!-- End AdSlot 7 -->
+        <!-- Beginning Sync AdSlot 8 for Ad unit Gamasutra//independentgames ### size: [[160,160]]  -->
+<div id="div-gpt-ad-Ltile1">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-Ltile1');
+ </script>
+</div>
+<!-- End AdSlot 8 -->
+      
+		 
+               	</div>
+                 </div>
+     <!--end right sidebar-->         
+        </div>
+					<!-- Beginning Sync AdSlot 21 for Ad unit Gamasutra//independentgames ### size: [[8,2]]  -->
+<div id="div-gpt-ad-native">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-native');
+ </script>
+</div>
+<!-- End AdSlot 21 -->
+			<!-- Beginning Sync AdSlot 22 for Ad unit Gamasutra//independentgames ### size: [[8,4]]  -->
+<div id="div-gpt-ad-insight">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-insight');
+ </script>
+</div>
+<!-- End AdSlot 22 -->
+			<!-- Beginning Sync AdSlot 23 for Ad unit Gamasutra//independentgames ### size: [[4,4]]  -->
+<div id="div-gpt-ad-video">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-video');
+ </script>
+</div>
+<!-- End AdSlot 23 -->
+				
+     <!--end container-->
+     
+     <br class="clear">
+<link rel="stylesheet" type="text/css" href="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/superfooter_dark.css">
+<div align="center">
+          <!-- Beginning Sync AdSlot 6 for Ad unit Gamasutra//independentgames ### size: [[3,3]]  -->
+<div id="div-gpt-ad-ribbon">
+ <script type="text/javascript">
+  googletag.display('div-gpt-ad-ribbon');
+ </script>
+</div>
+<!-- End AdSlot 6 -->
+</div>
+<!--begin footer-->
+<!-- BEGIN DARK FOOTER -->
+<div align="center">
+  <div class="superfooter" id="footerblack">
+    <div class="superfooter container" id="pagecenter">
+    <div id="top">
+    <!--DARK FOOTER LEFT SIDE -->
+    <div id="left">
+    <a href="http://www.ubmtechweb.com/" target="_blank"><img src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/UBM_Logo_White.png" width="88" height="111" border="0" alt="UBM"></a>
+    </div><!-- / DARK FOOTER LEFT SIDE -->
+    <!-- DARK FOOTER rightlinks SIDE -->
+    <div class="superfooter" id="rightlinks">
+      <div class="list-div" id="tech-brands">
+        <ul class="first-list">
+          <li class="footer_title">TECHNOLOGY GROUP</li> 
+          <li><a href="http://www.blackhat.com/" target="_blank">Black Hat</a></li>
+<li><a target="_blank" href="http://contentmarketinginstitute.com/">Content Marketing Institute</a></li>
+<li><a target="_blank" href="http://www.contentmarketingworld.com/">Content Marketing World</a></li>
+          <li><a href="http://www.darkreading.com/" target="_blank">Dark Reading</a></li> 
+         
+        </ul>
+        <ul>
+          <li><a target="_blank" href="http://www.enterpriseconnect.com/">Enterprise Connect</a></li>
+          <li><a href="http://www.gdconf.com/" target="_blank">GDC</a></li>
+          <li><a href="https://www.gamasutra.com/" target="_blank">Gamasutra</a></li>
+		  <li><a href="http://www.thinkhdi.com/" target="_blank">HDI</a></li>
+        </ul>
+        <ul>
+          <li><a href="http://www.icmi.com/" target="_blank">ICMI</a></li>
+          <li><a href="http://www.informationweek.com/" target="_blank">InformationWeek</a></li>
+		  <li><a href="http://insecurity.com/" target="_blank">INsecurity</a></li>
+		  <li><a href="http://www.interop.com/" target="_blank">Interop ITX</a></li>
+        </ul>
+        <ul class="last-list">
+          <li><a href="http://www.networkcomputing.com/" target="_blank">Network Computing</a></li>
+          <li><a href="http://www.nojitter.com/" target="_blank">No Jitter</a></li>
+		  <li><a href="http://www.smworld.com/" target="_blank">Service Management World</a></li>
+		  <li><a href="http://www.vrdconf.com/" target="_blank">VRDC</a></li>
+        </ul>
+      </div>
+      <div class="list-div" id="communities-served">
+        <ul class="first-list">
+          <li class="footer_title">COMMUNITIES SERVED</li>
+<li><a target="_blank" href="http://tech.ubm.com/community-brands/content-marketing-2/">Content Marketing</a></li>
+
+          <li><a href="http://tech.ubm.com/community-brands/enterprise-it/" target="_blank">Enterprise IT</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/enterprise-communications/" target="_blank">Enterprise Communications</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/game-and-app-developers/" target="_blank">Game Development</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/information-security/" target="_blank">Information Security</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/technical-service-and-support/" target="_blank">IT Services &amp; Support</a></li>
+       </ul>
+      </div>
+      <div class="list-div" id="working-with-us">
+        <ul class="first-list">
+          <li class="footer_title">WORKING WITH US</li>
+          <li><a href="http://createyournextcustomer.techweb.com/contact-us/" target="_blank">Advertising Contacts</a></li>
+          <li><a href="http://events.ubm.com/?company=10" target="_blank">Event Calendar</a></li>
+          <li><a href="http://createyournextcustomer.techweb.com/" target="_blank">Tech Marketing</a></li>
+          <li><a href="http://createyournextcustomer.techweb.com/" target="_blank">Solutions</a></li>
+          <li><a href="http://tech.ubm.com/contact-us/" target="_blank">Contact Us</a></li>
+          <li><a href="http://wrightsmedia.com/sites/ubm/index.cfm" target="_blank">Licensing</a></li>
+        </ul>
+      </div>
+    </div><!-- / DARK FOOTER rightlinks -->
+  </div><!--end top-->
+    <div style="clear:both;"></div><!-- // to clear the right and left evenly // -->
+  <div id="bottom">
+    <ul class="blue">
+      <li><a href="http://legal.us.ubm.com/terms-of-service/" target="_blank" class="blue">Terms of Service</a></li>
+      <li><a href="http://legal.us.ubm.com/privacy-policy/" target="_blank" class="blue">Privacy Statement</a></li>
+  <li><a href="http://reg.ubmamevents.com/UBMLegalEntities" target="_blank" class="blue">Legal Entities</a></li> 
+      <li>Copyright © 2018 UBM, All rights reserved</li>
+    </ul>
+  </div>
+    </div>
+  </div><!-- / END footergrey -->
+</div><!-- / END align="center" -->
+<!-- / END DARK FOOTER -->
+
+<!-- Eloqua tracking code -->
+<script type="text/javascript" language="JavaScript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/elqtracking.js.download"></script>
+<script type="text/javascript" language="JavaScript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/elqCfg.js.download"></script><script type="text/javascript" language="JavaScript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/elqImg.js.download"></script>
+<!-- End Eloqua tracking code -->
+
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/beacon-min.js.download"></script>
+<script type="text/javascript">
+var beacon = new UBM.Beacon({environment: 'p', apiKey: '31fa8154ead6bb6b2bcefa32b0b2bd86ef990485d4def29a6117223512da2973'});
+beacon.pageview();
+</script>
+<script type="text/javascript">
+	var registerData='';
+	registerCheck();
+	function registerCheck(){
+		$.ajax({
+			url: '/omnloginstatus.php',
+			async : false,
+			success: function(result){
+				registerData = result.replace('"','');
+				registerData = registerData.replace('"','');
+			}
+		});
+	}
+</script>
+
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/combined.js.download"></script>
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/nextgengama.js.download"></script>
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/checkauth.js.download"></script>
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/oasTrack_v1.js.download"></script>
+<script async="" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/widgets.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/plusone.js.download" gapi_processed="true"></script>
+<!-- SiteCatalyst code version: H.21.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+
+
+<script language="JavaScript" type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/VisitorAPI.js.download"></script>
+<script language="JavaScript" type="text/javascript" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/ubm-tech-global-app-measurement.js.download"></script>
+<script language="JavaScript" type="text/javascript"><!--
+    /* You may give each page an identifying name, server, and channel on
+    the next lines. */
+	s.pageName="";
+	s.server="";
+	s.channel="";
+	s.pageType="";
+	s.prop1="";
+	s.prop2="277766";
+	s.prop3="Gamasustra | 277766 | Use Paper Prototyping to design your games";
+	s.prop4="Use Paper Prototyping to design your games";
+	s.prop5="GAMASUTRA BLOG";
+	s.prop6="";
+	s.prop7="Marco Mignano";
+	s.prop8="userAgent";
+	s.prop9="";
+	s.prop10="";
+	s.prop13="";
+    s.prop19=registerData;
+	s.contextData['Newsletter_signup'] ="";
+	/* Conversion Variables */
+	s.campaign="";
+	s.state="";
+	s.zip="";
+	s.events="event5";
+	s.products="";
+	s.purchaseID="";
+	s.eVar1="design,indie";
+	s.eVar2="";
+	s.eVar3="";
+	s.eVar4="";
+	s.eVar5="";
+	/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code = s.t(); if (s_code) document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
+//--></script><noscript>&lt;a href="http://www.omniture.com" title="Web Analytics"&gt;&lt;img
+src="http://cmp.112.2o7.net/b/ss/cmpglobalvista/1/H.21--NS/0"
+height="1" width="1" border="0" alt="" /&gt;&lt;/a&gt;</noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.21. -->          
+  
+<!-- Begin ADSNATIVE Code -->
+<script type="text/javascript" src="https://static.adsnative.com/static/js/render.v1.js"></script>
+<!-- End ADSNATIVE Code -->  
+<!--Begin Ad script for pixel --> 
+
+<script type="text/javascript">
+    adroll_adv_id = "AJSB6AWABZB2RFHAOYSOZH";
+    adroll_pix_id = "2RTKKW6YFBHIVKRM6FNJ4D";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+
+<!--END Ad script for pixel -->
+
+                
+                <iframe frameborder="0" width="0" height="0" tabindex="-1" style="display:none" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/record.html"></iframe><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/widget_iframe.9c00c8ca14a8618c4db8e2c43139b138.html" style="display: none;"></iframe><iframe name="oauth2relay553724926" id="oauth2relay553724926" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe style="display:none" id="checkAuthFrame" height="100" frameborder="0" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/gateway.html"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Gamasutra_ Marco Mignano&#39;s Blog - Use Paper Prototyping to design your games_files/saved_resource(1).html"></iframe><div id="TWLightBoxOverlay" style="background: none 0px 0px repeat scroll rgb(0, 0, 0); opacity: 0.9; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1000; display: none;"></div><div id="TWLightBoxPanel" class="gamasutra" style="width: 780px; margin-left: -405px; margin-top: -250px; position: fixed; display: none; top: 50%; left: 50%; z-index: 6000000;"><div id="topLoginHeader"><div class="nextGenContainer_title">Techweb</div><div class="nextGenContainer_closeButton"><div id="nextGenContainer_closeButton_inner" onclick="NextGen.close();"></div></div></div><div id="nextGenLoginContainer" class=""><div id="nextGenContainer" class=""></div></div><div class="emptyFix" id="nextGenFooterContainer"></div></div></body></html>
