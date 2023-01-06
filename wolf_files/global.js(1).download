@@ -1,0 +1,22 @@
+
+// Tooltip - 마우스를 가져다 대면 툴팁이 뜨는 소스
+jQuery(document).ready(function($) {
+$("a").tooltip({
+    track: true, 
+    delay: 0, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 250
+   })
+});
+
+// Mouseover Fade Effects
+jQuery(document).ready(function($){
+    $(".subWrapper").fadeTo("slow", 0.0); // This sets the opacity of the thumbs to fade down to 60% when the page loads
+    $(".subWrapper").hover(function(){
+    $(this).fadeTo(200, 1.0); // This should set the opacity to 100% on hover
+	
+},function(){   		
+    $(this).fadeTo(200, 0); // This should set the opacity back to 60% on mouseout
+    });
+});
