@@ -1,0 +1,57 @@
+/**
+ * 개별 카페 레이어 알림을 처리한다.
+ */
+var PowerCafeNoticeLayer = Class({
+    name: "PowerCafeNoticeLayer",
+
+    __init: function (htParam) {
+        var aNotices = htParam.aNotices;
+
+        for (var i = 0; i < aNotices.length; i++) {
+            if (aNotices[i].show && !this._isPermanantClose(aNotices[i].name)) {
+                this._showNotice(aNotices[i].name);
+                this._bindEvent(aNotices[i].name);
+            }
+        }
+    },
+
+    _bindEvent: function (sNoticeName) {
+        Event.register($(sNoticeName + 'CloseBtn'), 'click', this.closeNotice.bindForEvent(this, sNoticeName));
+        Event.register($(sNoticeName + 'PermanentClose'), 'change', this.togglePermanentClose.bindForEvent(this, sNoticeName));
+    },
+
+    _showNotice: function (sNoticeName) {
+        $(sNoticeName + 'Dim').className = 'dim dim50 dim_open';
+        $(sNoticeName).style.display = '';
+    },
+
+    togglePermanentClose: function (we, sNoticeName) {
+        if (this._isChekcedPermanantClose(sNoticeName)) {
+            $(sNoticeName + 'PermanentClose').className = 'chk checked';
+        } else {
+            $(sNoticeName + 'PermanentClose').className = 'chk';
+        }
+    },
+
+    closeNotice: function (we, sNoticeName) {
+        if (this._isChekcedPermanantClose(sNoticeName)) {
+            this._setPermanantClose(sNoticeName);
+        }
+
+        $(sNoticeName + 'Dim').className = 'dim dim50';
+        $(sNoticeName).style.display = 'none';
+    },
+
+    _setPermanantClose: function (sNoticeName) {
+        oMainLocalStorage.setLocalStorage(oMainLocalStorage.PC_POWERCAFE_NOTICE + sNoticeName, 'F');
+    },
+
+    _isPermanantClose: function (sNoticeName) {
+        return oMainLocalStorage.getLocalStorage(oMainLocalStorage.PC_POWERCAFE_NOTICE + sNoticeName) == 'F';
+    },
+
+    _isChekcedPermanantClose: function (sNoticeName) {
+        return document.getElementById(sNoticeName + 'PermanentCloseChk').checked;
+    }
+});
+
