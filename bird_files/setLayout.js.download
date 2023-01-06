@@ -1,0 +1,82 @@
+$(function(){
+	var __resultTop__;
+	$(window).scroll(function(){
+		if($('#__leftQBannerLayout__').css("display") != "none" && $('#__leftQBannerLayout__').css("min-width") == "1px" ){	// min-width 이 속성으로 스크롤 여부를 확인한다. [ 1px : 스크롤, 0 : 고정 ]
+			
+			if(parseInt($(document).scrollTop()) > parseInt($('#__leftQBannerLayout__').css("min-height"))){
+				__resultTop__ = parseInt($(document).scrollTop());
+			}else{
+				__resultTop__ = $('#__leftQBannerLayout__').css("min-height"); // 여기서 min-height 은 상단에서 떨어진 크기 지정
+			}
+			$('#__leftQBannerLayout__').stop().animate({"top": __resultTop__}, "ease");
+		}
+
+		if($('#__rightQBannerLayout__').css("display") != "none" && $('#__rightQBannerLayout__').css("min-width") == "1px"){	// min-width 이 속성으로 스크롤 여부를 확인한다. [ 1px : 스크롤, 0 : 고정 ]
+			if(parseInt($(document).scrollTop()) > parseInt($('#__rightQBannerLayout__').css("min-height"))){
+				__resultTop__ = parseInt($(document).scrollTop()) ;
+			}else{
+				__resultTop__ = $('#__rightQBannerLayout__').css("min-height"); // 여기서 min-height 은 상단에서 떨어진 크기 지정
+			}
+			$('#__rightQBannerLayout__').stop().animate({"top": __resultTop__}, "ease");
+		}
+
+		if($('#__topFixLeftLayout__').css("display") != "none" && $('#__topFixLeftLayout__').css("min-width") == "1px"){	// min-width 이 속성으로 스크롤 여부를 확인한다. [ 1px : 스크롤, 0 : 고정 ]
+			if(parseInt($(document).scrollTop()) > parseInt($('#__topFixLeftLayout__').css("min-height"))){
+				__resultTop__ = parseInt($(document).scrollTop()) ;
+			}else{
+				__resultTop__ = $('#__topFixLeftLayout__').css("min-height"); // 여기서 min-height 은 상단에서 떨어진 크기 지정
+			}
+			$('#__topFixLeftLayout__').stop().animate({"top": __resultTop__}, "ease");
+		}
+		
+		if($('#__topFixRightLayout__').css("display") != "none" && $('#__topFixRightLayout__').css("min-width") == "1px"){	// min-width 이 속성으로 스크롤 여부를 확인한다. [ 1px : 스크롤, 0 : 고정 ]
+			if(parseInt($(document).scrollTop()) > parseInt($('#__topFixRightLayout__').css("min-height"))){
+				__resultTop__ = parseInt($(document).scrollTop());
+			}else{
+				__resultTop__ = $('#__topFixRightLayout__').css("min-height"); // 여기서 min-height 은 상단에서 떨어진 크기 지정
+			}
+
+			$('#__topFixRightLayout__').stop().animate({"top": __resultTop__}, "ease");
+		}
+	});
+
+	$("#__topBanner__").click(function(){
+		if($("#__wrapFixTopLayout__").css("height") < $(this).css("height")){
+			var divHeight = $(this).css("height");
+		}else{
+			var divHeight = $("#__wrapFixTopLayout__").css("min-height");
+		}
+
+		$("#__wrapFixTopLayout__").animate({
+			height: divHeight
+		},400,function(){
+			// Animation complete.
+		});
+	});
+
+	
+
+	
+});
+/*
+$(document).ready(function(){
+	var leftLayoutTotalHeight = parseInt($("#__contentsLeft__").css("height")) + parseInt($("#__contentsLeftMenu__").css("height"));
+	var contentsLayoutTotalHeight = parseInt($("#__contentsMiddle__").css("height")) + parseInt($("#__contentsNavigation__").css("height"));
+	var rightLayoutTotalHeight = parseInt($("#__contentsRight__").css("height")) + parseInt($("#__contentsRightMenu__").css("height"));
+	//alert(leftLayoutTotalHeight +":"+contentsLayoutTotalHeight+":"+rightLayoutTotalHeight);
+	var tmpHeightVal = contentsLayoutTotalHeight;
+	if($("#__contentsLeft__").css("display") != "none"){
+		if(tmpHeightVal < leftLayoutTotalHeight){
+			tmpHeightVal = leftLayoutTotalHeight;
+		}
+	}
+
+	if($("#__contentsRight__").css("display") != "none"){
+		if(tmpHeightVal < rightLayoutTotalHeight){
+			tmpHeightVal = rightLayoutTotalHeight;
+		}
+	}
+
+	$("#__contentsFrame__").css("height",tmpHeightVal);
+});
+*/
