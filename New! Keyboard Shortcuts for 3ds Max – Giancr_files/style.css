@@ -1,0 +1,371 @@
+/*
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating wil be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+
+/* General para todo el blog */
+strong, b {font-weight: inherit; color:#e8e8e8;}
+.entry-content p{font-size:16px; color:#969696;}
+blockquote p, blockquote ul, blockquote ul li {font-style:oblique; font-size: 14px!important; line-height: 22px;}
+blockquote ul li {line-height: 18px;}
+.botonverde a {border:none!important; font-size:16px!important;}
+.botonverde a:hover {background-color:#e79e34!important;}
+.redesgiancr {margin: 0 10px;}
+.nomargin {margin:0!important;}
+.orange {color: #ff9900;}
+
+/* LOGO */
+.header-scrolled .logo img { opacity: 0; }
+.header-scrolled .logo a { background-image: url(https://giancr.com/wp-content/uploads/2017/12/logoweb-scrolling.png); background-repeat: no-repeat; background-size: contain; }
+.logo img {margin-top:11px;}
+
+/* ---- */
+div .av_one_half {
+    margin-left: 8%;
+    width: 45.773%;
+}
+div .av_one_third {
+    margin-left: 2.97%;
+    width: 31.352%;
+}
+#top .av-flex-placeholder {
+	width: 3%;
+}
+/*
+.av_one_full{
+	background-image: url(https://giancr.com/img/fondocarta.gif);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding: 8px;
+	text-align: center;
+}*/
+
+/* suscribe modelo carta */
+/*.carta{background-color: #ffffff;
+    height: 100%;
+    padding: 15px;
+}
+.carta h2{color:#000000; margin-top: 10px;}
+.sml_subscribe{margin-bottom:14px!important;}
+.sml_name, .sml_email, .sml_submit{display: inline-block; margin-right: 15px; height: 34px; margin-bottom:0px;}
+.sml_nameinput, .sml_emailinput{background-color: #f3f3f3!important; border: 1px solid #e1e1e1!important; color: #000!important;}
+.carta .sml_name{width: 24%;}
+.carta .sml_email{width: 50%;}
+.carta .sml_submit{width: 19%;}
+.prepend{color:#7b7b7b;}*/
+
+/* ----- */
+.html_modern-blog .avia-content-slider .slide-entry-title {
+    font-size: 15px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+.main_color .avia-content-slider .slide-image {
+	margin-bottom: 0px;
+}
+.avia-content-slider .slide-image {
+    	border-radius: 3px 3px 0px 0px!important;
+-moz-border-radius: 3px 3px 0px 0px!important;
+-webkit-border-radius: 3px 3px 0px 0px!important;
+}
+ .avia-content-slider .slide-image img {
+	border-radius: 3px 3px 0px 0px!important;
+-moz-border-radius: 3px 3px 0px 0px!important;
+-webkit-border-radius: 3px 3px 0px 0px!important;
+}
+.slide-content{
+background-color: #000000;
+    padding: 0px 10px;
+	border-radius: 0px 0px 8px 8px!important;
+-moz-border-radius: 0px 0px 8px 8px!important;
+-webkit-border-radius: 0px 0px 8px 8px!important;
+}
+.html_modern-blog #top .post-entry .blog-categories{
+display:none;
+}
+.avia-content-slider .slide-entry-wrap {
+    margin-bottom: 30px;
+}
+
+/*----------------------------------------
+// Footer y Socket
+//--------------------------------------*/
+/*#socket .copyright {line-height: 15px;}
+footer .social_bookmarks li {margin: 0 5px;}
+footer [data-av_icon]:before {font-size: 24px; line-height: 35px;}
+footer ul.social_bookmarks {height: 35px!important;}
+footer ul.social_bookmarks li, footer ul.social_bookmarks li a {width: 35px!important;}*/
+/*.iconbox_content .avia-icon-pos-center br {display: none;}
+.iconbox_content span.av_font_icon.avia_animate_when_visible + br {display: none!important;}*/
+#after_section_1 .container .content {width: 100%!important; padding-top:15px!important; padding-bottom:15px!important;}
+#after_section_1 .container .content .entry-content-wrapper{padding-right: 0!important;}
+
+.main_color strong{color: #ffffff;}
+.main_color strong span{text-decoration: none!important;}
+.html_elegant-blog .avia-content-slider .slide-entry-title:hover {opacity:1; color:#ff9900;}
+.inner_sidebar {font-size: 16px;}
+.main_color .news-time {display: none;}
+.widget {padding: 15px 0 30px 0;}
+#shr_canvas4{ display: none;}
+
+.avia_message_box.avia-border-solid {border-color: #f53100!important;}
+.tabladoscol{width: 68%!important; margin: 0 auto!important;}
+#shr-admin-badge {display:none;}
+/*.home .wpml-ls-statics-post_translations {display:none;} */
+.inner_sidebar {margin-left: 20px;}
+.avia_cookie_text {font-size:14px!important;}
+.cookie_text {color:#ff9900;}
+
+/*----------------------------------------
+// Polylang
+//--------------------------------------*/
+
+.polylang_langswitcher {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.polylang_langswitcher li {
+    display: inline;  
+}
+
+/*----------------------------------------
+// Google search personalizado
+//--------------------------------------*/
+.googlesearch {width:200px;}
+.googlesearch .gsc-clear-button {display:none;}
+.googlesearch td.gsc-input input{color: red; font-size:18px!important; background:#ffffff!important; text-indent:0px!important;}
+.googlesearch td.gsc-input input::-webkit-input-placeholder {opacity:0;}
+.googlesearch td.gsc-input input::-moz-placeholder{opacity:0;}
+.googlesearch td.gsc-input input:-ms-input-placeholder {opacity:0;}
+.googlesearch td.gsc-input input:-moz-placeholder {opacity:0;}
+.googlesearch td.gsc-input input::placeholder {opacity:0;}
+
+/*----------------------------------------
+// Caption de imagenes
+//--------------------------------------*/
+#top .wp-caption.aligncenter {border: none;}
+#top .wp-caption img {padding: 0;}
+
+
+/* Estilo para post cambio de color RGB */
+	#tablargb table{border-collapse: collapse; border:none; text-align: center;}
+	#tablargb table td{border: none; padding: 0px;}
+	#tablargb .td1 {width: 48px;}
+	#tablargb .td2 {width: 103px;}
+	#tablargb .td3 {width: 293px;}
+	#tablargb .td4 {width: 103px;}
+	#tablargb .td5 {width: 101px;}
+	#tablargb .td6 {width: 112px;}
+	#tablargb .esp1, #tablargb .esp2, #tablargb .esp3, #tablargb .esp4, #tablargb .esp5, #tablargb .esp6{height: 107px; width: 100%;}
+	#tablargb .esp7, #tablargb .esp8, #tablargb .esp10, #tablargb .esp11, #tablargb .esp12{height: 65px; width: 100%;}
+	#tablargb .esp13, #tablargb .esp14, #tablargb .esp16, #tablargb .esp17, #tablargb .esp18{height: 70px; width: 100%;}
+	#tablargb .esp19, #tablargb .esp20, #tablargb .esp22, #tablargb .esp23, #tablargb .esp24{height: 65px; width: 100%}
+	#tablargb h3{color: #ffffff; margin:0px;}
+	#tablargb p{color: #787878; margin:5px 0px; font-size: 13px; line-height: 15px;}
+	#tablargb .esp2{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_02.jpg)}
+	#tablargb .esp3{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_03.jpg)}
+	#tablargb .esp4{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_04.jpg)}
+	#tablargb .esp5{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_05.jpg)}
+	#tablargb .esp7{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_07.jpg);}
+	#tablargb .esp13{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_13.jpg);}
+	#tablargb .esp19{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_19.jpg);}
+	#tablargb .esp25{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_25.jpg); height: 80px;}
+	#tablargb .esp8{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_08.jpg)}
+	#tablargb .esp14{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_14.jpg)}
+	#tablargb .esp20{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_20.jpg)}
+	#tablargb .esp9{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_09_09.jpg); vertical-align: middle; display: inherit; height: 200px; width: 293px;}
+	#tablargb .esp15{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_15.jpg)}
+	#tablargb .esp21{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_21.jpg)}
+	#tablargb .esp10{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_10.jpg)}
+	#tablargb .esp16{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_16.jpg)}
+	#tablargb .esp22{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_22.jpg)}
+	#tablargb .esp11{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_11.jpg)}
+	#tablargb .esp17{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_17.jpg)}
+	#tablargb .esp23{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_23.jpg)}
+	#tablargb .esp12{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_12.jpg);vertical-align: bottom; display: inherit; width: 112px;}
+	#tablargb .esp18{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_18.jpg)}
+	#tablargb .esp24{background-image: url(https://giancr.com/wp-content/uploads/images/convertir_24.jpg)}
+	#tablargb .botonrgb{background-image: url(https://giancr.com/wp-content/uploads/images/convertir-boton.png); width: 112px; height: 112px; display: block; text-align: center; margin: 0 auto; cursor: pointer;}
+	#tablargb .botonrgb:hover{background-image: url(https://giancr.com/wp-content/uploads/images/convertir-boton-over.png);}
+	#tablargb .casillaR, #tablargb .casillaG, #tablargb .casillaB{width: 90px; background-color: #000000; border-radius: 5px; font-size: 22px; color: #ffffff; text-align: center; padding: 2px 0;}
+	#tablargb .casillaR{border:1px solid #ff0000; margin-top: 13px;}
+	#tablargb .casillaG{border:1px solid #00ff00; margin-top: 20px;}
+	#tablargb .casillaB{border:1px solid #0000ff; margin-top: 20px;}
+	#tablargb .resultado1, #tablargb .resultado2, #tablargb .resultado3{font-size: 22px; display: inline-block;}
+	#tablargb .resultado1{color: #ff0000; margin-top: 10px;}
+	#tablargb .resultado2{color: #00ff00; margin-top: 20px;}
+	#tablargb .resultado3{color: #007cff; margin-top: 20px;}
+
+/* Search AJAX personalizado */
+#top .menu-item #searchform {
+    top: 26px;
+    position: relative;
+}
+
+#top #searchform > div {
+    opacity: 1 !important;
+    display: block !important;
+}
+.ajax_search_response h4:first-child {
+    padding-top: 11px!important;
+}
+#top #searchform .ajax_search_response {
+    background-color: #000000;
+    border: 1px solid #444444;
+    border-top: none;
+}
+
+/* Flecha de Ir a arriba */
+#scroll-top-link {
+    background-color: #ff9902;
+	color: #444444;
+}
+#scroll-top-link.avia_pop_class:hover {
+    opacity: 1;
+}
+#scroll-top-link:hover {
+    background-color: #ff9900;
+    color: #000000;
+}
+
+#top .header-scrolled-full #searchform {top: 2px;}
+h4 span img {vertical-align: middle;}
+
+/* Masonry reducir o zoom imagen al haber Hover  */
+.avia_desktop .av-masonry-entry:hover .av-masonry-image-container {
+  -webkit-transform: scale(1.05,1.05);
+  transform: scale(1.05,1.05);
+}
+
+/* Masonry en Sidebar en una columna */
+.sidebar .av-masonry-col-2 a.av-masonry-entry {width: 100%; margin-bottom: 30px;}
+
+/* Lupa en imagenes enlaces Lightbox */
+a.lightbox-added:after {
+	font-family: FontAwesome;
+    content: "\f00e";
+    font-size: 26px;
+    color: #fff;
+    position: absolute;
+    right: 17px;
+    top: 22px;
+}
+a.lightbox-added:hover:after {opacity: 0;}
+
+/* Overlay */
+.image-overlay-inside, .image-overlay.overlay-type-extern, .image-overlay.overlay-type-image, .image-overlay.overlay-type-video {background: #00000000;}
+.image-overlay.overlay-type-extern .image-overlay-inside:before, .image-overlay.overlay-type-image .image-overlay-inside:before, .image-overlay.overlay-type-video .image-overlay-inside:before {background: #FE9C00;}
+.image-overlay.overlay-type-extern .image-overlay-inside:before {content: '\E822'; font-size: 26px;}
+.avia_transform a:hover .image-overlay {opacity: 0.9 !important; background:#00000061;}
+.entradas-mas-vistas h2 {font-weight: bold!important;}
+
+/* ICONOS */
+.infoimg {vertical-align: bottom; margin-left: 10px;}
+
+/*  */
+.onp-sl-overlap-background {
+    background-color: #191919!important;
+}
+
+/* Quita el FEATURED IMAGE del inicio de cada post */
+/*.single .big-preview.single-big {
+  display: none !important;
+}*/
+
+/* TABLA DE PRECIOS */
+.pricing-table li.avia-pricing-row .currency-symbol {font-size: 0.7em; top: -0.4em;}
+.avia_pricing_default .pricing-table li.avia-pricing-row small, .avia_pricing_default .pricing-table li.avia-pricing-row .currency-symbol {opacity: 0.8;}
+
+
+
+/*----------------------------------------
+// Sidebar
+//--------------------------------------*/
+.sidebar h3 {color: #ff6633;}
+
+/* Sidebar Suscribe y Suscribe Home Maislter */
+/*
+#sml_subscribe_widget h3.widgettitle, .suscrib h3 {font-size: 22px; color:#000; text-align: center;}
+*/
+
+.mailster-form-2 input::-webkit-input-placeholder { color:#000000; }
+.mailster-form-2 input:-moz-placeholder { color:#000000; } /* FF 4-18 */
+.mailster-form-2 input::-moz-placeholder { color:#000000; } /* FF 19+ */
+.mailster-form-2 input:-ms-input-placeholder { color:#000000; } /* IE 10+ */
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+.mailster-_status-wrapper {display: none;} /* Quita el campo Estado del formulario 1 */
+.page-id-8242 .mailster-submit-wrapper input{color:#000; font-weight: bold;}
+.mailster-widget, .suscribe {background: #FF6633; padding:17px; border-radius: 10px; -moz-border-radius: 10px;	-webkit-border-radius: 10px;}
+.suscribe h3 {text-align:center; font-size:22px;}
+.mailster-widget .mailster-widget-text-before {color:#000; margin-bottom:10px;}
+.mailster-form-2 {margin-bottom:0px!important;}
+.mailster-form-2 input {background-color: #ffa434!important; border-radius: 3px!important; -moz-border-radius: 3px; -webkit-border-radius: 3px; color:#000000!important;}
+.mailster-form-2 .mailster-rgpd-wrapper .mailster-rgpd {
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #000000;
+	padding: 9px;
+	border-radius: 3px!important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	/*display: inline-block!important;*/
+	position: relative;
+	float: left;
+    margin-bottom: 26px;
+    margin-right: 10px;
+	cursor:pointer;
+}
+.mailster-form-2 .mailster-rgpd-wrapper .mailster-rgpd:checked {
+	background-color: #e9ecee;
+	border: 1px solid #000000;
+}
+.mailster-form-2 .mailster-rgpd-wrapper .mailster-rgpd:checked:after {
+	content: "\f00c";
+    font-family: 'FontAwesome';
+	font-size: 16px;
+	position: absolute;
+	top: 0px;
+	left: 1px;
+	color: #000000;
+}
+.mailster-form-2 .mailster-submit-wrapper{text-align:center; margin-top:16px;}
+.mailster-form-2 .submit-button{font-weight: bold; background-color:#000000!important; color:#ff9900!important; border-radius:10px;}
+.mailster-form-2 .submit-button:hover {color: #ffffff!important;}
+.mailster-form-2 .mailster-rgpd-wrapper {color: #000000; font-size:14px; line-height:16px; font-weight: normal!important;}
+.mailster-form-2 .mailster-rgpd-wrapper a{color: #000000; text-decoration: underline; font-weight: bold;}
+.mailster-form-2 .mailster-rgpd-wrapper label{font-weight:normal!important; cursor:pointer;}
+
+
+
+
+
+
+
+
+/*
+Mobile Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the Mobile and Tablet Portrait view */
+
+
+@media only screen and (max-width: 989px) {
+  /* Add your Mobile Styles here */
+	
+}
+@media only screen and (max-width: 767px) {
+  /* Add your Mobile Styles here */
+	#top p {font-size: 18px; line-height: 26px;}
+}
+@media only screen and (max-width: 480px) {
+	/* Add your Mobile Styles here */
+    
+}
