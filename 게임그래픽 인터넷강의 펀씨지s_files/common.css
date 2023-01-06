@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+/* 전체 공통 */
+*{margin:0px; padding:0px;}
+html, body {color:#5f5f5f; font-size: 11.5px; font-family:'돋움','Dotum','Baekmuk Dotum','Undotum','Apple Gothic','sans-serif'; text-align:left; width:100%; height:auto; line-height:1.4285}
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input {margin:0px; padding:0px;}
+h1 {font-weight:bold; font-style:normal; font-size:16px;}
+ul,ol,li {list-style: none;}
+fieldset,img {border: none;}
+img {border:0px; padding:0px;}
+a {text-decoration:none;color:#555;}
+a:hover {text-decoration:none;color:#ff9900;}
+/*table {border-collapse:collapse; border-spacing:0px; color:#333;}*/
+/*#Wrap {width:100%; background:url(/admin/view/layout/images/wrapbg1.jpg) repeat-x; no-repeat; height:100%; background-color:#F3F3F3; }*/
+/*#hearder {display:block; position:absolute; top:0px; left:0px; width:100%; height:50px; float:left; z-index:7; } */ /* background:url(/admin/view/layout/images/hearderbg.jpg); */
+label {cursor:pointer;}
+/*
+@font-face{ font-family: 'NanumGodic'; src: url('/common/css/fonts/nanumGodic.eot'); src: url('/common/css/fonts/nanumGodic.eot?#iefix') format('embedded-opentype'), url('/common/css/fonts/nanumGodic.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face{ font-family: "NanumGothicBold"; src: url('/common/css/fonts/NanumGothicBold.eot'); src: url('/common/css/fonts/NanumGothicBold.eot?#iefix') format('embedded-opentype'), url('/common/css/fonts/NanumGothicBold.woff') format('woff'); }
+.nanumGodicFont{ font-family: "NanumGodic",sans-serif; font-weight: normal; }
+.nanumGodicBoldFont{ font-family: "NanumGothicBold",sans-serif; font-weight: normal; }
+*/
+#siteHit{background-color:#ffffff;}
+.width98{width:98%;margin:0 auto;}
+.width98_1{width:98%;}
+.v4Text{min-height:550px;}
+ /*셀렉트박스 공통*/
+.select-style {padding: 0;margin: 0;border: 1px solid #dfdfdf;height:25px;width: 100px;border-radius: 0px;overflow: hidden;background-color: #fff;background: #fff url("/images/icon/arrowdown.gif") no-repeat 90% 50%;}
+.select-style select {padding: 4px 8px;width: 130%;border: none;color:#888;box-shadow: none;background-color: transparent;background-image: none;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.select-style select:focus {outline: none;}
+
+.selectStyle_v1 { float:left; padding:0; margin:0 5px 0 0 ; border:1px solid #dfdfdf; height:19px; width:100px; border-radius:0px; overflow:hidden; background-color:#fff; background:#fff url("/images/icon/arrowdown.gif") no-repeat 98% 50%;}
+.selectStyle_v1 select { padding:1px 1px; width:110px; border:none; color:#777; box-shadow:none; background-color:transparent; background-image:none; -webkit-appearance:none; -moz-appearance:none; appearance:none;}
+.selectStyle_v1 select:focus { outline: none;}
+
+.selectStyle2 { float:left; padding:0; margin:0 5px 0 0 ; border:1px solid #dfdfdf; height:19px; width:100px; border-radius:0px; overflow:hidden; background-color:#fff; background:#fff url("/images/icon/arrowdown.gif") no-repeat 98% 50%;}
+.selectStyle2 select { padding:1px 1px; width:120px; border:none; color:#777; box-shadow:none; background-color:transparent; background-image:none; -webkit-appearance:none; -moz-appearance:none; appearance:none;}
+.selectStyle2 select:focus { outline: none;}
