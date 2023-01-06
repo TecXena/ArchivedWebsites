@@ -1,0 +1,23 @@
+@charset "euc-kr";
+/*
+ 회원 영역 표기 관련 CSS (title 한글 주석이 깨져서 보인다면, 해당 css 파일의 인코딩 설정을 확인해서 commit 이 필요합니다.)
+*/
+
+.pers_nick_area{padding:0 0 2px !important; text-align:left; width:100%;}
+.pers_nick_area table{border:0 !important; width:100%; table-layout:fixed;}
+.pers_nick_area .pc{padding:0 !important; margin:0; vertical-align:top; width:32px; border:none !important;}
+.pers_nick_area .pc2w{padding:0 !important; margin:0; vertical-align:top; width:32px; border:none !important;}
+.pers_nick_area .pc img,
+.pers_nick_area .pc2w img{vertical-align:top; margin:0 2px 0 0 !important;}
+.pers_nick_area .p-nick{padding:1px 0 0 !important; .padding-top:2px !important; margin:0; border:none !important; line-height:1.2em; overflow:hidden;}
+.pers_nick_area .p-border{border:1px solid #ddd;}
+.pers_nick_area .p-none,
+.pers_nick_area .p-emoticon{}
+.pers_nick_area .p-nick a{display:inline-block;cursor:pointer;}
+.pers_nick_area .p-nick .ellipsis {line-height: 16px;}
+.article-board.m-tcol-c .pers_nick_area .p-nick a {display:block;}
+
+.wordbreak{display:inline-block;word-break:break-all;word-wrap:break-word;vertical-align:middle}
+/* ellipsis 영역 */
+.ellipsis,
+.ellipsis-w{width:100%; line-height:1.4em; height:1.2em; white-space:nowrap; overflow:hidden !important; text-overflow:ellipsis; padding:0 !important; margin:0 !important; cursor:pointer; vertical-align:middle; word-wrap:normal !important;}
