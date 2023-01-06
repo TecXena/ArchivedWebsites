@@ -1,0 +1,38 @@
+
+/* 문서 아이콘 흰 색 바탕용
+---------------------------------------------------------------------------------*/
+.latest_default { overflow:hidden; position:relative; width:100%; }
+.latest_default h2 { margin:0; font-family: Helvetica, Arial, sans-serif; font-size:2em; font-weight:500; letter-spacing:-0.015em; color:#808080; }
+
+.latest_default ul { margin:0; padding:0; }
+.latest_default ul li { height:22px; padding-top:8px; border-bottom:1px dotted #ddd; overflow:hidden; list-style:none; white-space:nowrap; }
+
+.latest_default ul li .title { padding-left:15px; background:url(../images/default/bullet.gif) no-repeat left 3px; display:block; }
+.latest_default ul li .title a { font:12px 돋움; letter-spacing:-1px; color:#454545; text-decoration:none; }
+
+.latest_default ul li .title span.comment { color:#FE6700; font:.9em Tahoma; }
+.latest_default ul li .title span.comment a { color:#FE6700; font:.9em Tahoma; }
+
+.latest_default .more { position:absolute; top:12px; right:11px; color:#54564b; font:.8em Tahoma;}
+.latest_default a.more { text-decoration:none;} 
+.latest_default a.more:hover { text-decoration:underline;}
+
+
+
+/* 하트 아이콘 검은 색 바탕용
+---------------------------------------------------------------------------------*/
+.latest_heart_black { overflow:hidden; position:relative; width:100%; }
+.latest_heart_black h2 { margin:0; font-family: Helvetica, Arial, sans-serif; font-size:2em; font-weight:500; letter-spacing:-0.015em; color:#808080; }
+
+.latest_heart_black ul { margin:0; padding:0; }
+.latest_heart_black ul li { height:22px; padding-top:8px; border-bottom:1px dotted #666; overflow:hidden; list-style:none; white-space:nowrap; }
+
+.latest_heart_black ul li .title { padding-left:15px; background:url(../images/heart_black/bullet.gif) no-repeat left 2px; display:block; }
+.latest_heart_black ul li .title a { font:9pt 돋움; letter-spacing:-1px; color:#fff; text-decoration:none; }
+
+.latest_heart_black ul li .title span.comment { color:#FE6700; font:.9em Tahoma; }
+.latest_heart_black ul li .title span.comment a { color:#FE6700; font:.9em Tahoma; }
+
+.latest_heart_black .more { position:absolute; top:12px; right:11px; color:#54564b; font:.8em Tahoma;}
+.latest_heart_black a.more { text-decoration:none;} 
+.latest_heart_black a.more:hover { text-decoration:underline;}

@@ -1,0 +1,109 @@
+/*
+이 마크업 문서는 아래 제공자에 의해 작성 및 수정, 배포 되었습니다
+Markup : Hyunhw Jung
+Website: http://www.premiumxe.com
+Email : clubnb2@naver.com
+*/
+
+/* Colorset - pxeWhite
+---------------------------------------------------------------------------------*/
+#nav_pxeWhite { position:relative; display: block; margin:0; padding:0; }
+  #nav_pxeWhite li { display: block; list-style: none; margin: 0; padding: 0; float:left; position: relative; }
+  #nav_pxeWhite ul { display: none; position:absolute; left: 0; margin: 0; padding:0; }
+  * html #nav_pxeWhite ul { line-height: 0; } /* IE6 "fix" */
+  	#nav_pxeWhite ul a { zoom: 1; } /* IE6/7 fix */
+    #nav_pxeWhite ul li a { float: none; }
+    #nav_pxeWhite ul ul { top: 0; }
+	
+/* Essentials - configure this */
+#nav_pxeWhite ul { width:140px }
+#nav_pxeWhite ul ul { left:138px; }
+
+/* Everything else is theming */
+#nav_pxeWhite { left:0px; top:30px; }
+#nav_pxeWhite *:hover { background-color: none; }
+#nav_pxeWhite li a { color:#999; display:inline-block; padding:0 14px 0 0; margin:0 14px 0 0; background:url(images/vr.gif) no-repeat right 2px; font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif; font-size:13px; text-transform:uppercase; }
+#nav_pxeWhite li.on a { color:#464646; }
+#nav_pxeWhite li a:hover { color:#464646; }
+
+#nav_pxeWhite li.tools a {  }
+#nav_pxeWhite li.tools a:hover {  }
+
+    #nav_pxeWhite ul { top:24px; width:140px; }
+    #nav_pxeWhite ul li { border-bottom:1px solid #dadada; border-right:1px solid #dadada; border-left:1px solid #dadada; background:#f7f7f7; color:#839da9 }
+	#nav_pxeWhite ul a { color:#839da9 !important; display:block; width:112px; height:21px; margin:0; padding-bottom:none; padding-top:9px; padding-left:12px; font:8pt 돋움; text-transform:none; letter-spacing:-1px; text-align:left; background:none !important; }
+	#nav_pxeWhite ul a span { position:absolute; top:10px; right:10px; }
+	#nav_pxeWhite ul a:hover { background:#fbfbfb !important; }
+	#nav_pxeWhite ul .on { background:#fff; }
+
+/* #nav_pxeWhite ul a { border-bottom: none; } - I also needed this for IE6/7 */
+
+
+
+/* Colorset - pxeBlack
+---------------------------------------------------------------------------------*/
+ #nav_pxeBlack { position:relative; display: block; margin:0; padding: 0; }
+  #nav_pxeBlack li { display: block; list-style: none; margin: 0; padding: 0; float:left; position: relative; }
+  #nav_pxeBlack ul { display: none; position:absolute; left: 0; margin: 0; padding:0; }
+  * html #nav_pxeBlack ul { line-height: 0; } /* IE6 "fix" */
+  	#nav_pxeBlack ul a { zoom: 1; } /* IE6/7 fix */
+    #nav_pxeBlack ul li a { float: none; }
+    #nav_pxeBlack ul ul { top: 0; }
+	
+/* Essentials - configure this */
+#nav_pxeBlack ul { width:140px }
+#nav_pxeBlack ul ul { left:138px; }
+
+/* Everything else is theming */
+#nav_pxeBlack { left:0px; top:30px; }
+#nav_pxeBlack *:hover { background-color: none; }
+#nav_pxeBlack li a { color:#313131; display:inline-block; padding:0 14px 0 0; margin:0 14px 0 0; background:url(images/vr_pxeBlack.gif) no-repeat right 2px; font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif; font-size:13px; text-transform:uppercase; }
+#nav_pxeBlack li.on a { color:#fff; }
+#nav_pxeBlack li a:hover { color:#fff; }
+
+#nav_pxeBlack li.tools a {  }
+#nav_pxeBlack li.tools a:hover {  }
+
+    #nav_pxeBlack ul { top:24px; width:140px; }
+    #nav_pxeBlack ul li { border-bottom:1px solid #222; border-right:1px solid #222; border-left:1px solid #222; background:#373737; color:#fff }
+	#nav_pxeBlack ul a { color:#fff !important; display:block; width:112px; height:21px; margin:0; padding-bottom:none; padding-top:9px; padding-left:12px; font:8pt 돋움; text-transform:none; letter-spacing:-1px; text-align:left; background:none !important; }
+	#nav_pxeBlack ul a span { position:absolute; top:10px; right:10px; }
+	#nav_pxeBlack ul a:hover { background:#444 !important; }
+	#nav_pxeBlack ul .on { background:#1b1b1b; }
+
+/* #nav_pxeBlack ul a { border-bottom: none; } - I also needed this for IE6/7 */
+
+
+
+/* Colorset - pxeLapis
+---------------------------------------------------------------------------------*/
+ #nav_pxeLapis { position:relative; display: block; margin:0; padding: 0; }
+  #nav_pxeLapis li { display: block; list-style: none; margin: 0; padding: 0; float:left; position: relative; }
+  #nav_pxeLapis ul { display: none; position:absolute; left: 0; margin: 0; padding:0; }
+  * html #nav_pxeLapis ul { line-height: 0; } /* IE6 "fix" */
+  	#nav_pxeLapis ul a { zoom: 1; } /* IE6/7 fix */
+    #nav_pxeLapis ul li a { float: none; }
+    #nav_pxeLapis ul ul { top: 0; }
+	
+/* Essentials - configure this */
+#nav_pxeLapis ul { width:140px }
+#nav_pxeLapis ul ul { left:138px; }
+
+/* Everything else is theming */
+#nav_pxeLapis { left:0px; top:30px; }
+#nav_pxeLapis *:hover { background-color: none; }
+#nav_pxeLapis li a { color:#373f42; display:inline-block; padding:0 14px 0 0; margin:0 14px 0 0; background:url(images/vr_pxeBlack.gif) no-repeat right 2px; font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, sans-serif; font-size:13px; text-transform:uppercase; }
+#nav_pxeLapis li.on a { color:#6b888a; }
+#nav_pxeLapis li a:hover { color:#fff; }
+
+#nav_pxeLapis li.tools a {  }
+#nav_pxeLapis li.tools a:hover {  }
+
+    #nav_pxeLapis ul { top:24px; width:140px; }
+    #nav_pxeLapis ul li { border-bottom:1px solid #0a0d0e; border-right:1px solid #0a0d0e; border-left:1px solid #0a0d0e; background:#101415; color:#373f42 }
+	#nav_pxeLapis ul a { color:#89b5c6 !important; display:block; width:112px; height:21px; margin:0; padding-bottom:none; padding-top:9px; padding-left:12px; font:8pt 돋움; text-transform:none; letter-spacing:-1px; text-align:left; background:none !important; }
+	#nav_pxeLapis ul a span { position:absolute; top:10px; right:10px; }
+	#nav_pxeLapis ul a:hover { color:#fff !important; background:#191e1f !important; }
+	#nav_pxeLapis ul .on { background:#191e1f; }
+
+/* #nav_pxeBlack ul a { border-bottom: none; } - I also needed this for IE6/7 */
